@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class pro
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ConsoleHelperLibrary", "ConsoleHelperLibrary\ConsoleHelperLibrary.vbproj", "{4ECDD411-0AA4-4832-8C72-6FDA15CEA924}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CollectInputToList", "CollectInputToList\CollectInputToList.vbproj", "{7499D38E-7E6D-445D-ACA9-05608786E0B5}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CollectInputToList", "CollectInputToList\CollectInputToList.vbproj", "{7499D38E-7E6D-445D-ACA9-05608786E0B5}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CollectNumericInput", "CollectNumericInput\CollectNumericInput.vbproj", "{0161D289-1CA0-4F48-8A7D-D18A240B40A7}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CollectNumericInput", "CollectNumericInput\CollectNumericInput.vbproj", "{0161D289-1CA0-4F48-8A7D-D18A240B40A7}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CollectDateTimeInput", "CollectDateTimeInput\CollectDateTimeInput.vbproj", "{671D1000-C5B6-490B-BC7D-515B4784A81A}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CollectDateTimeInput", "CollectDateTimeInput\CollectDateTimeInput.vbproj", "{671D1000-C5B6-490B-BC7D-515B4784A81A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Step 2 Windows forms examples", "Step 2 Windows forms examples", "{2EA0779D-72E1-4205-9617-F173EDCD1633}"
 EndProject
@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorldWinForms1", "HelloWorldWinForms1\HelloWorldWinForms1.vbproj", "{3BD80E1C-C375-451E-BFE4-D2F3DF45F7D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +66,10 @@ Global
 		{671D1000-C5B6-490B-BC7D-515B4784A81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{671D1000-C5B6-490B-BC7D-515B4784A81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{671D1000-C5B6-490B-BC7D-515B4784A81A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD80E1C-C375-451E-BFE4-D2F3DF45F7D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD80E1C-C375-451E-BFE4-D2F3DF45F7D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD80E1C-C375-451E-BFE4-D2F3DF45F7D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD80E1C-C375-451E-BFE4-D2F3DF45F7D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{0161D289-1CA0-4F48-8A7D-D18A240B40A7} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{671D1000-C5B6-490B-BC7D-515B4784A81A} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{FFFD14AB-2530-4B34-AAB5-AB2EAA8D9AF5} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
+		{3BD80E1C-C375-451E-BFE4-D2F3DF45F7D4} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}

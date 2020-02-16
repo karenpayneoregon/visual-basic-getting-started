@@ -2,6 +2,7 @@ Imports System
 Imports ConsoleHelperLibrary
 Module Program
     Sub Main(args As String())
+
         Dim decimalValue As Decimal
         Dim stringValue As String
         Dim originalForegroundColor = Console.ForegroundColor
@@ -32,9 +33,8 @@ Module Program
             End If
 
             Console.ReadLine()
+
         Loop
-
-
 
     End Sub
 End Module
