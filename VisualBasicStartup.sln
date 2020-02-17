@@ -36,7 +36,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ComponentLibrary", "Compone
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinFormExtensions", "WinFormExtensions\WinFormExtensions.vbproj", "{6F670FA4-5D5D-4136-B926-146C7EC7840B}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Progress1", "AsyncIProgress\Progress1.vbproj", "{4EAAD1E4-D25C-46D4-AAB7-14646D346BED}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AsyncTaskProgress1", "AsyncIProgress\AsyncTaskProgress1.vbproj", "{4EAAD1E4-D25C-46D4-AAB7-14646D346BED}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GroupByVehicle", "GroupByVehicle\GroupByVehicle.vbproj", "{F155596E-974A-4E8F-A2D8-B7DA404571B5}"
 EndProject
@@ -45,6 +45,14 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LanguageExensionMethods", "LanguageExensionMethods\LanguageExensionMethods.vbproj", "{E39C7EAF-DE76-406F-BC97-669FCB8D4BE4}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TypeConversions", "TypeConversions\TypeConversions.vbproj", "{AAACC442-F6EB-4A74-887F-E3ED4FF90C62}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormValidationSimple", "FormValidationSimple\FormValidationSimple.vbproj", "{387BCED8-2A5D-4F36-827E-55E5E587B970}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormValidationDataAnnotation", "FormValidationDataAnnotation\FormValidationDataAnnotation.vbproj", "{E7B77591-4BBD-423A-9651-86CBEF849263}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "3 Hello World working with strings", "3 Hello World working with strings\3 Hello World working with strings.vbproj", "{D58C625F-BAFF-495B-BF16-304E50044B7C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "4 Hello World working with dates", "4 Hello World working with dates\4 Hello World working with dates.vbproj", "{E93ED7FD-4064-46C9-8AB6-FB882961E394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,6 +120,22 @@ Global
 		{AAACC442-F6EB-4A74-887F-E3ED4FF90C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAACC442-F6EB-4A74-887F-E3ED4FF90C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAACC442-F6EB-4A74-887F-E3ED4FF90C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387BCED8-2A5D-4F36-827E-55E5E587B970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387BCED8-2A5D-4F36-827E-55E5E587B970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387BCED8-2A5D-4F36-827E-55E5E587B970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387BCED8-2A5D-4F36-827E-55E5E587B970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B77591-4BBD-423A-9651-86CBEF849263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B77591-4BBD-423A-9651-86CBEF849263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B77591-4BBD-423A-9651-86CBEF849263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B77591-4BBD-423A-9651-86CBEF849263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58C625F-BAFF-495B-BF16-304E50044B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58C625F-BAFF-495B-BF16-304E50044B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58C625F-BAFF-495B-BF16-304E50044B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58C625F-BAFF-495B-BF16-304E50044B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93ED7FD-4064-46C9-8AB6-FB882961E394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93ED7FD-4064-46C9-8AB6-FB882961E394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93ED7FD-4064-46C9-8AB6-FB882961E394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93ED7FD-4064-46C9-8AB6-FB882961E394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +158,10 @@ Global
 		{21D61684-BFEB-42AC-9C3D-C7149D8414E2} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{E39C7EAF-DE76-406F-BC97-669FCB8D4BE4} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{AAACC442-F6EB-4A74-887F-E3ED4FF90C62} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
+		{387BCED8-2A5D-4F36-827E-55E5E587B970} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
+		{E7B77591-4BBD-423A-9651-86CBEF849263} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
+		{D58C625F-BAFF-495B-BF16-304E50044B7C} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
+		{E93ED7FD-4064-46C9-8AB6-FB882961E394} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}

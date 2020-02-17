@@ -1,0 +1,3 @@
+﻿# Common string operations
+
+TODO
