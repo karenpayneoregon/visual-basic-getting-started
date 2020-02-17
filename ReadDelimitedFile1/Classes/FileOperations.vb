@@ -2,6 +2,13 @@
 Imports System.Text
 
 Namespace Classes
+    ''' <summary>
+    ''' Although all methods should have exception handling only one 
+    ''' has exception handling as there are more than one way to deal
+    ''' with runtime exceptions which may be returning the error and stop
+    ''' processing, continue processing and write errors to a list or
+    ''' to a log file etc.
+    ''' </summary>
     Public Class FileOperations
         ''' <summary>
         ''' This is the same default buffer size as
@@ -15,7 +22,49 @@ Namespace Classes
         ''' - The file is to be accessed sequentially from beginning to end.
         ''' </summary>
         Private Const DefaultOptions As FileOptions = FileOptions.Asynchronous Or FileOptions.SequentialScan
-        Public Shared Function ConventionalRead(FileName As String) As List(Of Customer)
+        ''' <summary>
+        ''' Uses File.ReadAllLines in tangent with a ValueTuple where the return types
+        ''' are a List(Of Customer) and Nothing is the read was successful while if there
+        ''' was an error the List may be empty or have several customers along with the exception
+        ''' object which throw the exception e.g. file missing, incorrect column count, conversion
+        ''' issue.
+        ''' </summary>
+        ''' <param name="FileName"></param>
+        ''' <returns></returns>
+        Public Shared Function ReadAllLinesWithFileReadLines(FileName As String) As (List As List(Of Customer), Exception As Exception)
+            Dim customers = New List(Of Customer)()
+
+            Try
+                Dim lines = File.ReadAllLines(FileName)
+                For Each line As String In lines
+                    Dim lineParts = line.Split(","c)
+
+                    customers.Add(New Customer() With {
+                                 .CustomerIdentifier = Convert.ToInt32(lineParts(0)),
+                                 .CompanyName = lineParts(1),
+                                 .ContactName = lineParts(2),
+                                 .ContactTitle = lineParts(3),
+                                 .City = lineParts(4),
+                                 .Country = lineParts(5)
+                                 })
+
+                Next
+            Catch ex As Exception
+                Return (customers, ex)
+            End Try
+
+            Return (customers, Nothing)
+
+        End Function
+        ''' <summary>
+        ''' Read each line, line by line which allows business logic to determine
+        ''' if all lines need to be read or not while the above method will read all
+        ''' lines in unless using .Skip and/or .Take which can be a performance hit
+        ''' on the application.
+        ''' </summary>
+        ''' <param name="FileName"></param>
+        ''' <returns></returns>
+        Public Shared Function ReadAllLinesWithFileStream(FileName As String) As List(Of Customer)
             Dim customers = New List(Of Customer)()
 
             ' Open the FileStream with the same FileMode, FileAccess
@@ -44,7 +93,15 @@ Namespace Classes
 
             Return customers
         End Function
-        Public Shared Async Function ReadAllLinesAsync1(FileName As String, Encoding As Encoding) As Task(Of Customer())
+        ''' <summary>
+        ''' Mirror of the synchronous method above, here the method is 
+        ''' asynchronous which can keep the app responsive yet will slow
+        ''' down the entire process.
+        ''' </summary>
+        ''' <param name="FileName"></param>
+        ''' <param name="Encoding"></param>
+        ''' <returns></returns>
+        Public Shared Async Function ReadAllLinesWithFileStreamAsync(FileName As String, Encoding As Encoding) As Task(Of Customer())
             Dim customers = New List(Of Customer)()
 
             Using stream = New FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.Read, DefaultBufferSize, DefaultOptions)

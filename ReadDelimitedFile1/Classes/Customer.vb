@@ -114,7 +114,11 @@ Namespace Classes
 
             End Set
         End Property
-
+        Public ReadOnly Property Information() As String
+            Get
+                Return $"{CustomerIdentifier} - {CompanyName}"
+            End Get
+        End Property
         Public Overrides Function ToString() As String
             Return CompanyName
         End Function

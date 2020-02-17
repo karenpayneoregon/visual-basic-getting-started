@@ -25,6 +25,7 @@ Partial Class DataGridViewForm
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DataGridViewForm))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CurrentCustomerButton = New System.Windows.Forms.Button()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -41,7 +42,7 @@ Partial Class DataGridViewForm
         Me.ContactNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CountryColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CurrentCustomerButton = New System.Windows.Forms.Button()
+        Me.CurrentPersonToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.Panel1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
@@ -57,12 +58,21 @@ Partial Class DataGridViewForm
         Me.Panel1.Size = New System.Drawing.Size(633, 46)
         Me.Panel1.TabIndex = 0
         '
+        'CurrentCustomerButton
+        '
+        Me.CurrentCustomerButton.Location = New System.Drawing.Point(12, 11)
+        Me.CurrentCustomerButton.Name = "CurrentCustomerButton"
+        Me.CurrentCustomerButton.Size = New System.Drawing.Size(143, 23)
+        Me.CurrentCustomerButton.TabIndex = 0
+        Me.CurrentCustomerButton.Text = "Current customer"
+        Me.CurrentCustomerButton.UseVisualStyleBackColor = True
+        '
         'BindingNavigator1
         '
         Me.BindingNavigator1.AddNewItem = Nothing
         Me.BindingNavigator1.CountItem = Me.BindingNavigatorCountItem
         Me.BindingNavigator1.DeleteItem = Nothing
-        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2})
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.CurrentPersonToolStripButton})
         Me.BindingNavigator1.Location = New System.Drawing.Point(0, 0)
         Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -72,7 +82,7 @@ Partial Class DataGridViewForm
         Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
         Me.BindingNavigator1.Size = New System.Drawing.Size(633, 25)
         Me.BindingNavigator1.TabIndex = 1
-        Me.BindingNavigator1.Text = "BindingNavigator1"
+        Me.BindingNavigator1.Text = "CustomersBindingNavigator"
         '
         'BindingNavigatorCountItem
         '
@@ -181,14 +191,13 @@ Partial Class DataGridViewForm
         Me.CountryColumn.HeaderText = "Country"
         Me.CountryColumn.Name = "CountryColumn"
         '
-        'CurrentCustomerButton
+        'CurrentPersonToolStripButton
         '
-        Me.CurrentCustomerButton.Location = New System.Drawing.Point(12, 11)
-        Me.CurrentCustomerButton.Name = "CurrentCustomerButton"
-        Me.CurrentCustomerButton.Size = New System.Drawing.Size(143, 23)
-        Me.CurrentCustomerButton.TabIndex = 0
-        Me.CurrentCustomerButton.Text = "Current customer"
-        Me.CurrentCustomerButton.UseVisualStyleBackColor = True
+        Me.CurrentPersonToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.CurrentPersonToolStripButton.Image = CType(resources.GetObject("CurrentPersonToolStripButton.Image"), System.Drawing.Image)
+        Me.CurrentPersonToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.CurrentPersonToolStripButton.Name = "CurrentPersonToolStripButton"
+        Me.CurrentPersonToolStripButton.Size = New System.Drawing.Size(23, 22)
         '
         'DataGridViewForm
         '
@@ -199,7 +208,7 @@ Partial Class DataGridViewForm
         Me.Controls.Add(Me.BindingNavigator1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "DataGridViewForm"
-        Me.Text = "Form1"
+        Me.Text = "Read delimited text file"
         Me.Panel1.ResumeLayout(False)
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
@@ -228,4 +237,5 @@ Partial Class DataGridViewForm
     Friend WithEvents CityColumn As DataGridViewTextBoxColumn
     Friend WithEvents CountryColumn As DataGridViewTextBoxColumn
     Friend WithEvents CurrentCustomerButton As Button
+    Friend WithEvents CurrentPersonToolStripButton As ToolStripButton
 End Class
