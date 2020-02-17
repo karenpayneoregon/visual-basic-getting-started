@@ -1,0 +1,3 @@
+﻿# IEqualityComparer\<T> example
+
+TODO

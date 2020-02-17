@@ -65,7 +65,9 @@ Public Class DataGridViewForm
     Private Sub ShowCurrentCustomer()
 
         If CustomersBindingSource.Current IsNot Nothing Then
+
             'CType(CustomersBindingSource.Current, Customer).Country = ""
+
             MessageBox.Show(CType(CustomersBindingSource.Current, Customer).Information)
         End If
 
