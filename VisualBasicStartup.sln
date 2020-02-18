@@ -68,11 +68,13 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "1 Standard LINQ", "1 Standa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing Versions", "Testing Versions", "{35AF557B-C6EB-4536-9841-8A77E38D55B8}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VersionAcrossMachines", "VersionAcrossMachines\VersionAcrossMachines.vbproj", "{3203DC43-1729-4227-B933-F062A19071F9}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "VersionAcrossMachines", "VersionAcrossMachines\VersionAcrossMachines.vbproj", "{3203DC43-1729-4227-B933-F062A19071F9}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinFormControls", "WinFormControls\WinFormControls.vbproj", "{C6495030-3BFF-4CA2-A7A7-B347B7F17393}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinFormValidationLibrary", "WinFormValidationLibrary\WinFormValidationLibrary.vbproj", "{D26C0329-6658-4CF8-A7A6-71C319FA8826}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Generics1", "Generics1\Generics1.vbproj", "{A990855D-CF24-4100-9AC0-9EEA93872CD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -184,6 +186,10 @@ Global
 		{D26C0329-6658-4CF8-A7A6-71C319FA8826}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D26C0329-6658-4CF8-A7A6-71C319FA8826}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D26C0329-6658-4CF8-A7A6-71C319FA8826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A990855D-CF24-4100-9AC0-9EEA93872CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A990855D-CF24-4100-9AC0-9EEA93872CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A990855D-CF24-4100-9AC0-9EEA93872CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A990855D-CF24-4100-9AC0-9EEA93872CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -218,6 +224,7 @@ Global
 		{3203DC43-1729-4227-B933-F062A19071F9} = {35AF557B-C6EB-4536-9841-8A77E38D55B8}
 		{C6495030-3BFF-4CA2-A7A7-B347B7F17393} = {FFFD14AB-2530-4B34-AAB5-AB2EAA8D9AF5}
 		{D26C0329-6658-4CF8-A7A6-71C319FA8826} = {FFFD14AB-2530-4B34-AAB5-AB2EAA8D9AF5}
+		{A990855D-CF24-4100-9AC0-9EEA93872CD9} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
