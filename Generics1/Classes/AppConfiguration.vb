@@ -20,12 +20,15 @@ Namespace Classes
             Try
                 Dim converter = TypeDescriptor.GetConverter(GetType(T))
                 Return CType(converter.ConvertFromString(input), T)
-            Catch e1 As Exception
+            Catch ex As Exception
                 Return Nothing
             End Try
         End Function
         Public Shared Function TestMode() As Boolean
             Return ConfigSetting(Of Boolean)("TestMode")
+        End Function
+        Public Shared Function TestMode1() As Boolean
+            Return GetConfigSetting(Of Boolean)("TestMode")
         End Function
         Public Shared Function DatabaseServer() As String
             Return ConfigurationManager.AppSettings("DatabaseServer")
