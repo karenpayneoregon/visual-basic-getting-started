@@ -90,6 +90,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "File operations", "File ope
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ListBoxDataBinding", "ListBoxDataBinding\ListBoxDataBinding.vbproj", "{4B4F35F7-F0DE-4228-B110-78A6832F44D3}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DynamicExpressionsLibrary", "DynamicExpressionsLibrary\DynamicExpressionsLibrary.vbproj", "{53B57A03-23C3-4579-88F2-A3A7F0E0320C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -208,6 +210,10 @@ Global
 		{4B4F35F7-F0DE-4228-B110-78A6832F44D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B4F35F7-F0DE-4228-B110-78A6832F44D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B4F35F7-F0DE-4228-B110-78A6832F44D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B57A03-23C3-4579-88F2-A3A7F0E0320C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B57A03-23C3-4579-88F2-A3A7F0E0320C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B57A03-23C3-4579-88F2-A3A7F0E0320C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B57A03-23C3-4579-88F2-A3A7F0E0320C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -250,6 +256,7 @@ Global
 		{12949825-0275-4736-AC40-2E3C5DB9A7B8} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
 		{1CEF8D36-31EE-409A-B2E1-FC5E1ECBB866} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
 		{4B4F35F7-F0DE-4228-B110-78A6832F44D3} = {E906EDE1-9AB8-4D2E-9E27-B304CF332F3F}
+		{53B57A03-23C3-4579-88F2-A3A7F0E0320C} = {FFFD14AB-2530-4B34-AAB5-AB2EAA8D9AF5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
