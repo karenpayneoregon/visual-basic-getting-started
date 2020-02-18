@@ -38,21 +38,33 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WinFormExtensions", "WinFor
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AsyncTaskProgress1", "AsyncIProgress\AsyncTaskProgress1.vbproj", "{4EAAD1E4-D25C-46D4-AAB7-14646D346BED}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GroupByVehicle", "GroupByVehicle\GroupByVehicle.vbproj", "{F155596E-974A-4E8F-A2D8-B7DA404571B5}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "GroupByVehicle", "GroupByVehicle\GroupByVehicle.vbproj", "{F155596E-974A-4E8F-A2D8-B7DA404571B5}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "IEqualityComparerExample", "IEqualityComparerExample\IEqualityComparerExample.vbproj", "{21D61684-BFEB-42AC-9C3D-C7149D8414E2}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "IEqualityComparerExample", "IEqualityComparerExample\IEqualityComparerExample.vbproj", "{21D61684-BFEB-42AC-9C3D-C7149D8414E2}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LanguageExensionMethods", "LanguageExensionMethods\LanguageExensionMethods.vbproj", "{E39C7EAF-DE76-406F-BC97-669FCB8D4BE4}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "LanguageExensionMethods", "LanguageExensionMethods\LanguageExensionMethods.vbproj", "{E39C7EAF-DE76-406F-BC97-669FCB8D4BE4}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TypeConversions", "TypeConversions\TypeConversions.vbproj", "{AAACC442-F6EB-4A74-887F-E3ED4FF90C62}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TypeConversions", "TypeConversions\TypeConversions.vbproj", "{AAACC442-F6EB-4A74-887F-E3ED4FF90C62}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormValidationSimple", "FormValidationSimple\FormValidationSimple.vbproj", "{387BCED8-2A5D-4F36-827E-55E5E587B970}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FormValidationDataAnnotation", "FormValidationDataAnnotation\FormValidationDataAnnotation.vbproj", "{E7B77591-4BBD-423A-9651-86CBEF849263}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "3 Hello World working with strings", "3 Hello World working with strings\3 Hello World working with strings.vbproj", "{D58C625F-BAFF-495B-BF16-304E50044B7C}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "3 Hello World working with strings", "3 Hello World working with strings\3 Hello World working with strings.vbproj", "{D58C625F-BAFF-495B-BF16-304E50044B7C}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "4 Hello World working with dates", "4 Hello World working with dates\4 Hello World working with dates.vbproj", "{E93ED7FD-4064-46C9-8AB6-FB882961E394}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "4 Hello World working with dates", "4 Hello World working with dates\4 Hello World working with dates.vbproj", "{E93ED7FD-4064-46C9-8AB6-FB882961E394}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{CC385D56-7B75-400C-813F-A5D66374D47C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExceptionLibrary", "ExceptionLibrary\ExceptionLibrary.vbproj", "{7E2F19C5-6257-42C7-BE48-A69A9E4A82AE}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RunTimeExceptions", "RunTimeExceptions\RunTimeExceptions.vbproj", "{46DF5D00-236A-4EBB-B3A7-EE98BA6A6D1D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MyApplicationNamespace", "MyApplicationNamespace\MyApplicationNamespace.vbproj", "{72776F6C-C31D-464B-AEA1-BD5895655115}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LINQ and Lambda examples", "LINQ and Lambda examples", "{0DC67C26-FC0B-42A4-843B-29FB4D2BF11A}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "1 Standard LINQ", "1 Standard LINQ\1 Standard LINQ.vbproj", "{1871352C-D433-466B-BB0E-D64B888F14CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,6 +148,22 @@ Global
 		{E93ED7FD-4064-46C9-8AB6-FB882961E394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93ED7FD-4064-46C9-8AB6-FB882961E394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93ED7FD-4064-46C9-8AB6-FB882961E394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2F19C5-6257-42C7-BE48-A69A9E4A82AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2F19C5-6257-42C7-BE48-A69A9E4A82AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2F19C5-6257-42C7-BE48-A69A9E4A82AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2F19C5-6257-42C7-BE48-A69A9E4A82AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46DF5D00-236A-4EBB-B3A7-EE98BA6A6D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46DF5D00-236A-4EBB-B3A7-EE98BA6A6D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46DF5D00-236A-4EBB-B3A7-EE98BA6A6D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46DF5D00-236A-4EBB-B3A7-EE98BA6A6D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72776F6C-C31D-464B-AEA1-BD5895655115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72776F6C-C31D-464B-AEA1-BD5895655115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72776F6C-C31D-464B-AEA1-BD5895655115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72776F6C-C31D-464B-AEA1-BD5895655115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1871352C-D433-466B-BB0E-D64B888F14CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1871352C-D433-466B-BB0E-D64B888F14CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1871352C-D433-466B-BB0E-D64B888F14CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1871352C-D433-466B-BB0E-D64B888F14CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +190,11 @@ Global
 		{E7B77591-4BBD-423A-9651-86CBEF849263} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
 		{D58C625F-BAFF-495B-BF16-304E50044B7C} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{E93ED7FD-4064-46C9-8AB6-FB882961E394} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
+		{7E2F19C5-6257-42C7-BE48-A69A9E4A82AE} = {17EC3836-3B69-4D6E-A376-FBA807BC9A61}
+		{46DF5D00-236A-4EBB-B3A7-EE98BA6A6D1D} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
+		{72776F6C-C31D-464B-AEA1-BD5895655115} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
+		{0DC67C26-FC0B-42A4-843B-29FB4D2BF11A} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
+		{1871352C-D433-466B-BB0E-D64B888F14CF} = {0DC67C26-FC0B-42A4-843B-29FB4D2BF11A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
