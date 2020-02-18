@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.StatusLabel = New System.Windows.Forms.Label()
         Me.StartButton = New System.Windows.Forms.Button()
-        Me.CancelButton = New System.Windows.Forms.Button()
+        Me.CancellButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'StatusLabel
@@ -47,19 +47,19 @@ Partial Class Form1
         '
         'CancelButton
         '
-        Me.CancelButton.Location = New System.Drawing.Point(96, 39)
-        Me.CancelButton.Name = "CancelButton"
-        Me.CancelButton.Size = New System.Drawing.Size(75, 23)
-        Me.CancelButton.TabIndex = 2
-        Me.CancelButton.Text = "Cancel"
-        Me.CancelButton.UseVisualStyleBackColor = True
+        Me.CancellButton.Location = New System.Drawing.Point(96, 39)
+        Me.CancellButton.Name = "CancellButton"
+        Me.CancellButton.Size = New System.Drawing.Size(75, 23)
+        Me.CancellButton.TabIndex = 2
+        Me.CancellButton.Text = "Cancel"
+        Me.CancellButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(210, 94)
-        Me.Controls.Add(Me.CancelButton)
+        Me.Controls.Add(Me.CancellButton)
         Me.Controls.Add(Me.StartButton)
         Me.Controls.Add(Me.StatusLabel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -73,5 +73,5 @@ Partial Class Form1
 
     Friend WithEvents StatusLabel As Label
     Friend WithEvents StartButton As Button
-    Friend WithEvents CancelButton As Button
+    Friend WithEvents CancellButton As Button
 End Class

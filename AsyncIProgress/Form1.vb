@@ -57,7 +57,7 @@ Public Class Form1
         End If
 
     End Sub
-    Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
+    Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancellButton.Click
         _cts.Cancel()
     End Sub
     Private Sub ReportProgress(value As Integer)

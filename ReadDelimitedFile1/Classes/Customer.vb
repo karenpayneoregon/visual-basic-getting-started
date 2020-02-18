@@ -1,6 +1,5 @@
 ﻿Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
-Imports JetBrains.Annotations
 
 Namespace Classes
     Public Class Customer
@@ -124,7 +123,6 @@ Namespace Classes
         End Function
         Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 
-        <NotifyPropertyChangedInvocator>
         Protected Overridable Sub OnPropertyChanged(<CallerMemberName> Optional ByVal propertyName As String = Nothing)
             PropertyChangedEvent?.Invoke(Me, New PropertyChangedEventArgs(propertyName))
         End Sub
