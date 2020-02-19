@@ -16,6 +16,8 @@ Public Class StringExamples
 
     End Sub
     Public Shared Sub SplitExamples()
+        Dim sentence As String = "this--is--a--complete--sentence"
+        Dim tokens() As String = sentence.Split({"--"}, StringSplitOptions.None)
 
     End Sub
     Public Shared Sub ExtractExamples()
@@ -37,7 +39,8 @@ Public Class StringExamples
 
     End Sub
     Public Shared Sub ReplaceExamples()
-
+        Dim token = "Hello France"
+        token = token.Replace("France", "USA")
     End Sub
     Public Shared Sub DateTimeToStringExamples()
 
