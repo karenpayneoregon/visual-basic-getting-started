@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports System.Linq.Expressions
 Imports System.Runtime.CompilerServices
 
 Public Module GenericExtensions
@@ -26,7 +25,31 @@ Public Module GenericExtensions
     Public Function Between(Of T As IComparable(Of T))(actual As T, lower As T, upper As T) As Boolean
         Return actual.CompareTo(lower) >= 0 AndAlso actual.CompareTo(upper) <= 0
     End Function
-
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <typeparam name="T"></typeparam>
+    ''' <param name="source"></param>
+    ''' <param name="chunkSize"></param>
+    ''' <returns></returns>
+    <Extension>
+    Public Function ChunkBy(Of T)(source As List(Of T), chunkSize As Integer) As List(Of List(Of T))
+        Return source.Select(
+            Function(value, index)
+                Return New With {
+                        Key .Index = index,
+                        Key .Value = value}
+            End Function).
+            GroupBy(Function(item) item.Index \ chunkSize).
+            Select(Function(grp) grp.Select(Function(v) v.Value).ToList()).
+            ToList()
+    End Function
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <typeparam name="T"></typeparam>
+    ''' <param name="sender"></param>
+    ''' <returns></returns>
     <Extension>
     Public Function ToNullable(Of T As Structure)(sender As String) As T?
 
