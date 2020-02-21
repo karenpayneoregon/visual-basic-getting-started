@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>_10_Hello_World_Dynamic_sort</RootNamespace>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StandardLibrary1\StandardLibrary1.vbproj" />
+  </ItemGroup>
+
+</Project>
