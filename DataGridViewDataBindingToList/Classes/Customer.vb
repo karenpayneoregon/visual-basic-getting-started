@@ -12,7 +12,8 @@ Namespace Classes
         Private _contactName As String
         Private _contactTitle As String
         Private _city As String
-        Private _country As String
+        Private _countryId As Integer
+        Private _countryName1 As String
 
         ''' <summary>
         ''' Primary key
@@ -99,23 +100,34 @@ Namespace Classes
         ''' Country name
         ''' </summary>
         ''' <returns></returns>
-        Public Property Country() As String
+        Public Property CountryIdentifier() As Integer
             Get
-                Return _country
+                Return _countryId
             End Get
             Set
-                If Value = _country Then
+                If Value = _countryId Then
                     Return
                 End If
 
-                _country = Value
+                _countryId = Value
                 OnPropertyChanged()
 
             End Set
         End Property
+
+        Public Property CountryName() As String
+            Get
+                Return _countryName1
+            End Get
+            Set
+                _countryName1 = Value
+                OnPropertyChanged()
+            End Set
+        End Property
+
         Public ReadOnly Property Information() As String
             Get
-                Return $"{CustomerIdentifier} - {CompanyName}"
+                Return $"{CustomerIdentifier} - {CompanyName} - {CountryIdentifier} - {CountryName}"
             End Get
         End Property
         Public Overrides Function ToString() As String

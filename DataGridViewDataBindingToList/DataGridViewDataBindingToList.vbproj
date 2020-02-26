@@ -113,7 +113,7 @@
     <None Include="Countries.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="CustomersWithPrimaryAndCountryPrimaryKey - Copy.csv">
+    <None Include="CustomersWithPrimaryAndCountryPrimaryKey.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="CustomersWithPrimaryKey.csv">

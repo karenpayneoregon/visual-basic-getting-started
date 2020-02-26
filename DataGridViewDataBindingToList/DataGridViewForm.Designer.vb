@@ -195,7 +195,7 @@ Partial Class DataGridViewForm
         '
         'CountryColumn
         '
-        Me.CountryColumn.DataPropertyName = "Country"
+        Me.CountryColumn.DataPropertyName = "CountryName"
         Me.CountryColumn.HeaderText = "Country"
         Me.CountryColumn.Name = "CountryColumn"
         '
@@ -232,11 +232,11 @@ Partial Class DataGridViewForm
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents CustomersDataGridView As DataGridView
+    Friend WithEvents CurrentCustomerButton As Button
+    Friend WithEvents CurrentPersonToolStripButton As ToolStripButton
     Friend WithEvents CompanyNameColumn As DataGridViewTextBoxColumn
     Friend WithEvents ContactTitleColumn As DataGridViewTextBoxColumn
     Friend WithEvents ContactNameColumn As DataGridViewTextBoxColumn
     Friend WithEvents CityColumn As DataGridViewTextBoxColumn
     Friend WithEvents CountryColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CurrentCustomerButton As Button
-    Friend WithEvents CurrentPersonToolStripButton As ToolStripButton
 End Class

@@ -32,40 +32,41 @@ Namespace Classes
         ''' </summary>
         ''' <param name="FileName"></param>
         ''' <returns></returns>
-        Public Shared Function ReadAllLinesWithFileReadLines(FileName As String) As (List As List(Of Customer), Exception As Exception)
+        Public Shared Function ReadAllLinesWithFileReadLines(FileName As String, CountryList As List(Of Country)) As (List As List(Of Customer), Exception As Exception)
+
             Dim customers = New List(Of Customer)()
-            Dim countries = New List(Of String)
+
             Try
+
                 Dim lines = File.ReadAllLines(FileName)
+
                 For Each line As String In lines
+
+                    ' split line by comma
                     Dim lineParts = line.Split(","c)
 
-                    customers.Add(New Customer() With {
-                                 .CustomerIdentifier = Convert.ToInt32(lineParts(0)),
-                                 .CompanyName = lineParts(1),
-                                 .ContactName = lineParts(2),
-                                 .ContactTitle = lineParts(3),
-                                 .City = lineParts(4),
-                                 .Country = lineParts(5)
-                                 })
+                    ' for this code sample there are numbers in the last element,
+                    ' in the wild there should be an assertion if the last element
+                    ' is a valid integer.
+                    Dim countryId = Convert.ToInt32(lineParts(5))
 
-                    countries.Add(lineParts(5))
+                    '
+                    ' Get country name from country identifier
+                    '
+                    Dim currentCountryName = CountryList.FirstOrDefault(Function(country) country.Id = countryId).Name
+
+                    customers.Add(New Customer() With {
+                                     .CustomerIdentifier = Convert.ToInt32(lineParts(0)),
+                                     .CompanyName = lineParts(1),
+                                     .ContactName = lineParts(2),
+                                     .ContactTitle = lineParts(3),
+                                     .City = lineParts(4),
+                                     .CountryIdentifier = countryId,
+                                     .CountryName = currentCountryName
+                                 })
 
                 Next
 
-                '
-                ' This is how country names were created from the customer list above
-                '
-                'Dim countryData = countries.
-                '        Distinct.
-                '        Select(Function(country, index) New Country With {
-                '                  .Name = country,
-                '                  .Id = index}).
-                '        OrderBy(Function(x) x.Name).ToList()
-
-                'For Each item In countryData
-                '    Console.WriteLine($"{item.Id},{item.Name}")
-                'Next
 
             Catch ex As Exception
                 Return (customers, ex)
@@ -125,7 +126,7 @@ Namespace Classes
                                          .ContactName = lineParts(2),
                                          .ContactTitle = lineParts(3),
                                          .City = lineParts(4),
-                                         .Country = lineParts(5)
+                                         .CountryIdentifier = Convert.ToInt32(lineParts(5))
                                          })
 
                         line = reader.ReadLine()
@@ -160,7 +161,7 @@ Namespace Classes
                                          .ContactName = lineParts(2),
                                          .ContactTitle = lineParts(3),
                                          .City = lineParts(4),
-                                         .Country = lineParts(5)
+                                         .CountryIdentifier = Convert.ToInt32(lineParts(5))
                                          })
 
                         line = Await reader.ReadLineAsync()

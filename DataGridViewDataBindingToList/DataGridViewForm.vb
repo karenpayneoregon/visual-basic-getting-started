@@ -43,11 +43,11 @@ Public Class DataGridViewForm
         End If
 
 
-
+        Dim customerFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                                            "CustomersWithPrimaryAndCountryPrimaryKey.csv")
 
         Dim results As (List As List(Of Customer), Exception As Exception) =
-                FileOperations.ReadAllLinesWithFileReadLines(
-                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CustomersWithPrimaryKey.csv"))
+                FileOperations.ReadAllLinesWithFileReadLines(customerFileName, CountryList)
 
         If results.Exception Is Nothing Then
             CustomersBindingSource.DataSource = New SortableBindingList(Of Customer)(results.List)
@@ -86,7 +86,9 @@ Public Class DataGridViewForm
 
         If CustomersBindingSource.Current IsNot Nothing Then
 
-            'CType(CustomersBindingSource.Current, Customer).Country = ""
+            Dim customer = CType(CustomersBindingSource.Current, Customer)
+            customer.CountryName = CountryList.FirstOrDefault().Name
+            customer.CountryIdentifier = CountryList.FirstOrDefault().Id
 
             MessageBox.Show(CType(CustomersBindingSource.Current, Customer).Information)
         End If
