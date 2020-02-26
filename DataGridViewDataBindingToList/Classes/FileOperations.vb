@@ -75,6 +75,30 @@ Namespace Classes
 
         End Function
         ''' <summary>
+        ''' Read country id and name into a strong type list of Country
+        ''' </summary>
+        ''' <param name="FileName"></param>
+        ''' <returns></returns>
+        Public Shared Function GetCountryList(FileName As String) As List(Of Country)
+
+            Try
+
+                Return File.ReadAllLines(FileName).Select(
+                Function(country)
+                    Dim linePart() As String
+
+                    linePart = country.Split(","c)
+
+                    Return New Country With {.Id = CInt(linePart(0)), .Name = linePart(1)}
+
+                End Function).ToList()
+
+            Catch ex As Exception
+                Return New List(Of Country)
+            End Try
+
+        End Function
+        ''' <summary>
         ''' Read each line, line by line which allows business logic to determine
         ''' if all lines need to be read or not while the above method will read all
         ''' lines in unless using .Skip and/or .Take which can be a performance hit

@@ -7,6 +7,8 @@ Imports WinFormExtensions
 
 Public Class DataGridViewForm
     Private CustomersBindingSource As New BindingSource
+    Private CountryList As List(Of Country)
+
     Public Sub New()
         InitializeComponent()
 
@@ -23,6 +25,25 @@ Public Class DataGridViewForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub DataGridViewForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
+        Dim countryFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Countries.csv")
+
+        If File.Exists(countryFileName) Then
+
+            CountryList = FileOperations.
+                GetCountryList(Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory, "Countries.csv"))
+        Else
+            '
+            ' Missing text file for country information
+            '
+            MessageBox.Show("Missing data file for countries")
+
+            Exit Sub
+        End If
+
+
+
 
         Dim results As (List As List(Of Customer), Exception As Exception) =
                 FileOperations.ReadAllLinesWithFileReadLines(
@@ -45,6 +66,7 @@ Public Class DataGridViewForm
         ' also if DataGridView events are not properly setup
         '
         CustomersDataGridView.ExpandColumns()
+
 
     End Sub
     ''' <summary>
@@ -69,5 +91,14 @@ Public Class DataGridViewForm
             MessageBox.Show(CType(CustomersBindingSource.Current, Customer).Information)
         End If
 
+    End Sub
+
+
+    Private Sub CustomersDataGridView_KeyDown(sender As Object, e As KeyEventArgs) Handles CustomersDataGridView.KeyDown
+        Console.WriteLine(Now)
+        If e.KeyData = Keys.Enter Then
+            e.Handled = True
+            MessageBox.Show("ss")
+        End If
     End Sub
 End Class
