@@ -161,4 +161,19 @@ Public Class DataGridViewForm
         customerFromBindingSource.CountryName = customerFromComboBox.Name
 
     End Sub
+
+    Private Sub CustomersDataGridView_DoubleClick(sender As Object, e As EventArgs) Handles CustomersDataGridView.DoubleClick
+        If CustomersBindingSource.Current IsNot Nothing Then
+            Dim customerFromBindingSource = CType(CustomersBindingSource.Current, Customer)
+
+            Dim editorForm As New EditorForm(customerFromBindingSource, CountryList)
+            Try
+                If editorForm.ShowDialog() <> DialogResult.OK Then
+                    CustomersBindingSource.ResetCurrentItem()
+                End If
+            Finally
+                editorForm.Dispose()
+            End Try
+        End If
+    End Sub
 End Class

@@ -174,24 +174,28 @@ Partial Class DataGridViewForm
         Me.CompanyNameColumn.DataPropertyName = "CompanyName"
         Me.CompanyNameColumn.HeaderText = "Company"
         Me.CompanyNameColumn.Name = "CompanyNameColumn"
+        Me.CompanyNameColumn.ReadOnly = True
         '
         'ContactTitleColumn
         '
         Me.ContactTitleColumn.DataPropertyName = "ContactTitle"
         Me.ContactTitleColumn.HeaderText = "Title"
         Me.ContactTitleColumn.Name = "ContactTitleColumn"
+        Me.ContactTitleColumn.ReadOnly = True
         '
         'ContactNameColumn
         '
         Me.ContactNameColumn.DataPropertyName = "ContactName"
         Me.ContactNameColumn.HeaderText = "Name"
         Me.ContactNameColumn.Name = "ContactNameColumn"
+        Me.ContactNameColumn.ReadOnly = True
         '
         'CityColumn
         '
         Me.CityColumn.DataPropertyName = "City"
         Me.CityColumn.HeaderText = "City"
         Me.CityColumn.Name = "CityColumn"
+        Me.CityColumn.ReadOnly = True
         '
         'CountryColumn
         '

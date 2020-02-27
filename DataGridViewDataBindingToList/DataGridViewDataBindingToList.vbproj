@@ -82,6 +82,12 @@
     <Compile Include="DataGridViewForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditorForm.Designer.vb">
+      <DependentUpon>EditorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Extensions\DataGridViewExtensions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -102,6 +108,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DataGridViewForm.resx">
       <DependentUpon>DataGridViewForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorForm.resx">
+      <DependentUpon>EditorForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
