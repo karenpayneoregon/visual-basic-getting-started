@@ -1,12 +1,13 @@
-﻿Imports System.ComponentModel
-Imports System.IO
+﻿Imports System.IO
 Imports ComponentLibrary
 Imports DataGridViewDataBindingToList.Classes
+Imports DataGridViewDataBindingToList.Extensions
 Imports WinFormExtensions
 
 
 Public Class DataGridViewForm
-    Private CustomersBindingSource As New BindingSource
+    Private ReadOnly CustomersBindingSource As New BindingSource
+    Private ReadOnly CountryBindingSource As New BindingSource
     Private CountryList As List(Of Country)
 
     Public Sub New()
@@ -33,6 +34,15 @@ Public Class DataGridViewForm
             CountryList = FileOperations.
                 GetCountryList(Path.Combine(
                     AppDomain.CurrentDomain.BaseDirectory, "Countries.csv"))
+
+            CountryBindingSource.DataSource = CountryList
+
+            CountryColumn.DisplayMember = "Name"
+            CountryColumn.ValueMember = "CountryIdentifier"
+            CountryColumn.DataPropertyName = "CountryIdentifier"
+            CountryColumn.DataSource = CountryBindingSource
+            CountryColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing
+
         Else
             '
             ' Missing text file for country information
@@ -87,8 +97,8 @@ Public Class DataGridViewForm
         If CustomersBindingSource.Current IsNot Nothing Then
 
             Dim customer = CType(CustomersBindingSource.Current, Customer)
-            customer.CountryName = CountryList.FirstOrDefault().Name
-            customer.CountryIdentifier = CountryList.FirstOrDefault().Id
+            'customer.CountryName = CountryList.FirstOrDefault().Name
+            'customer.CountryIdentifier = CountryList.FirstOrDefault().CountryIdentifier
 
             MessageBox.Show(CType(CustomersBindingSource.Current, Customer).Information)
         End If
@@ -102,5 +112,53 @@ Public Class DataGridViewForm
             e.Handled = True
             MessageBox.Show("ss")
         End If
+    End Sub
+    ''' <summary>
+    ''' Used to know when the Country DataGridViewComboBox is the current column,
+    ''' subscribe to SelectionChangeCommitted of the cast ComboBox.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub CustomersDataGridView_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) _
+        Handles CustomersDataGridView.EditingControlShowing
+
+        If CustomersDataGridView.CurrentCell.IsComboBoxCell Then
+            If CustomersDataGridView.Columns(CustomersDataGridView.CurrentCell.ColumnIndex).Name = "CountryColumn" Then
+                Dim currentCombobox = TryCast(e.Control, ComboBox)
+
+                RemoveHandler currentCombobox.SelectionChangeCommitted,
+                    AddressOf DataGridViewComboBoxSelectionChangeCommittedForColorColumn
+
+                AddHandler currentCombobox.SelectionChangeCommitted,
+                    AddressOf DataGridViewComboBoxSelectionChangeCommittedForColorColumn
+
+            End If
+        End If
+
+    End Sub
+    ''' <summary>
+    ''' Since the DataGridView BindingSource knows nothing of the BindingSource for the
+    ''' DataGridViewComboBox we retrieve the current country from the DataGridViewComboBox
+    ''' and assign the value to the actual Customer.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub DataGridViewComboBoxSelectionChangeCommittedForColorColumn(sender As Object, e As EventArgs)
+        Dim customerFromBindingSource = CType(CustomersBindingSource.Current, Customer)
+
+        '
+        ' Knowing the DataGridViewComboBox is set to a List of Country its safe to cast to a Country
+        '
+        Dim customerFromComboBox =
+                CType(
+                    CType(sender, DataGridViewComboBoxEditingControl).SelectedItem, Country)
+
+        '
+        ' Update current customer's country data which in turn fires off the proper change because
+        ' of Customers uses INotifyPropertyChanged
+        '
+        customerFromBindingSource.CountryIdentifier = customerFromComboBox.CountryIdentifier
+        customerFromBindingSource.CountryName = customerFromComboBox.Name
+
     End Sub
 End Class

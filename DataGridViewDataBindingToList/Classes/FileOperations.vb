@@ -53,7 +53,7 @@ Namespace Classes
                     '
                     ' Get country name from country identifier
                     '
-                    Dim currentCountryName = CountryList.FirstOrDefault(Function(country) country.Id = countryId).Name
+                    Dim currentCountryName = CountryList.FirstOrDefault(Function(country) country.CountryIdentifier = countryId).Name
 
                     customers.Add(New Customer() With {
                                      .CustomerIdentifier = Convert.ToInt32(lineParts(0)),
@@ -90,7 +90,7 @@ Namespace Classes
 
                     linePart = country.Split(","c)
 
-                    Return New Country With {.Id = CInt(linePart(0)), .Name = linePart(1)}
+                    Return New Country With {.CountryIdentifier = CInt(linePart(0)), .Name = linePart(1)}
 
                 End Function).ToList()
 

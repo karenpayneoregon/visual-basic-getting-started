@@ -42,7 +42,7 @@ Partial Class DataGridViewForm
         Me.ContactTitleColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContactNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CountryColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CountryColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
@@ -198,6 +198,8 @@ Partial Class DataGridViewForm
         Me.CountryColumn.DataPropertyName = "CountryName"
         Me.CountryColumn.HeaderText = "Country"
         Me.CountryColumn.Name = "CountryColumn"
+        Me.CountryColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CountryColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'DataGridViewForm
         '
@@ -238,5 +240,5 @@ Partial Class DataGridViewForm
     Friend WithEvents ContactTitleColumn As DataGridViewTextBoxColumn
     Friend WithEvents ContactNameColumn As DataGridViewTextBoxColumn
     Friend WithEvents CityColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CountryColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CountryColumn As DataGridViewComboBoxColumn
 End Class
