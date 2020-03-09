@@ -100,6 +100,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "10 Hello World Dynamic sort
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataGridViewDataBindingToList", "DataGridViewDataBindingToList\DataGridViewDataBindingToList.vbproj", "{5EFD11E2-4F69-41F8-946B-493F1DED98D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainConsoleApp", "AppDomainConsoleApp\AppDomainConsoleApp.csproj", "{3BF92302-EAD7-4049-9800-30414004DCF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -238,6 +240,10 @@ Global
 		{5EFD11E2-4F69-41F8-946B-493F1DED98D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EFD11E2-4F69-41F8-946B-493F1DED98D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EFD11E2-4F69-41F8-946B-493F1DED98D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BF92302-EAD7-4049-9800-30414004DCF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF92302-EAD7-4049-9800-30414004DCF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF92302-EAD7-4049-9800-30414004DCF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF92302-EAD7-4049-9800-30414004DCF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -285,6 +291,7 @@ Global
 		{1B6A88DB-DFBA-4C5F-93D3-15040C848BD5} = {CC385D56-7B75-400C-813F-A5D66374D47C}
 		{F0AD38E6-4962-4031-99E5-5336B1CE7E7B} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{5EFD11E2-4F69-41F8-946B-493F1DED98D8} = {E906EDE1-9AB8-4D2E-9E27-B304CF332F3F}
+		{3BF92302-EAD7-4049-9800-30414004DCF4} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
