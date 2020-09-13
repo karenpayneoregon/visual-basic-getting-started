@@ -100,7 +100,13 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "10 Hello World Dynamic sort
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataGridViewDataBindingToList", "DataGridViewDataBindingToList\DataGridViewDataBindingToList.vbproj", "{5EFD11E2-4F69-41F8-946B-493F1DED98D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainConsoleApp", "AppDomainConsoleApp\AppDomainConsoleApp.csproj", "{3BF92302-EAD7-4049-9800-30414004DCF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDomainConsoleApp", "AppDomainConsoleApp\AppDomainConsoleApp.csproj", "{3BF92302-EAD7-4049-9800-30414004DCF4}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BindingList_ListChanged_Lib", "BindingList_ListChanged_Lib\BindingList_ListChanged_Lib.vbproj", "{A5D44779-26AC-4BA5-BFF8-8501E43A0465}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc Front ends", "Misc Front ends", "{32B5A642-AE30-42CE-AC43-A0123F0BAED6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BindingList_ListChanged", "BindingList_ListChanged\BindingList_ListChanged.vbproj", "{A3048067-81C2-4D2F-B484-7A4454061171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -244,6 +250,14 @@ Global
 		{3BF92302-EAD7-4049-9800-30414004DCF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BF92302-EAD7-4049-9800-30414004DCF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BF92302-EAD7-4049-9800-30414004DCF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D44779-26AC-4BA5-BFF8-8501E43A0465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D44779-26AC-4BA5-BFF8-8501E43A0465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D44779-26AC-4BA5-BFF8-8501E43A0465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D44779-26AC-4BA5-BFF8-8501E43A0465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3048067-81C2-4D2F-B484-7A4454061171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3048067-81C2-4D2F-B484-7A4454061171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3048067-81C2-4D2F-B484-7A4454061171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3048067-81C2-4D2F-B484-7A4454061171}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -292,6 +306,8 @@ Global
 		{F0AD38E6-4962-4031-99E5-5336B1CE7E7B} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{5EFD11E2-4F69-41F8-946B-493F1DED98D8} = {E906EDE1-9AB8-4D2E-9E27-B304CF332F3F}
 		{3BF92302-EAD7-4049-9800-30414004DCF4} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
+		{A5D44779-26AC-4BA5-BFF8-8501E43A0465} = {CC385D56-7B75-400C-813F-A5D66374D47C}
+		{A3048067-81C2-4D2F-B484-7A4454061171} = {32B5A642-AE30-42CE-AC43-A0123F0BAED6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
