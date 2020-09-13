@@ -108,6 +108,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc Front ends", "Misc Fro
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BindingList_ListChanged", "BindingList_ListChanged\BindingList_ListChanged.vbproj", "{A3048067-81C2-4D2F-B484-7A4454061171}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Step 3 WPF examples", "Step 3 WPF examples", "{552597D9-91E4-4774-8FFD-93C39DA33F20}"
+	ProjectSection(SolutionItems) = preProject
+		WPFcodeSamples.md = WPFcodeSamples.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity Framework examples", "Entity Framework examples", "{0F78F6F7-DB06-4999-B026-2288E535210D}"
+	ProjectSection(SolutionItems) = preProject
+		EntityFramework.md = EntityFramework.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

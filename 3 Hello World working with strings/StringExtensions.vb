@@ -6,8 +6,8 @@ Module StringExtensions
     Public Function ReduceWhitespace(ByVal value As String) As String
         Dim newString = New StringBuilder()
         Dim previousIsWhitespace As Boolean = False
-        For i As Integer = 0 To value.Length - 1
-            If Char.IsWhiteSpace(value.Chars(i)) Then
+        For index As Integer = 0 To value.Length - 1
+            If Char.IsWhiteSpace(value.Chars(index)) Then
                 If previousIsWhitespace Then
                     Continue For
                 End If
@@ -17,8 +17,8 @@ Module StringExtensions
                 previousIsWhitespace = False
             End If
 
-            newString.Append(value.Chars(i))
-        Next i
+            newString.Append(value.Chars(index))
+        Next
 
         Return newString.ToString()
     End Function

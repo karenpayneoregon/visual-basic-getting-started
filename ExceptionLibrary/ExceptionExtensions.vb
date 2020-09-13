@@ -5,7 +5,7 @@ Public Module ExceptionExtensions
     ''' <param name="exception"></param>
     ''' <param name="result"></param>
     ''' <returns></returns>
-    <System.Runtime.CompilerServices.Extension>
+    <Runtime.CompilerServices.Extension>
     Public Function GetExceptionMessages(exception As Exception, Optional ByVal result As String = "") As String
 
         If exception Is Nothing Then
