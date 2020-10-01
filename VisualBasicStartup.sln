@@ -118,6 +118,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity Framework examples",
 		EntityFramework.md = EntityFramework.md
 	EndProjectSection
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MySettingsAlternate", "MySettingsAlternate\MySettingsAlternate.vbproj", "{E5908C87-5A2F-47D3-96E7-1D804F88D604}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -268,6 +270,10 @@ Global
 		{A3048067-81C2-4D2F-B484-7A4454061171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3048067-81C2-4D2F-B484-7A4454061171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3048067-81C2-4D2F-B484-7A4454061171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5908C87-5A2F-47D3-96E7-1D804F88D604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5908C87-5A2F-47D3-96E7-1D804F88D604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5908C87-5A2F-47D3-96E7-1D804F88D604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5908C87-5A2F-47D3-96E7-1D804F88D604}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -318,6 +324,7 @@ Global
 		{3BF92302-EAD7-4049-9800-30414004DCF4} = {583AA4FB-3793-440D-94E1-DE41B96A48C6}
 		{A5D44779-26AC-4BA5-BFF8-8501E43A0465} = {CC385D56-7B75-400C-813F-A5D66374D47C}
 		{A3048067-81C2-4D2F-B484-7A4454061171} = {32B5A642-AE30-42CE-AC43-A0123F0BAED6}
+		{E5908C87-5A2F-47D3-96E7-1D804F88D604} = {32B5A642-AE30-42CE-AC43-A0123F0BAED6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
