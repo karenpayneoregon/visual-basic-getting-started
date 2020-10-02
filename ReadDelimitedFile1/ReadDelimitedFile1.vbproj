@@ -116,6 +116,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\CustomersWithPrimaryKey.csv" />
     <None Include="CustomersWithPrimaryKey.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

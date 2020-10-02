@@ -72,4 +72,19 @@ Public Class DataGridViewForm
         End If
 
     End Sub
+
+    Private Sub FindCustomerButton_Click(sender As Object, e As EventArgs) Handles FindCustomerButton.Click
+
+        Dim customers = CType(CustomersBindingSource.DataSource, BindingList(Of Customer))
+
+        ' find by id and change
+        Dim customer = customers.FirstOrDefault(Function(cust) cust.CustomerIdentifier = 31)
+        customer.CompanyName = customer.CompanyName & "1"
+
+        ' find by name and change 
+        Dim customerName = customer.CompanyName
+        customer = customers.FirstOrDefault(Function(cust) cust.CompanyName = customerName)
+        customer.CompanyName = customer.CompanyName & "A"
+
+    End Sub
 End Class

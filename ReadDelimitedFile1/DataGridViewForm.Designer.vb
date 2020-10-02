@@ -36,13 +36,15 @@ Partial Class DataGridViewForm
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CurrentPersonToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.CustomersDataGridView = New System.Windows.Forms.DataGridView()
         Me.CompanyNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContactTitleColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContactNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CountryColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CurrentPersonToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.FindCustomerButton = New System.Windows.Forms.Button()
+        Me.CustomerIdTextBox = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
@@ -51,6 +53,8 @@ Partial Class DataGridViewForm
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.CustomerIdTextBox)
+        Me.Panel1.Controls.Add(Me.FindCustomerButton)
         Me.Panel1.Controls.Add(Me.CurrentCustomerButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 288)
@@ -151,6 +155,14 @@ Partial Class DataGridViewForm
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
+        'CurrentPersonToolStripButton
+        '
+        Me.CurrentPersonToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.CurrentPersonToolStripButton.Image = CType(resources.GetObject("CurrentPersonToolStripButton.Image"), System.Drawing.Image)
+        Me.CurrentPersonToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.CurrentPersonToolStripButton.Name = "CurrentPersonToolStripButton"
+        Me.CurrentPersonToolStripButton.Size = New System.Drawing.Size(23, 22)
+        '
         'CustomersDataGridView
         '
         Me.CustomersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -191,13 +203,22 @@ Partial Class DataGridViewForm
         Me.CountryColumn.HeaderText = "Country"
         Me.CountryColumn.Name = "CountryColumn"
         '
-        'CurrentPersonToolStripButton
+        'FindCustomerButton
         '
-        Me.CurrentPersonToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.CurrentPersonToolStripButton.Image = CType(resources.GetObject("CurrentPersonToolStripButton.Image"), System.Drawing.Image)
-        Me.CurrentPersonToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.CurrentPersonToolStripButton.Name = "CurrentPersonToolStripButton"
-        Me.CurrentPersonToolStripButton.Size = New System.Drawing.Size(23, 22)
+        Me.FindCustomerButton.Location = New System.Drawing.Point(352, 11)
+        Me.FindCustomerButton.Name = "FindCustomerButton"
+        Me.FindCustomerButton.Size = New System.Drawing.Size(143, 23)
+        Me.FindCustomerButton.TabIndex = 1
+        Me.FindCustomerButton.Text = "Find customer"
+        Me.FindCustomerButton.UseVisualStyleBackColor = True
+        '
+        'CustomerIdTextBox
+        '
+        Me.CustomerIdTextBox.Location = New System.Drawing.Point(501, 11)
+        Me.CustomerIdTextBox.Name = "CustomerIdTextBox"
+        Me.CustomerIdTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.CustomerIdTextBox.TabIndex = 2
+        Me.CustomerIdTextBox.Text = "31"
         '
         'DataGridViewForm
         '
@@ -208,8 +229,10 @@ Partial Class DataGridViewForm
         Me.Controls.Add(Me.BindingNavigator1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "DataGridViewForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Read delimited text file"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
@@ -238,4 +261,6 @@ Partial Class DataGridViewForm
     Friend WithEvents CountryColumn As DataGridViewTextBoxColumn
     Friend WithEvents CurrentCustomerButton As Button
     Friend WithEvents CurrentPersonToolStripButton As ToolStripButton
+    Friend WithEvents FindCustomerButton As Button
+    Friend WithEvents CustomerIdTextBox As TextBox
 End Class
