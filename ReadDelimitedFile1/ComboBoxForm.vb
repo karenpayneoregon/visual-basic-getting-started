@@ -1,11 +1,8 @@
-﻿Imports System.ComponentModel
-Imports System.IO
-Imports ComponentLibrary
+﻿Imports System.IO
 Imports ReadDelimitedFile1.Classes
 
 Public Class ComboBoxForm
     Private CustomersBindingSource As New BindingSource
-    Private CustomerBindingList As BindingList(Of Customer)
     Private Sub ComboBoxForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Dim results As (List As List(Of Customer), Exception As Exception) =
                 FileOperations.ReadAllLinesWithFileReadLines(
