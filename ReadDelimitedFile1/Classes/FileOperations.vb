@@ -41,7 +41,7 @@ Namespace Classes
 
                     customers.Add(New Customer() With {
                                  .CustomerIdentifier = Convert.ToInt32(lineParts(0)),
-                                 .CompanyName = lineParts(1),
+                                 .CompanyName = lineParts(1).Trim(),
                                  .ContactName = lineParts(2),
                                  .ContactTitle = lineParts(3),
                                  .City = lineParts(4),
