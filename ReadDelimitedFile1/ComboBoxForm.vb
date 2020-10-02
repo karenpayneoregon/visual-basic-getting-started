@@ -12,7 +12,7 @@ Public Class ComboBoxForm
             CustomersBindingSource.DataSource = results.List.OrderBy(Function(c) c.CompanyName).ToList()
         Else
             MessageBox.Show($"Encounter errors reading customer data{Environment.NewLine}{results.Exception.Message}")
-            Exit Sub()
+            Exit Sub
         End If
 
         CustomerComboBox.DataSource = CustomersBindingSource
