@@ -56,6 +56,10 @@ Public Class Form1
 
                 Dim newPerson = personBindList.Item(e.NewIndex)
                 operations.NewPersonAdded(newPerson)
+            ElseIf e.ListChangedType = ListChangedType.ItemChanged Then
+                If e.PropertyDescriptor.DisplayName = "AddressList" Then
+                    ' TODO
+                End If
             End If
         Else
             currentlyLoading = False
