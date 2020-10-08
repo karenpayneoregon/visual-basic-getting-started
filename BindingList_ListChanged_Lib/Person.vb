@@ -9,12 +9,6 @@ Public Class Person
     Private _firstName As String
     Private _lastName As String
     Private _personId As Integer
-    Private _addressList As List(Of Address)
-
-
-    Public Sub New()
-        AddressList = New List(Of Address)
-    End Sub
 
     Public Property PersonId() As Integer
         Get
@@ -46,16 +40,11 @@ Public Class Person
         End Set
     End Property
 
-    Public Property AddressList() As List(Of Address)
-        Get
-            Return _addressList
-        End Get
-        Set
-            _addressList = Value
-            OnPropertyChanged()
-        End Set
-    End Property
-
+    Public Property AddressList() As New ObservableCollection(Of Address)()
+    Public Sub AddAddress(address As Address)
+        AddressList.Add(address)
+        OnPropertyChanged("AddressList")
+    End Sub
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
     Protected Overridable Sub OnPropertyChanged(<CallerMemberName> Optional memberName As String = Nothing)
 
@@ -66,7 +55,6 @@ Public Class Person
     Public Overrides Function ToString() As String
         Return $"{FirstName} {LastName}"
     End Function
-
 
 End Class
 Public Class Address

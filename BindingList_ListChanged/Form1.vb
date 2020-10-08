@@ -1,14 +1,14 @@
-﻿Imports System.ComponentModel
+﻿Imports System.Collections.ObjectModel
+Imports System.ComponentModel
 Imports BindingList_ListChanged_Lib
 
 Public Class Form1
     WithEvents personBindList As RemoveAndBind(Of Person)
-    WithEvents personBindingSource As New BindingSource
-    WithEvents AddressBindingSource As New BindingSource
+    Private personBindingSource As New BindingSource
+    Private AddressBindingSource As New BindingSource
 
     Private ReadOnly operations As New Operations
     Private currentlyLoading As Boolean = True
-
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
@@ -19,12 +19,11 @@ Public Class Form1
         '
         Dim peopleList = New List(Of Person) From {
                 New Person() With {.PersonId = 1, .FirstName = "Karen", .LastName = "Payne",
-                .AddressList = New List(Of Address)() From {New Address() With {.PersonId = 1, .AddressId = 1, .Street = "ABC Street"}}},
+                .AddressList = New ObservableCollection(Of Address)() From {New Address() With {.PersonId = 1, .AddressId = 1, .Street = "ABC Street"}}},
                 New Person() With {.PersonId = 2, .FirstName = "Bill", .LastName = "Smith",
-                .AddressList = New List(Of Address)() From {New Address() With {.PersonId = 2, .AddressId = 1, .Street = "111 Street"},
+                .AddressList = New ObservableCollection(Of Address)() From {New Address() With {.PersonId = 2, .AddressId = 1, .Street = "111 Street"},
                 New Address() With {.PersonId = 2, .AddressId = 2, .Street = "222 Street"}}},
                 New Person() With {.PersonId = 3, .FirstName = "Anne", .LastName = "Jones"}}
-
 
 
         personBindList = New RemoveAndBind(Of Person) '(peopleList)
@@ -114,8 +113,7 @@ Public Class Form1
                 .Street = street,
                 .AddressId = addressId}
 
-        personBindList.Item(PeopleDataGridView.CurrentCell.RowIndex).AddressList.Add(personAddress)
-        personBindList.ResetItem(PeopleDataGridView.CurrentCell.RowIndex)
+        personBindList.Item(PeopleDataGridView.CurrentCell.RowIndex).AddAddress(personAddress)
 
     End Sub
 
