@@ -19,9 +19,9 @@ Public Class Form1
         '
         Dim peopleList = New List(Of Person) From {
                 New Person() With {.PersonId = 1, .FirstName = "Karen", .LastName = "Payne",
-                .AddressList = New ObservableCollection(Of Address)() From {New Address() With {.PersonId = 1, .AddressId = 1, .Street = "ABC Street"}}},
+                .AddressCollection = New ObservableCollection(Of Address)() From {New Address() With {.PersonId = 1, .AddressId = 1, .Street = "ABC Street"}}},
                 New Person() With {.PersonId = 2, .FirstName = "Bill", .LastName = "Smith",
-                .AddressList = New ObservableCollection(Of Address)() From {New Address() With {.PersonId = 2, .AddressId = 1, .Street = "111 Street"},
+                .AddressCollection = New ObservableCollection(Of Address)() From {New Address() With {.PersonId = 2, .AddressId = 1, .Street = "111 Street"},
                 New Address() With {.PersonId = 2, .AddressId = 2, .Street = "222 Street"}}},
                 New Person() With {.PersonId = 3, .FirstName = "Anne", .LastName = "Jones"}}
 
@@ -37,7 +37,7 @@ Public Class Form1
         PersonBindingNavigator.BindingSource = personBindingSource
 
         AddressBindingSource.DataSource = personBindingSource
-        AddressBindingSource.DataMember = "AddressList"
+        AddressBindingSource.DataMember = "AddressCollection"
 
         AddressDataGridView.DataSource = AddressBindingSource
 
@@ -57,7 +57,7 @@ Public Class Form1
                 Dim newPerson = personBindList.Item(e.NewIndex)
                 operations.NewPersonAdded(newPerson)
             ElseIf e.ListChangedType = ListChangedType.ItemChanged Then
-                If e.PropertyDescriptor.DisplayName = "AddressList" Then
+                If e.PropertyDescriptor.DisplayName = "AddressCollection" Then
                     ' TODO
                 End If
             End If
@@ -103,8 +103,8 @@ Public Class Form1
         Dim currentPerson = personBindList.Item(PeopleDataGridView.CurrentCell.RowIndex)
         Dim addressId = 1
 
-        If currentPerson.AddressList.Count > 0 Then
-            addressId = currentPerson.AddressList.Max(Function(item) item.AddressId) + 1
+        If currentPerson.AddressCollection.Count > 0 Then
+            addressId = currentPerson.AddressCollection.Max(Function(item) item.AddressId) + 1
         End If
 
         Dim street = "New address"
