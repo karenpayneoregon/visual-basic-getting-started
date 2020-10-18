@@ -48,6 +48,7 @@ Partial Class Form1
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.InformationButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.CustomersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +57,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.InformationButton)
         Me.Panel1.Controls.Add(Me.CurrentButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 400)
@@ -240,6 +242,15 @@ Partial Class Form1
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
+        'InformationButton
+        '
+        Me.InformationButton.Location = New System.Drawing.Point(93, 15)
+        Me.InformationButton.Name = "InformationButton"
+        Me.InformationButton.Size = New System.Drawing.Size(75, 23)
+        Me.InformationButton.TabIndex = 1
+        Me.InformationButton.Text = "Information"
+        Me.InformationButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,4 +296,5 @@ Partial Class Form1
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents InformationButton As Button
 End Class

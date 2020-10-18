@@ -1,4 +1,6 @@
-﻿Namespace Classes
+﻿Imports System.Xml
+
+Namespace Classes
     ''' <summary>
     ''' Add DataTable events for Customers DataTable, there
     ''' are no DataTable events in other classes.
@@ -22,6 +24,33 @@
         ''' <param name="sender">Customer DataRow</param>
         Public Delegate Sub CustomerUpdate(sender As DataRow)
         Public Shared Event CustomerUpdateHandler As CustomerUpdate
+
+        Public Delegate Sub CustomerNewRow(sender As DataRow)
+        Public Shared Event CustomerNewRowHandler As CustomerNewRow
+
+        Public Shared Sub RowChanged(sender As Object, e As DataRowChangeEventArgs)
+
+            If e.Action = DataRowAction.Add Then
+                Dim id = Operations.AddCustomerRow(e.Row)
+                e.Row.SetField("CustomerIdentifier", id)
+                RaiseEvent CustomerNewRowHandler(e.Row)
+            End If
+
+        End Sub
+
+        ''' <summary>
+        ''' Capture new row added
+        ''' </summary>
+        ''' <param name="sender"></param>
+        ''' <param name="e"></param>
+        Public Shared Sub RowChanging(sender As Object, e As DataRowChangeEventArgs)
+
+            If e.Action = DataRowAction.Add Then
+                RaiseEvent CustomerNewRowHandler(e.Row)
+            End If
+
+        End Sub
+
         ''' <summary>
         ''' Provide access to changes for the current DataRow after in this
         ''' case leaving a cell in a DataGridView.
@@ -38,14 +67,17 @@
                 Console.WriteLine($"                Id {e.Row.Field(Of Integer)("CustomerIdentifier")}")
             End If
 
-            Console.WriteLine($"       Column name {e.Column.ColumnName}")
-            Console.WriteLine($"    Original value [{e.Row(e.Column.ColumnName, DataRowVersion.Original)}]")
-            Console.WriteLine($"    Propose value [{e.ProposedValue}]")
-            Console.WriteLine($"        Row state [{e.Row.RowState}]")
+            If e.Row.RowState = DataRowState.Modified Then
+                Console.WriteLine($"       Column name {e.Column.ColumnName}")
+                Console.WriteLine($"    Original value [{e.Row(e.Column.ColumnName, DataRowVersion.Original)}]")
+                Console.WriteLine($"    Propose value [{e.ProposedValue}]")
+                Console.WriteLine($"        Row state [{e.Row.RowState}]")
 
-            Console.WriteLine(New String("-"c, 20))
+                Console.WriteLine(New String("-"c, 20))
 
-            RaiseEvent CustomerUpdateHandler(e.Row)
+                RaiseEvent CustomerUpdateHandler(e.Row)
+            End If
+
 
         End Sub
         ''' <summary>

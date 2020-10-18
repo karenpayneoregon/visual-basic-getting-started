@@ -1,4 +1,5 @@
-﻿Imports DataGridViewComboBoxes.Classes
+﻿Imports System.ComponentModel
+Imports DataGridViewComboBoxes.Classes
 Imports DataGridViewComboBoxes.LanguageExtensions
 
 ''' <summary>
@@ -16,7 +17,7 @@ Public Class Form1
     ''' <summary>
     ''' For DataGridView DataSource
     ''' </summary>
-    Private ReadOnly _customersBindingSource As New BindingSource
+    WithEvents _customersBindingSource As New BindingSource
     ''' <summary>
     ''' For ContactType ComboBox in DataGridView
     ''' </summary>
@@ -62,7 +63,8 @@ Public Class Form1
         CustomersDataGridView.DataSource = _customersBindingSource
 
         CustomersNavigator.BindingSource = _customersBindingSource
-
+        _customersBindingSource.MoveLast()
+        ActiveControl = CustomersDataGridView
     End Sub
 
     Private Sub WhenDataOperationError(sender As Exception)
@@ -208,6 +210,22 @@ Public Class Form1
     ''' <param name="e"></param>
     Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorAddNewItem.Click
         MessageBox.Show("Add new record not implemented")
+    End Sub
+    ''' <summary>
+    ''' Since the primary key CustomerIdentifier has AutoIncrement set to False so that no incrementing is done
+    ''' from moving on and off the new row in the DataGridView we must assign a dummy identifier else an exception is raised
+    ''' along with the inability to leave the new row in the DataGridView
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub _customersBindingSource_AddingNew(sender As Object, e As AddingNewEventArgs) Handles _customersBindingSource.AddingNew
+        Dim drv As DataRowView = DirectCast(_customersBindingSource.List, DataView).AddNew()
+        drv.Row.Item(0) = -1
+        e.NewObject = drv
+    End Sub
+
+    Private Sub InformationButton_Click(sender As Object, e As EventArgs) Handles InformationButton.Click
+        Console.WriteLine(_customersBindingSource.Count)
     End Sub
 End Class
 

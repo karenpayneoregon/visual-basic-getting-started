@@ -31,6 +31,7 @@ Namespace Classes
 
             AddHandler DataTableEvents.CustomerDeletedHandler, AddressOf CustomerDeleted
             AddHandler DataTableEvents.CustomerUpdateHandler, AddressOf CustomerUpdated
+            AddHandler DataTableEvents.CustomerNewRowHandler, AddressOf CustomerNew
             Dim customerDataTable As New DataTable
 
             Using connection As New SqlConnection(ConnectionString)
@@ -39,7 +40,8 @@ Namespace Classes
                     connection.Open()
 
                     customerDataTable.Load(cmd.ExecuteReader())
-
+                    customerDataTable.Columns("CustomerIdentifier").AutoIncrement = False
+                    customerDataTable.Columns("CustomerIdentifier").ReadOnly = False
                 End Using
             End Using
 
@@ -51,11 +53,29 @@ Namespace Classes
             If setupEvents Then
                 AddHandler customerDataTable.ColumnChanged, AddressOf DataTableEvents.ColumnChanged
                 AddHandler customerDataTable.RowDeleted, AddressOf DataTableEvents.Deleted
+                AddHandler customerDataTable.RowChanging, AddressOf DataTableEvents.RowChanging
+                AddHandler customerDataTable.RowChanged, AddressOf DataTableEvents.RowChanged
             End If
 
             Return customerDataTable
 
         End Function
+        ''' <summary>
+        ''' Called from DataTableEvents.RowChanged
+        ''' </summary>
+        ''' <param name="sender"></param>
+        Public Shared Sub CustomerNew(sender As DataRow)
+            ' 
+        End Sub
+        ''' <summary>
+        ''' TODO
+        ''' </summary>
+        ''' <param name="sender"></param>
+        ''' <returns></returns>
+        Public Shared Function AddCustomerRow(sender As DataRow) As Integer
+            Return 233
+        End Function
+
         ''' <summary>
         ''' Update Customers table followed by updating contact table. If there
         ''' is a failure all updates are rolled back.
@@ -158,8 +178,6 @@ Namespace Classes
                 End Using
             End Using
         End Sub
-
-
         Public Shared Function CountryDataTable() As DataTable
             Dim dt As New DataTable
 

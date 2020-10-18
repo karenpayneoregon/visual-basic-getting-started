@@ -1,5 +1,7 @@
 ﻿# DataGridView ComboBox (VB.NET)
 
+## A work in progress
+
 Basic starter project to learn how to work with DataGridViewComboBox columns in a DataGridView using SQL-Server modified NorthWind database.
 
 - Not all aspects are coded yet there is enough to get a developer started.
