@@ -1,9 +1,25 @@
 ﻿Namespace Classes
+    ''' <summary>
+    ''' Add DataTable events for Customers DataTable, there
+    ''' are no DataTable events in other classes.
+    '''
+    ''' Events are subscribed too in Operations Customers function called
+    ''' by the main form.
+    ''' </summary>
     Public Class DataTableEvents
 
+        ''' <summary>
+        ''' Notification a customer record has been deleted
+        ''' </summary>
+        ''' <param name="sender">Customer id</param>
         Public Delegate Sub CustomerDeleted(sender As Integer)
         Public Shared Event CustomerDeletedHandler As CustomerDeleted
 
+        ''' <summary>
+        ''' Notification for a Customer row being partially or fully updated
+        ''' which in turn broadcast and picked up by Operations class.
+        ''' </summary>
+        ''' <param name="sender">Customer DataRow</param>
         Public Delegate Sub CustomerUpdate(sender As DataRow)
         Public Shared Event CustomerUpdateHandler As CustomerUpdate
         ''' <summary>
@@ -16,10 +32,6 @@
 
             If e.Row.RowState = DataRowState.Deleted OrElse e.Row.RowState = DataRowState.Detached Then
                 Return
-            ElseIf e.Row.RowState = DataRowState.Unchanged Then
-
-                'e.Row.SetModified()
-
             End If
 
             If e.Row.Table.Columns.Contains("CustomerIdentifier") Then

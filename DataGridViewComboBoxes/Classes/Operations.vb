@@ -4,7 +4,10 @@ Imports DataGridViewComboBoxes.LanguageExtensions
 Imports DataProviderCommandHelpers
 
 Namespace Classes
-
+    ''' <summary>
+    ''' Responsible for all data operations in tangent with DataTable
+    ''' events in DataTableEvents class
+    ''' </summary>
     Public Class Operations
         Inherits BaseExceptionProperties
 
