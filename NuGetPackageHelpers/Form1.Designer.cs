@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ExportToMarkupButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ProcessButton.Location = new System.Drawing.Point(12, 11);
             this.ProcessButton.Name = "ProcessButton";
-            this.ProcessButton.Size = new System.Drawing.Size(423, 23);
+            this.ProcessButton.Size = new System.Drawing.Size(107, 23);
             this.ProcessButton.TabIndex = 0;
             this.ProcessButton.Text = "Process";
             this.ProcessButton.UseVisualStyleBackColor = true;
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ExportToMarkupButton);
             this.panel1.Controls.Add(this.ProcessButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 359);
@@ -74,6 +76,18 @@
             this.columnHeader1.Text = "Information";
             this.columnHeader1.Width = 420;
             // 
+            // ExportToMarkupButton
+            // 
+            this.ExportToMarkupButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportToMarkupButton.Location = new System.Drawing.Point(125, 11);
+            this.ExportToMarkupButton.Name = "ExportToMarkupButton";
+            this.ExportToMarkupButton.Size = new System.Drawing.Size(107, 23);
+            this.ExportToMarkupButton.TabIndex = 1;
+            this.ExportToMarkupButton.Text = "Export as markup";
+            this.ExportToMarkupButton.UseVisualStyleBackColor = true;
+            this.ExportToMarkupButton.Click += new System.EventHandler(this.ExportToMarkupButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +109,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button ExportToMarkupButton;
     }
 }
 
