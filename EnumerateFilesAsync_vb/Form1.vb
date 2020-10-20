@@ -1,4 +1,5 @@
 ﻿Imports System.Threading
+Imports ChunkIncomingTextFile.Classes
 Imports Classes
 Imports Classes.Classes
 
@@ -10,10 +11,16 @@ Partial Public Class Form1
 
     Private _cancellationTokenSource As New CancellationTokenSource()
 
-    Private folderName As String = "C:\Program Files (x86)"
-    Private searchFor As String = "THE SOFTWARE IS PROVIDED"
+    Private folderName As String
 
     Private Async Sub StartButton_Click(sender As Object, e As EventArgs) Handles StartButton.Click
+
+        If String.IsNullOrWhiteSpace(FolderNameTextBox.Text) OrElse String.IsNullOrWhiteSpace(FindTextBox.Text) Then
+            MessageBox.Show("Need a folder and something to find")
+            Exit Sub
+        End If
+
+        folderName = FolderNameTextBox.Text
 
         FolderNameListBox.DataSource = Nothing
 
@@ -26,11 +33,12 @@ Partial Public Class Form1
 
         Dim operations As New Operations()
 
+        RemoveHandler operations.OnIterate_Conflict, AddressOf IterateFolders
         AddHandler operations.OnIterate_Conflict, AddressOf IterateFolders
 
         Try
 
-            Dim foundFiles = Await operations.IterateFolders(folderName, searchFor, _cancellationTokenSource.Token)
+            Dim foundFiles = Await operations.IterateFolders(folderName, FindTextBox.Text, _cancellationTokenSource.Token)
 
             If Not operations.FolderExists Then
                 MessageBox.Show($"{folderName}{Environment.NewLine} does not exists")
@@ -90,10 +98,17 @@ Partial Public Class Form1
     End Sub
 
     Private Sub FolderListBoxDoubleClicked(sender As Object, e As EventArgs)
+
         If FolderNameListBox.Items.Count > 0 Then
             Try
-                Process.Start(FolderNameListBox.Text)
+                If GeneralHelper.IsNotePadPlus() = NotePadPlusStatus.Installed Then
+                    Process.Start("notepad++.exe", FolderNameListBox.Text)
+                Else
+                    MessageBox.Show("Requires notepad++")
+                End If
             Catch ex As Exception
+                Console.WriteLine(ex.Message)
+                Console.WriteLine($"explorer.exe /select,""{FolderNameListBox.Text}""")
                 MessageBox.Show("Failed to open file")
             End Try
         End If
@@ -111,6 +126,12 @@ Partial Public Class Form1
             Return _DefaultInstance
         End Get
     End Property
+#End Region
+
+    Private Sub SelectFolderButton_Click(sender As Object, e As EventArgs) Handles SelectFolderButton.Click
+        '
+        ' If you want to have user select, do it here
+        '
+    End Sub
 End Class
 
-#End Region

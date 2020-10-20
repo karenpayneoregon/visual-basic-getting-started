@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DelegatesModule.vb" />
+    <Compile Include="Classes\GeneralHelper.vb" />
     <Compile Include="Classes\MonitorProgressArgs.vb" />
     <Compile Include="Classes\Operations.vb" />
     <Compile Include="Form1.vb">
@@ -140,6 +141,9 @@
     </None>
     <None Include="App.config" />
     <None Include="readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
