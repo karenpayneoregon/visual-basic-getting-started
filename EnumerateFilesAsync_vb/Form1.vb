@@ -1,5 +1,4 @@
 ﻿Imports System.Threading
-Imports ChunkIncomingTextFile.Classes
 Imports Classes
 Imports Classes.Classes
 
