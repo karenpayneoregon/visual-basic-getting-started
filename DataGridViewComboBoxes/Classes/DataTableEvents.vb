@@ -8,6 +8,10 @@ Namespace Classes
     ''' Events are subscribed too in Operations Customers function called
     ''' by the main form.
     ''' </summary>
+    ''' <remarks>
+    ''' See for DataTable Events docs
+    ''' https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events
+    ''' </remarks>
     Public Class DataTableEvents
 
         ''' <summary>
