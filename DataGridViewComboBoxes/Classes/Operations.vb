@@ -40,8 +40,10 @@ Namespace Classes
                     connection.Open()
 
                     customerDataTable.Load(cmd.ExecuteReader())
+
                     customerDataTable.Columns("CustomerIdentifier").AutoIncrement = False
                     customerDataTable.Columns("CustomerIdentifier").ReadOnly = False
+
                 End Using
             End Using
 

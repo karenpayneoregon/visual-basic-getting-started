@@ -134,6 +134,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetPackageHelpers", "NuGe
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EnumerateFilesAsync_vb", "EnumerateFilesAsync_vb\EnumerateFilesAsync_vb.vbproj", "{DF0A3A8F-05AE-42F5-B208-E8630F53E1B6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forum specific questions", "Forum specific questions", "{8E2D466B-E11F-4B23-ACD0-FB67209F3781}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WindowsApp1", "WindowsApp1\WindowsApp1.vbproj", "{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -308,6 +312,10 @@ Global
 		{DF0A3A8F-05AE-42F5-B208-E8630F53E1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF0A3A8F-05AE-42F5-B208-E8630F53E1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF0A3A8F-05AE-42F5-B208-E8630F53E1B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -365,6 +373,7 @@ Global
 		{F8B7BAE5-85C1-420D-A70A-E38F90F1C8B0} = {1CEF8D36-31EE-409A-B2E1-FC5E1ECBB866}
 		{4F8D7E77-2F4E-4252-8511-023197D18CEE} = {EEE70D4D-A56F-4957-8018-6404427EABD1}
 		{DF0A3A8F-05AE-42F5-B208-E8630F53E1B6} = {AEB46F27-701C-402F-9C40-D4CC36AB0FD1}
+		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}

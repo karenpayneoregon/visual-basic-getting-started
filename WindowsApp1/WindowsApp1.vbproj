@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CB5D950E-5FE6-4752-93D4-9CDA6FBBC3E6}</ProjectGuid>
+    <ProjectGuid>{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>DataGridViewComboBoxes.My.MyApplication</StartupObject>
-    <RootNamespace>DataGridViewComboBoxes</RootNamespace>
-    <AssemblyName>DataGridViewComboBoxes</AssemblyName>
+    <StartupObject>WindowsApp1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApp1</RootNamespace>
+    <AssemblyName>WindowsApp1</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>DataGridViewComboBoxes.xml</DocumentationFile>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>DataGridViewComboBoxes.xml</DocumentationFile>
+    <DocumentationFile>WindowsApp1.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,9 +48,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataProviderCommandHelpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DataProviderCommandHelpers.1.0.0\lib\net46\DataProviderCommandHelpers.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -76,29 +73,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BaseExceptionProperties.vb" />
-    <Compile Include="Classes\CountryItem.vb" />
-    <Compile Include="Classes\Customers.vb" />
-    <Compile Include="Classes\DataTableEvents.vb" />
-    <Compile Include="Classes\Delegates\DelegatesModule.vb" />
-    <Compile Include="Classes\Delegates\PassingArgs.vb" />
-    <Compile Include="Classes\TableChanges.vb" />
-    <Compile Include="Forms\InformationForm.Designer.vb">
-      <DependentUpon>InformationForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\InformationForm.vb">
+    <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LanguageExtensions\BindingSourceExtensions.vb" />
-    <Compile Include="LanguageExtensions\DataGridViewExtensions.vb" />
-    <Compile Include="Forms\MainForm.vb">
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.vb">
-      <DependentUpon>MainForm.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LanguageExtensions\TableChangesExtensions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -114,16 +95,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Classes\Operations.vb" />
-    <Compile Include="StaticClasses\MyApplication.vb" />
-    <Compile Include="StaticClasses\MyDialogs.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\InformationForm.resx">
-      <DependentUpon>InformationForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.vb</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -143,12 +118,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="packages.config" />
-    <None Include="readme.md" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="DatabaseScript.sql" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

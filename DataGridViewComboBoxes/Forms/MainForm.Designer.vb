@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,8 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.InformationButton = New System.Windows.Forms.Button()
         Me.CurrentButton = New System.Windows.Forms.Button()
         Me.CustomersDataGridView = New System.Windows.Forms.DataGridView()
         Me.CompanyNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,7 +49,6 @@ Partial Class Form1
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.InformationButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.CustomersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,11 +65,20 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(991, 50)
         Me.Panel1.TabIndex = 0
         '
+        'InformationButton
+        '
+        Me.InformationButton.Location = New System.Drawing.Point(144, 15)
+        Me.InformationButton.Name = "InformationButton"
+        Me.InformationButton.Size = New System.Drawing.Size(115, 23)
+        Me.InformationButton.TabIndex = 1
+        Me.InformationButton.Text = "Show child form"
+        Me.InformationButton.UseVisualStyleBackColor = True
+        '
         'CurrentButton
         '
         Me.CurrentButton.Location = New System.Drawing.Point(12, 15)
         Me.CurrentButton.Name = "CurrentButton"
-        Me.CurrentButton.Size = New System.Drawing.Size(75, 23)
+        Me.CurrentButton.Size = New System.Drawing.Size(115, 23)
         Me.CurrentButton.TabIndex = 0
         Me.CurrentButton.Text = "Current"
         Me.CurrentButton.UseVisualStyleBackColor = True
@@ -242,16 +251,7 @@ Partial Class Form1
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
-        'InformationButton
-        '
-        Me.InformationButton.Location = New System.Drawing.Point(93, 15)
-        Me.InformationButton.Name = "InformationButton"
-        Me.InformationButton.Size = New System.Drawing.Size(75, 23)
-        Me.InformationButton.TabIndex = 1
-        Me.InformationButton.Text = "Information"
-        Me.InformationButton.UseVisualStyleBackColor = True
-        '
-        'Form1
+        'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -259,7 +259,7 @@ Partial Class Form1
         Me.Controls.Add(Me.CustomersDataGridView)
         Me.Controls.Add(Me.CustomersNavigator)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "Form1"
+        Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Code sample"
         Me.Panel1.ResumeLayout(False)

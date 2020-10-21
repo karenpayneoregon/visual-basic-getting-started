@@ -19,12 +19,12 @@ namespace NuGetPackageHelpers.Classes
         /// </summary>
         public static void BuilderPackageTable()
         {
-            string[] exclude = new[] {".git",".vs", "packages"};
+            string[] exclude = {".git",".vs", "packages"};
 
             var solutionFolder = GetFoldersToParent.GetSolutionFolderPath();
 
-            var folders = Directory.GetDirectories(solutionFolder).Where(path => 
-                !exclude.Contains(path.Split('\\').Last()));
+            var folders = Directory.GetDirectories(solutionFolder).
+                Where(path => !exclude.Contains(path.Split('\\').Last()));
 
             foreach (var folder in folders)
             {

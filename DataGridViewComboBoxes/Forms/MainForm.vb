@@ -1,5 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports DataGridViewComboBoxes.Classes
+Imports DataGridViewComboBoxes.Classes.Delegates
+Imports DataGridViewComboBoxes.Forms
 Imports DataGridViewComboBoxes.LanguageExtensions
 
 ''' <summary>
@@ -13,7 +15,13 @@ Imports DataGridViewComboBoxes.LanguageExtensions
 ''' Alternate is to use a DataAdapter to make saving changes easier but
 ''' if you want fully control the code here is a starter
 ''' </summary>
-Public Class Form1
+Public Class MainForm
+
+    Private _childForm As ChildForm
+    Private _firstTime As Boolean = True
+
+    Public Event OnMessageInformationChanged As DelegatesModule.OnPassingInformation
+
     ''' <summary>
     ''' For DataGridView DataSource
     ''' </summary>
@@ -63,8 +71,9 @@ Public Class Form1
         CustomersDataGridView.DataSource = _customersBindingSource
 
         CustomersNavigator.BindingSource = _customersBindingSource
-        _customersBindingSource.MoveLast()
+
         ActiveControl = CustomersDataGridView
+
     End Sub
 
     Private Sub WhenDataOperationError(sender As Exception)
@@ -82,8 +91,10 @@ Public Class Form1
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub CurrentButton_Click(sender As Object, e As EventArgs) Handles CurrentButton.Click
+
         Dim customer As New Customers(_customersBindingSource.DataRow())
         MessageBox.Show(customer.ToString())
+
     End Sub
     ''' <summary>
     ''' Watch and react to changes for DataGridViewComboBox cell changes
@@ -225,7 +236,40 @@ Public Class Form1
     End Sub
 
     Private Sub InformationButton_Click(sender As Object, e As EventArgs) Handles InformationButton.Click
-        Console.WriteLine(_customersBindingSource.Count)
+
+        If Not My.Application.IsFormOpen("ChildForm") Then
+            _childForm = New ChildForm With {
+                .Owner = Me
+                }
+
+            _childForm.Show()
+
+        End If
+
+        _childForm.Location = New Point(Left + (Width + 10), Top + 5)
+        _firstTime = False
+
+    End Sub
+    Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs) Handles Me.LocationChanged
+        If Not _firstTime Then
+            _childForm.Location = New Point(Left + (Width + 10), Top + 5)
+        End If
+    End Sub
+    Private Sub CustomersDataGridView_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles CustomersDataGridView.CellDoubleClick
+
+        Dim currentValue = ""
+
+        If CustomersDataGridView.CurrentCell.GetType() Is GetType(DataGridViewComboBoxCell) Then
+            currentValue = CType(CustomersDataGridView.CurrentCell, DataGridViewComboBoxCell).FormattedValue.ToString()
+        Else
+            currentValue = CStr(CustomersDataGridView.CurrentCell.Value)
+        End If
+
+        RaiseEvent OnMessageInformationChanged(
+            New PassingArgs(
+                CustomersDataGridView.CurrentCell.OwningColumn.Name,
+                currentValue))
+
     End Sub
 End Class
 
