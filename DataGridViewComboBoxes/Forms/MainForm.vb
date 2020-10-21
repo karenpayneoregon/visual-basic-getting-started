@@ -259,6 +259,10 @@ Public Class MainForm
 
         Dim currentValue = ""
 
+        '
+        ' This check is needed as without the cast to DataGridViewComboBoxCell the value
+        ' would be the identifier of the current cell.
+        '
         If CustomersDataGridView.CurrentCell.GetType() Is GetType(DataGridViewComboBoxCell) Then
             currentValue = CType(CustomersDataGridView.CurrentCell, DataGridViewComboBoxCell).FormattedValue.ToString()
         Else
