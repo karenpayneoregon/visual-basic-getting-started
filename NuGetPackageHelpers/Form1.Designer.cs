@@ -30,12 +30,14 @@
         {
             this.ProcessCurrentSolutionButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProjectTypeComboBox = new System.Windows.Forms.ComboBox();
             this.ProcessSelectSolutionButton = new System.Windows.Forms.Button();
             this.ExportToMarkupButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ProjectTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SolutionLabel = new System.Windows.Forms.Label();
+            this.SolutionFolderLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +63,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(488, 125);
             this.panel1.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ProjectTypeComboBox);
+            this.groupBox1.Controls.Add(this.ProcessSelectSolutionButton);
+            this.groupBox1.Controls.Add(this.ProcessCurrentSolutionButton);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(207, 103);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
+            // ProjectTypeComboBox
+            // 
+            this.ProjectTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProjectTypeComboBox.FormattingEnabled = true;
+            this.ProjectTypeComboBox.Location = new System.Drawing.Point(10, 70);
+            this.ProjectTypeComboBox.Name = "ProjectTypeComboBox";
+            this.ProjectTypeComboBox.Size = new System.Drawing.Size(183, 21);
+            this.ProjectTypeComboBox.TabIndex = 3;
             // 
             // ProcessSelectSolutionButton
             // 
@@ -90,11 +112,10 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(488, 311);
+            this.listView1.Size = new System.Drawing.Size(488, 266);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -104,31 +125,31 @@
             this.columnHeader1.Text = "Information";
             this.columnHeader1.Width = 420;
             // 
-            // ProjectTypeComboBox
+            // SolutionLabel
             // 
-            this.ProjectTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProjectTypeComboBox.FormattingEnabled = true;
-            this.ProjectTypeComboBox.Location = new System.Drawing.Point(10, 70);
-            this.ProjectTypeComboBox.Name = "ProjectTypeComboBox";
-            this.ProjectTypeComboBox.Size = new System.Drawing.Size(183, 21);
-            this.ProjectTypeComboBox.TabIndex = 3;
+            this.SolutionLabel.AutoSize = true;
+            this.SolutionLabel.Location = new System.Drawing.Point(19, 295);
+            this.SolutionLabel.Name = "SolutionLabel";
+            this.SolutionLabel.Size = new System.Drawing.Size(45, 13);
+            this.SolutionLabel.TabIndex = 4;
+            this.SolutionLabel.Text = "Solution";
             // 
-            // groupBox1
+            // SolutionFolderLabel
             // 
-            this.groupBox1.Controls.Add(this.ProjectTypeComboBox);
-            this.groupBox1.Controls.Add(this.ProcessSelectSolutionButton);
-            this.groupBox1.Controls.Add(this.ProcessCurrentSolutionButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 11);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(207, 103);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
+            this.SolutionFolderLabel.AutoSize = true;
+            this.SolutionFolderLabel.Location = new System.Drawing.Point(19, 282);
+            this.SolutionFolderLabel.Name = "SolutionFolderLabel";
+            this.SolutionFolderLabel.Size = new System.Drawing.Size(36, 13);
+            this.SolutionFolderLabel.TabIndex = 5;
+            this.SolutionFolderLabel.Text = "Folder";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 436);
+            this.Controls.Add(this.SolutionFolderLabel);
+            this.Controls.Add(this.SolutionLabel);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -137,6 +158,7 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -150,6 +172,8 @@
         private System.Windows.Forms.Button ProcessSelectSolutionButton;
         private System.Windows.Forms.ComboBox ProjectTypeComboBox;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label SolutionLabel;
+        private System.Windows.Forms.Label SolutionFolderLabel;
     }
 }
 

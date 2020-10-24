@@ -38,6 +38,13 @@ namespace NuGetPackageHelpers
         {
             listView1.Items.Add(sender);
         }
+
+        private void DisplayDetails()
+        {
+            SolutionFolderLabel.Text = $"Folder: {Solution.Folder}";
+            SolutionLabel.Text = $"Solution: {Solution.SolutionName}";
+        }
+
         /// <summary>
         /// Process the current solution this project resides in by language
         /// </summary>
@@ -46,11 +53,12 @@ namespace NuGetPackageHelpers
         private void ProcessCurrentSolutionButton_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-
             var projectType = ((ProjectType) ProjectTypeComboBox.SelectedItem).Extension;
             Operations.BuilderPackageTable(GetFoldersToParent.GetSolutionFolderPath(), projectType);
 
             Solution = Operations.Solution;
+            DisplayDetails();
+
         }
         /// <summary>
         /// Process the selected solution from the folder dialog by language
@@ -72,7 +80,10 @@ namespace NuGetPackageHelpers
                 listView1.Items.Clear();
                 var projectType = ((ProjectType)ProjectTypeComboBox.SelectedItem).Extension;
                 Operations.BuilderPackageTable(dialog.SelectedPath, projectType);
+
                 Solution = Operations.Solution;
+                DisplayDetails();
+
             }
         }
         private void ExportToMarkupButton_Click(object sender, EventArgs e)

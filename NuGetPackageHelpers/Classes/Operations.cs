@@ -9,6 +9,8 @@ namespace NuGetPackageHelpers.Classes
 {
     /// <summary>
     /// WIP
+    /// As this is being coded as time permits there could had been a slightly
+    /// better way to handle how information is returned yet all works fine.
     /// </summary>
     public class Operations 
     {
@@ -27,11 +29,11 @@ namespace NuGetPackageHelpers.Classes
             string[] exclude = {".git",".vs", "packages"};
 
             var solutionName = Directory.GetFiles(solutionFolder, "*.sln");
-            if (solutionName.Length == 1)
+            Solution = new Solution()
             {
-                Console.WriteLine(Path.GetFileName(solutionName[0]));
-            }
-            Solution = new Solution() {Folder = solutionFolder, SolutionName = solutionName.Length == 1 ? Path.GetFileName(solutionName[0]) : ""};
+                Folder = solutionFolder,
+                SolutionName = solutionName.Length == 1 ? Path.GetFileName(solutionName[0]) : "???"
+            };
 
             var folders = Directory.GetDirectories(solutionFolder).
                 Where(path => !exclude.Contains(path.Split('\\').Last()));
@@ -56,19 +58,17 @@ namespace NuGetPackageHelpers.Classes
                     DisplayInformationHandler?.Invoke(projectNameWithoutExtension);
                     package.ProjectName = projectNameWithoutExtension;
 
-
                     var document = XDocument.Load(fileName);
 
                     foreach (var packageNode in document.XPathSelectElements("/packages/package"))
                     {
-                        string identifier = packageNode.Attribute("id").Value;
+                        string packageName = packageNode.Attribute("id").Value;
                         string version = packageNode.Attribute("version").Value;
 
-                        DisplayInformationHandler?.Invoke($"    {identifier}, {version}");
-                        package.PackageItems.Add(new PackageItem() {Name = identifier, Version = version});
+                        DisplayInformationHandler?.Invoke($"    {packageName}, {version}");
+                        package.PackageItems.Add(new PackageItem() {Name = packageName, Version = version});
 
                     }
-
 
                     Solution.Packages.Add(package);
 
