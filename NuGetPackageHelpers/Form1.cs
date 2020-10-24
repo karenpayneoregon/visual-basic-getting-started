@@ -15,27 +15,90 @@ namespace NuGetPackageHelpers
 {
     public partial class Form1 : Form
     {
+
+        public Solution Solution = new Solution();
+
         public Form1()
         {
             InitializeComponent();
 
             Operations.DisplayInformationHandler += Operations_DisplayHandler;
+
+            ProjectTypeComboBox.DataSource = ProjectTypes.ProjectTypesList();
+
+            Shown += Form1_Shown;
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            ActiveControl = ProcessSelectSolutionButton;
         }
 
         private void Operations_DisplayHandler(string sender)
         {
             listView1.Items.Add(sender);
         }
-
-        private void ProcessButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Process the current solution this project resides in by language
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProcessCurrentSolutionButton_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
-            Operations.BuilderPackageTable();
-        }
 
+            var projectType = ((ProjectType) ProjectTypeComboBox.SelectedItem).Extension;
+            Operations.BuilderPackageTable(GetFoldersToParent.GetSolutionFolderPath(), projectType);
+
+            Solution = Operations.Solution;
+        }
+        /// <summary>
+        /// Process the selected solution from the folder dialog by language
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProcessSelectSolutionButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new Ookii.Dialogs.WinForms.VistaFolderBrowserDialog
+            {
+                SelectedPath = @"C:\OED\Dotnetland\",
+                ShowNewFolderButton = false,
+                Description = @"Select solution folder",
+                UseDescriptionForTitle = true
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                listView1.Items.Clear();
+                var projectType = ((ProjectType)ProjectTypeComboBox.SelectedItem).Extension;
+                Operations.BuilderPackageTable(dialog.SelectedPath, projectType);
+                Solution = Operations.Solution;
+            }
+        }
         private void ExportToMarkupButton_Click(object sender, EventArgs e)
         {
-            // TODO
+
+            if (Solution.Count >0)
+            {
+                Console.WriteLine(Solution.Folder);
+                foreach (var package in Solution.Packages)
+                {
+                    Console.WriteLine(package.ProjectName);
+                    foreach (var packageItem in package.PackageItems)
+                    {
+                        Console.WriteLine($"\t{packageItem.Delimited}");
+                    }
+
+                    Console.WriteLine();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("None");
+            }
         }
+
+
     }
 }

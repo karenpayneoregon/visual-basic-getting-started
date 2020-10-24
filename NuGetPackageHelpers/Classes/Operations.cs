@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -13,15 +15,23 @@ namespace NuGetPackageHelpers.Classes
         public delegate void DisplayInformation(string sender);
         public static event DisplayInformation DisplayInformationHandler;
 
+        //public static List<Package> Packages;
+        public static Solution Solution;
+
 
         /// <summary>
         /// Partly done method to create a git table for readme markdown file
         /// </summary>
-        public static void BuilderPackageTable()
+        public static void BuilderPackageTable(string solutionFolder, string projectType)
         {
             string[] exclude = {".git",".vs", "packages"};
 
-            var solutionFolder = GetFoldersToParent.GetSolutionFolderPath();
+            var solutionName = Directory.GetFiles(solutionFolder, "*.sln");
+            if (solutionName.Length == 1)
+            {
+                Console.WriteLine(Path.GetFileName(solutionName[0]));
+            }
+            Solution = new Solution() {Folder = solutionFolder, SolutionName = solutionName.Length == 1 ? Path.GetFileName(solutionName[0]) : ""};
 
             var folders = Directory.GetDirectories(solutionFolder).
                 Where(path => !exclude.Contains(path.Split('\\').Last()));
@@ -29,11 +39,12 @@ namespace NuGetPackageHelpers.Classes
             foreach (var folder in folders)
             {
                 var fileName = (Path.Combine(folder, "packages.config"));
+                var package = new Package(); // {SolutionFolder = solutionFolder };
 
                 if (File.Exists(fileName))
                 {
                     
-                    var projectFiles = Directory.GetFiles(folder, "*.vbproj");
+                    var projectFiles = Directory.GetFiles(folder, projectType);
 
                     if (projectFiles.Length == 0)
                     {
@@ -43,6 +54,7 @@ namespace NuGetPackageHelpers.Classes
                     var projectNameWithoutExtension = Path.GetFileNameWithoutExtension(projectFiles[0]);
 
                     DisplayInformationHandler?.Invoke(projectNameWithoutExtension);
+                    package.ProjectName = projectNameWithoutExtension;
 
 
                     var document = XDocument.Load(fileName);
@@ -53,8 +65,12 @@ namespace NuGetPackageHelpers.Classes
                         string version = packageNode.Attribute("version").Value;
 
                         DisplayInformationHandler?.Invoke($"    {identifier}, {version}");
+                        package.PackageItems.Add(new PackageItem() {Name = identifier, Version = version});
 
                     }
+
+
+                    Solution.Packages.Add(package);
 
                     DisplayInformationHandler?.Invoke("");
                 }
