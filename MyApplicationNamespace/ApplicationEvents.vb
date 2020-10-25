@@ -11,6 +11,10 @@
         ''' path and executable name
         ''' </summary>
         ''' <returns>Command arguments if present</returns>
+        ''' <remarks>
+        ''' C# version
+        ''' https://github.com/karenpayneoregon/code-samples-csharp/blob/master/CommandLineArguments/ApplicationHelper.cs
+        ''' </remarks>
         Public ReadOnly Property CommandLineArguments As String()
             Get
                 Dim arguments = Environment.GetCommandLineArgs.ToList().Select(Function(arg) arg.ToUpper()).ToList()

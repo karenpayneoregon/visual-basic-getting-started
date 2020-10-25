@@ -138,6 +138,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forum specific questions", 
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WindowsApp1", "WindowsApp1\WindowsApp1.vbproj", "{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CheckOneRow", "DataGridViewCheckBoxOneRow\CheckOneRow.vbproj", "{52E63779-1417-427B-9CDB-12110A6BDD3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -316,6 +318,10 @@ Global
 		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E63779-1417-427B-9CDB-12110A6BDD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E63779-1417-427B-9CDB-12110A6BDD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E63779-1417-427B-9CDB-12110A6BDD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E63779-1417-427B-9CDB-12110A6BDD3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -374,6 +380,7 @@ Global
 		{4F8D7E77-2F4E-4252-8511-023197D18CEE} = {EEE70D4D-A56F-4957-8018-6404427EABD1}
 		{DF0A3A8F-05AE-42F5-B208-E8630F53E1B6} = {AEB46F27-701C-402F-9C40-D4CC36AB0FD1}
 		{E803F0CC-B243-4AD7-9F9F-0A9B348559D2} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
+		{52E63779-1417-427B-9CDB-12110A6BDD3F} = {729B6ECF-1FFE-49C6-B0C8-B3153905271B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
