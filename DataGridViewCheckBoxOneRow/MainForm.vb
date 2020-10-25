@@ -20,7 +20,6 @@ Public Class MainForm
         dt.Columns.Add("RoomType", GetType(String))
         dt.Columns.Add("Rate", GetType(Decimal))
         dt.Columns.Add("Available", GetType(Boolean))
-        'dt.Columns.Add("Status", GetType(Boolean))
 
         dt.Rows.Add(10, "201A", "Suite", 98.99, False)
         dt.Rows.Add(20, "101A", "Suite", 120.99, False)
@@ -38,14 +37,14 @@ Public Class MainForm
             Dim currentRow As Integer = DataGridView1.CurrentCell.RowIndex
             Dim currentColumn As Integer = DataGridView1.CurrentCell.ColumnIndex
 
-            Dim checker As Boolean = False
+            Dim checker = False
 
             If Boolean.TryParse(e.ProposedValue.ToString, checker) Then
 
                 If checker Then
 
                     Dim id As String = bsRooms.CurrentRow("Identifier")
-                    Dim dt As DataTable = CType(bsRooms.DataSource, DataTable)
+                    Dim dt = CType(bsRooms.DataSource, DataTable)
 
                     For Each row As DataRow In dt.Rows
 
@@ -77,7 +76,7 @@ Public Class MainForm
 
                 DataGridView1.EndEdit()
 
-                Dim checked As Boolean = CType(DataGridView1.CurrentCell.Value, Boolean)
+                Dim checked = CType(DataGridView1.CurrentCell.Value, Boolean)
                 Console.WriteLine($"CurrentCellDirtyStateChanged: {checked}")
 
             End If
@@ -101,7 +100,7 @@ Public Class MainForm
 
                 If availableChecked Then
 
-                    Dim dt As DataTable = CType(bsRooms.DataSource, DataTable)
+                    Dim dt = CType(bsRooms.DataSource, DataTable)
                     For Each row As DataRow In dt.Rows
                         If Not row.Field(Of Integer)("Identifier") = currentIdentifier Then
                             row.SetField(Of Boolean)("Available", False)
