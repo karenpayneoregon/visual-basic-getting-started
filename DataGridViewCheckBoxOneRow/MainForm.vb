@@ -72,11 +72,16 @@ Public Class MainForm
     End Sub
     Private Sub DataGridView1SelectAll_CurrentCellDirtyStateChanged(sender As Object, e As EventArgs) Handles DataGridView1.CurrentCellDirtyStateChanged
         If TypeOf DataGridView1.CurrentCell Is DataGridViewCheckBoxCell Then
+
             If DataGridView1.Columns(DataGridView1.CurrentCell.ColumnIndex).Name = "AvailableColumn" Then
+
                 DataGridView1.EndEdit()
+
                 Dim checked As Boolean = CType(DataGridView1.CurrentCell.Value, Boolean)
                 Console.WriteLine($"CurrentCellDirtyStateChanged: {checked}")
+
             End If
+
         End If
     End Sub
     ''' <summary>
@@ -89,7 +94,7 @@ Public Class MainForm
         If e.KeyCode = Keys.Space Then
 
             If DataGridView1.Columns("AvailableColumn").Index = DataGridView1.CurrentCell.ColumnIndex Then
-                Dim currentIdentifier As Int32 = CType(bsRooms.Current, DataRowView).Row.Field(Of Int32)("Identifier")
+                Dim currentIdentifier = CType(bsRooms.Current, DataRowView).Row.Field(Of Int32)("Identifier")
                 Dim availableChecked As Boolean = Not CType(bsRooms.Current, DataRowView).Row.Field(Of Boolean)("Available")
 
                 DataGridView1.CurrentRow.Cells("AvailableColumn").Value = availableChecked
@@ -98,7 +103,7 @@ Public Class MainForm
 
                     Dim dt As DataTable = CType(bsRooms.DataSource, DataTable)
                     For Each row As DataRow In dt.Rows
-                        If Not row.Field(Of Int32)("Identifier") = currentIdentifier Then
+                        If Not row.Field(Of Integer)("Identifier") = currentIdentifier Then
                             row.SetField(Of Boolean)("Available", False)
                             row.SetField(Of Boolean)("Status", False) ' Added
                         Else
