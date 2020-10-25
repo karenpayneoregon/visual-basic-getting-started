@@ -35,21 +35,19 @@ Public Class frmMainForm
 
         If e.Column.ColumnName = "Available" Then
 
-            Dim CurrentRow As Integer = DataGridView1.CurrentCell.RowIndex
-            Dim CurrentCol As Integer = DataGridView1.CurrentCell.ColumnIndex
+            Dim currentRow As Integer = DataGridView1.CurrentCell.RowIndex
+            Dim currentColumn As Integer = DataGridView1.CurrentCell.ColumnIndex
 
-            Dim Checker As Boolean = False
+            Dim checker As Boolean = False
 
-            If Boolean.TryParse(e.ProposedValue.ToString, Checker) Then
+            If Boolean.TryParse(e.ProposedValue.ToString, checker) Then
 
-                If Checker Then
+                If checker Then
 
                     Dim id As String = bsRooms.CurrentRow("Identifier")
                     Dim dt As DataTable = CType(bsRooms.DataSource, DataTable)
 
                     For Each row As DataRow In dt.Rows
-
-                        Dim thisId As String = row("Identifier").ToString
 
                         If Not row("Identifier").ToString = id Then
                             row.SetField("Available", False)
@@ -63,7 +61,8 @@ Public Class frmMainForm
 
                 bsRooms.ResetCurrentItem()
 
-                DataGridView1.CurrentCell = DataGridView1(CurrentCol, CurrentRow)
+                DataGridView1.CurrentCell = DataGridView1(currentColumn, currentRow)
+
             End If
         End If
 
@@ -90,16 +89,16 @@ Public Class frmMainForm
         If e.KeyCode = Keys.Space Then
 
             If DataGridView1.Columns("AvailableColumn").Index = DataGridView1.CurrentCell.ColumnIndex Then
-                Dim CurrentIdentifier As Int32 = CType(bsRooms.Current, DataRowView).Row.Field(Of Int32)("Identifier")
-                Dim Checked As Boolean = Not CType(bsRooms.Current, DataRowView).Row.Field(Of Boolean)("Available")
+                Dim currentIdentifier As Int32 = CType(bsRooms.Current, DataRowView).Row.Field(Of Int32)("Identifier")
+                Dim availableChecked As Boolean = Not CType(bsRooms.Current, DataRowView).Row.Field(Of Boolean)("Available")
 
-                DataGridView1.CurrentRow.Cells("AvailableColumn").Value = Checked
+                DataGridView1.CurrentRow.Cells("AvailableColumn").Value = availableChecked
 
-                If Checked Then
+                If availableChecked Then
 
                     Dim dt As DataTable = CType(bsRooms.DataSource, DataTable)
                     For Each row As DataRow In dt.Rows
-                        If Not row.Field(Of Int32)("Identifier") = CurrentIdentifier Then
+                        If Not row.Field(Of Int32)("Identifier") = currentIdentifier Then
                             row.SetField(Of Boolean)("Available", False)
                             row.SetField(Of Boolean)("Status", False) ' Added
                         Else
