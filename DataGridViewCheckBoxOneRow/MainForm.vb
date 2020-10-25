@@ -1,6 +1,6 @@
 ﻿Imports CheckOneRow.Extensions
 
-Public Class frmMainForm
+Public Class MainForm
     WithEvents bsRooms As New BindingSource
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -31,7 +31,7 @@ Public Class frmMainForm
         Return dt
 
     End Function
-    Private Sub dt_ColumnChanged(ByVal sender As Object, ByVal e As DataColumnChangeEventArgs)
+    Private Sub dt_ColumnChanged(sender As Object, e As DataColumnChangeEventArgs)
 
         If e.Column.ColumnName = "Available" Then
 
@@ -80,7 +80,7 @@ Public Class frmMainForm
         End If
     End Sub
     ''' <summary>
-    ''' Handle user pressing spacebar in CheckBox column
+    ''' Handle user pressing space bar in CheckBox column
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
