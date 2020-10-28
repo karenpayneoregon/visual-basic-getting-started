@@ -1,4 +1,7 @@
-﻿Public Class Form1
+﻿Imports WindowsApp1.Classes
+Imports WindowsApp1.LanguageExtensions
+
+Public Class Form1
     Private bsData As New BindingSource
 
     Private Sub DataTable_RowChanged(sender As Object, e As DataRowChangeEventArgs)
@@ -27,25 +30,30 @@
         ' 
         ' 
     End Sub
-    Private Sub DataTable_RowDeleting(sender As Object, ByVal e As DataRowChangeEventArgs)
+    Private Sub DataTable_RowDeleting(sender As Object, e As DataRowChangeEventArgs)
         ResultsDataGridView.Rows.Add(New Object() {"Row Deleting", $"ID:{e.Row("Identifier")}"})
         ResultsDataGridView.CurrentCell = ResultsDataGridView(0, ResultsDataGridView.Rows.Count - 1)
     End Sub
-    Private Sub DataTable_TableNewRow(sender As Object, ByVal e As DataTableNewRowEventArgs)
+    Private Sub DataTable_TableNewRow(sender As Object, e As DataTableNewRowEventArgs)
         ResultsDataGridView.Rows.Add(New Object() {"Table NewRow", e.Row.RowState.ToString})
         ResultsDataGridView.CurrentCell = ResultsDataGridView(0, ResultsDataGridView.Rows.Count - 1)
     End Sub
     Private Sub DataTable_ColumnChanged(sender As Object, e As DataColumnChangeEventArgs)
+
         ResultsDataGridView.Rows.Add(New Object() {"Col Changed", "RowState:" & e.Row.RowState.ToString})
         ' 
         ' We step out of here if the row is deleted or detached (new row) since these rows do not have 
         ' original value 
         ' 
         If Not e.Row.RowState = DataRowState.Deleted AndAlso Not e.Row.RowState = DataRowState.Detached Then
+
             ResultsDataGridView.Rows.Add(New Object() {"Col Changed", $"Original value [{e.Row(e.Column.ColumnName, DataRowVersion.Original)}]"})
             ResultsDataGridView.Rows.Add(New Object() {"", $"Propose value [{e.ProposedValue}]"})
+
         End If
+
         ResultsDataGridView.CurrentCell = ResultsDataGridView(0, ResultsDataGridView.Rows.Count - 1)
+
     End Sub
     Private Sub DataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs)
         ' 
@@ -60,6 +68,7 @@
         End If
 
         ResultsDataGridView.CurrentCell = ResultsDataGridView(0, ResultsDataGridView.Rows.Count - 1)
+
     End Sub
     ''' <summary> 
     ''' Reports deleted rows since last AcceptChanges was called. 
@@ -71,7 +80,7 @@
     ''' rows where the row state is delete, otherwise if accept changes 
     ''' was executed there will be no deleted rows. 
     ''' </remarks> 
-    Private Sub cmdDeleted_Click(sender As System.Object, ByVal e As EventArgs) Handles cmdDeleted.Click
+    Private Sub cmdDeleted_Click(sender As Object, e As EventArgs) Handles cmdDeleted.Click
         Dim dt = bsData.DataTable
 
         Dim dv As New DataView(dt, "", "", DataViewRowState.Deleted)
@@ -114,12 +123,12 @@
             ResultsDataGridView.Rows.Clear()
         End If
     End Sub
-    Private Sub cmdClose_Click(sender As Object, ByVal e As EventArgs) Handles cmdClose.Click
+    Private Sub cmdClose_Click(sender As Object, e As EventArgs) Handles cmdClose.Click
         Close()
     End Sub
-    Private Sub Form1_Load(sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        bsData.DataSource = LoadMockedServiceItems()
+        bsData.DataSource = DataOperations.LoadMockedServiceItems()
         DataGridView1.DataSource = bsData
 
         DataGridView1.Columns("Cost").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
@@ -187,15 +196,16 @@
     ''' <param name="e"></param> 
     ''' <remarks></remarks> 
     Private Sub DataGridView1_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles DataGridView1.DataError
+
         If DataGridView1.Columns(e.ColumnIndex).Name = "Cost" Then
             MessageBox.Show("Cost must be numeric")
             e.Cancel = True
         End If
+
     End Sub
     Private Sub DataGridView1_DefaultValuesNeeded(sender As Object, e As DataGridViewRowEventArgs) Handles DataGridView1.DefaultValuesNeeded
         e.Row.Cells("Cost").Value = 0.0
     End Sub
-
 
 #End Region
 End Class
