@@ -1,4 +1,6 @@
-﻿Public Class OrderForm
+﻿Imports WindowsAppFilterDate.Classes
+
+Public Class OrderForm
 
     Private ReadOnly _orderBindingSource As New BindingSource
     Private _startDate As Date

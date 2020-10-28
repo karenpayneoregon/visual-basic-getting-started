@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AB2C5706-4BAA-4DE4-AF33-0A291C25B265}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>WindowsApp3.My.MyApplication</StartupObject>
-    <RootNamespace>WindowsApp3</RootNamespace>
-    <AssemblyName>WindowsApp3</AssemblyName>
+    <StartupObject>WindowsAppFilterDate.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsAppFilterDate</RootNamespace>
+    <AssemblyName>WindowsAppFilterDate</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>WindowsApp3.xml</DocumentationFile>
+    <DocumentationFile>WindowsAppFilterDate.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>WindowsApp3.xml</DocumentationFile>
+    <DocumentationFile>WindowsAppFilterDate.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
