@@ -11,7 +11,7 @@ Namespace Modules
         ''' <param name="exception">Exception object.</param>
         ''' <param name="environmentStackTrace">Environment stack trace, for pulling additional stack frames.</param>
         ''' <returns>Formatted exception with stack trace</returns>
-        <System.Runtime.CompilerServices.Extension>
+        <Runtime.CompilerServices.Extension>
         Public Function ToLogString(exception As Exception, environmentStackTrace As String) As String
 
             Dim environmentStackTraceLines = GetUserStackTraceLines(environmentStackTrace)
@@ -20,9 +20,8 @@ Namespace Modules
             Dim stackTraceLines = GetStackTraceLines(exception.StackTrace)
             stackTraceLines.AddRange(environmentStackTraceLines)
 
-            Dim fullStackTrace = String.Join(Environment.NewLine, stackTraceLines)
-
-            Return exception.Message & Environment.NewLine & fullStackTrace
+            Return String.Concat(Now.ToString(), Environment.NewLine, exception.Message,
+                                 Environment.NewLine, String.Join(Environment.NewLine, stackTraceLines))
 
         End Function
 
@@ -31,7 +30,7 @@ Namespace Modules
         ''' </summary>
         ''' <param name="stackTrace">Stack trace string.</param>
         ''' <returns>Stack trace lines</returns>
-        Private Function GetStackTraceLines(ByVal stackTrace As String) As List(Of String)
+        Private Function GetStackTraceLines(stackTrace As String) As List(Of String)
             Return stackTrace.Split({Environment.NewLine}, StringSplitOptions.None).ToList()
         End Function
         ''' <summary>
@@ -39,7 +38,7 @@ Namespace Modules
         ''' </summary>
         ''' <param name="fullStackTrace">Full stack trace, including external code.</param>
         ''' <returns>Stack trace lines</returns>
-        Private Function GetUserStackTraceLines(ByVal fullStackTrace As String) As List(Of String)
+        Private Function GetUserStackTraceLines(fullStackTrace As String) As List(Of String)
 
             Dim outputList = New List(Of String)()
             Dim regex As New Regex("([^\)]*\)) in (.*):line (\d)*$")
@@ -47,11 +46,13 @@ Namespace Modules
             Dim stackTraceLines As List(Of String) = GetStackTraceLines(fullStackTrace)
 
             For Each stackTraceLine In stackTraceLines
+
                 If Not regex.IsMatch(stackTraceLine) Then
                     Continue For
                 End If
 
                 outputList.Add(stackTraceLine)
+
             Next stackTraceLine
 
             Return outputList

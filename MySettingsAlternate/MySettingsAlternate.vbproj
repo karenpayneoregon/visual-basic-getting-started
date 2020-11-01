@@ -74,8 +74,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ApplicationSettingError.vb" />
     <Compile Include="Classes\ApplicationSettings.vb" />
+    <Compile Include="Classes\DataOperations.vb" />
     <Compile Include="Classes\Exceptions.vb" />
+    <Compile Include="Classes\MyApplication.vb" />
+    <Compile Include="DatabaseSettingsForm.Designer.vb">
+      <DependentUpon>DatabaseSettingsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseSettingsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +110,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DatabaseSettingsForm.resx">
+      <DependentUpon>DatabaseSettingsForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -131,7 +143,13 @@
     <None Include="Resources\View_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\UnhandledException.txt" />
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
