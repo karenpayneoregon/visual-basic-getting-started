@@ -1,6 +1,10 @@
 ﻿Imports System.Net
 
+''' <summary>
+''' One timer, one status strip with a label
+''' </summary>
 Public Class Form1
+
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
         InternetStatusLabel.Text = "Internet"
@@ -16,11 +20,17 @@ Public Class Form1
         Await Utilities.IsInternetAvailable()
     End Sub
 End Class
+''' <summary>
+''' Place this in a class file
+''' </summary>
 Public Class Utilities
     Public Delegate Sub OnCheckStatusDelegate(status As Boolean)
+    ''' <summary>
+    ''' Callback which can work with results from IsInternetAvailable
+    ''' </summary>
     Public Shared Event OnSettingChangedEvent As OnCheckStatusDelegate
     ''' <summary>
-    ''' 
+    ''' Is internet available
     ''' </summary>
     ''' <returns></returns>
     Public Shared Async Function IsInternetAvailable() As Task
@@ -42,9 +52,5 @@ Public Class Utilities
             End Function)
 
         RaiseEvent OnSettingChangedEvent(success)
-
-
-
     End Function
-
 End Class
