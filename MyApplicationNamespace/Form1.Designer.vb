@@ -31,6 +31,8 @@ Partial Class Form1
         Me.IconNamesComboBox = New System.Windows.Forms.ComboBox()
         Me.IconPictureBox = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GetNewSequenceButton = New System.Windows.Forms.Button()
+        Me.LastSequenceButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.BitMapPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,11 +124,31 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Icon from resource via string name to BitMap"
         '
+        'GetNewSequenceButton
+        '
+        Me.GetNewSequenceButton.Location = New System.Drawing.Point(14, 391)
+        Me.GetNewSequenceButton.Name = "GetNewSequenceButton"
+        Me.GetNewSequenceButton.Size = New System.Drawing.Size(134, 23)
+        Me.GetNewSequenceButton.TabIndex = 8
+        Me.GetNewSequenceButton.Text = "Get new sequence"
+        Me.GetNewSequenceButton.UseVisualStyleBackColor = True
+        '
+        'LastSequenceButton
+        '
+        Me.LastSequenceButton.Location = New System.Drawing.Point(165, 391)
+        Me.LastSequenceButton.Name = "LastSequenceButton"
+        Me.LastSequenceButton.Size = New System.Drawing.Size(134, 23)
+        Me.LastSequenceButton.TabIndex = 9
+        Me.LastSequenceButton.Text = "Get last sequence"
+        Me.LastSequenceButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(460, 418)
+        Me.Controls.Add(Me.LastSequenceButton)
+        Me.Controls.Add(Me.GetNewSequenceButton)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -153,4 +175,6 @@ Partial Class Form1
     Friend WithEvents IconNamesComboBox As ComboBox
     Friend WithEvents IconPictureBox As PictureBox
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GetNewSequenceButton As Button
+    Friend WithEvents LastSequenceButton As Button
 End Class

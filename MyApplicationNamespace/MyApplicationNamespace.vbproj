@@ -97,6 +97,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ResourceHelper.vb" />
+    <Compile Include="Singletons\ReferenceIncrementer.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -143,5 +144,6 @@
   <ItemGroup>
     <None Include="Resources\agent3.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

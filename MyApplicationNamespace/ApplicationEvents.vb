@@ -1,4 +1,6 @@
-﻿Namespace My
+﻿Imports MyApplicationNamespace.Singletons
+
+Namespace My
     ' The following events are available for MyApplication:
     ' Startup: Raised when the application starts, before the startup form is created.
     ' Shutdown: Raised after all application forms are closed.  This event is not raised if the application terminates abnormally.
@@ -44,5 +46,11 @@
                 Return CommandLineArguments.Length > 0
             End Get
         End Property
+        ''' <summary>
+        ''' Access Singleton but not used as we simple have to type more, go figure that
+        ''' some may want this.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Reference() As ReferenceIncrementer
     End Class
 End Namespace
