@@ -69,6 +69,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Animal.vb" />
+    <Compile Include="Classes\AnimalFarm.vb" />
+    <Compile Include="Classes\Cat.vb" />
+    <Compile Include="Classes\Fish.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -85,6 +89,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Classes\Person.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -107,5 +112,9 @@
     <None Include="App.config" />
     <None Include="readme.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Annimals.xml" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

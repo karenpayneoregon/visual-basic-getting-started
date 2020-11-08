@@ -5,7 +5,47 @@ Imports System.Xml.Serialization
 Module Module1
 
     Sub Main()
+        SerializeAnimals()
+    End Sub
+    Public Sub SerializeAnimals()
 
+        Dim animalFarm As New AnimalFarm()
+
+        animalFarm.Animals.Add(New Cat() With {
+                                  .Weight = 4000,
+                                  .FurLength = 3,
+                                  .Comments = "Line 1" & vbLf & "line2" & vbLf & "line3",
+                                  .Name = "Kitty"
+                                  })
+
+        animalFarm.Animals.Add(New Fish() With {
+                                  .Weight = 200,
+                                  .ScalesCount = 99,
+                                  .Comments = "Line 1" & vbLf & "line2",
+                                  .Name = "Guppy"
+                                  })
+
+        Dim ws As New XmlWriterSettings With {.NewLineHandling = NewLineHandling.Entitize}
+        Dim serializer As New XmlSerializer(GetType(AnimalFarm))
+
+        ' for debugging if you like to see the output
+        '    serializer.Serialize(Console.Out, animalFarm)
+
+        Dim fileName = "annimals.xml"
+        Using xmlWriter As XmlWriter = XmlWriter.Create(fileName, ws)
+            serializer.Serialize(xmlWriter, animalFarm)
+        End Using
+
+        Dim animalFarm1 As AnimalFarm = DeserializeXmlFileToObject(Of AnimalFarm)(fileName)
+        For Each animal As Animal In animalFarm1.Animals
+            Console.WriteLine(animal.Name)
+            Console.WriteLine($"{animal.Comments}")
+            Console.WriteLine()
+        Next
+
+        Console.ReadKey()
+    End Sub
+    Sub SerializePerson()
         Dim fileName = "person.xml"
 
         Dim person As New Person() With {
@@ -44,9 +84,3 @@ Module Module1
         Return returnObject
     End Function
 End Module
-Public Class Person
-    Public Property FirstName() As String
-    Public Property Lastname() As String
-    Public Property Comments() As String
-End Class
-
