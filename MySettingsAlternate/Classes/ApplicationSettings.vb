@@ -21,7 +21,6 @@ Namespace Classes
         ''' </summary>
         Public Shared Event OnSettingChangedEvent As OnSettingChangedDelegate
 
-
         ''' <summary>
         ''' Get app setting as string from application file. If configKey is not located an exception is thrown without
         ''' anything to indicate this but will throw a runtime exception from the calling method.
@@ -68,6 +67,37 @@ Namespace Classes
 
 
                 If Not DateTime.TryParse(value, result) Then
+                    Throw New Exception($"Invalid value in app config for {configKey}")
+                End If
+            Catch e As Exception
+
+                RaiseEvent OnGetKeyErrorEvent(configKey, e)
+                Exceptions.Write(e)
+            End Try
+
+            Return result
+
+        End Function
+        ''' <summary>
+        ''' Get a key in the configuration file as a date
+        ''' </summary>
+        ''' <param name="configKey">Key to read</param>
+        ''' <returns></returns>
+        Public Shared Function GetSettingAsInteger(configKey As String) As Integer
+
+            Dim value As String = Nothing
+            Dim result As Integer
+
+            Try
+
+                value = ConfigurationManager.AppSettings(configKey)
+
+                If value Is Nothing Then
+                    Throw New Exception($"Setting {configKey} not found")
+                End If
+
+
+                If Not Integer.TryParse(value, result) Then
                     Throw New Exception($"Invalid value in app config for {configKey}")
                 End If
             Catch e As Exception
@@ -152,11 +182,29 @@ Namespace Classes
             Return SetValue("MainWindowTitle", value)
         End Function
         ''' <summary>
+        ''' Minutes to pause for various operations as milliseconds 
+        ''' </summary>
+        ''' <returns></returns>
+        Public Shared Function importMinutesToPause() As Integer
+            Return GetSettingAsInteger("importMinutesToPause") * 1000
+        End Function
+        'LastCategoryIdentifier
+        Public Shared Function LastCategoryIdentifier() As Integer
+            Return GetSettingAsInteger("LastCategoryIdentifier")
+        End Function
+        Public Shared Function SetLastCategoryIdentifier(value As Integer) As Integer
+            SetValue("LastCategoryIdentifier", value.ToString())
+        End Function
+
+        ''' <summary>
         ''' Get last run date as string
         ''' </summary>
         ''' <returns></returns>
         Public Shared Function LastRan() As String
-            Return GetSettingAsString("LastRan")
+            Return LastRanAsDate().ToString()
+        End Function
+        Public Shared Function LastRanAsDate() As DateTime
+            Return GetSettingAsDateTime("LastRan")
         End Function
         ''' <summary>
         ''' Determine if the application should be in test mode

@@ -46,11 +46,5 @@ Namespace My
                 Return CommandLineArguments.Length > 0
             End Get
         End Property
-        ''' <summary>
-        ''' Access Singleton but not used as we simple have to type more, go figure that
-        ''' some may want this.
-        ''' </summary>
-        ''' <returns></returns>
-        Public ReadOnly Property Reference() As ReferenceIncrementer
     End Class
 End Namespace

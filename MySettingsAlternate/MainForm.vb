@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports MySettingsAlternate.Classes
 
-Public Class Form1
+Public Class MainForm
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
         IncomingFolderTextBox.Text = ApplicationSettings.GetSettingAsString("IncomingFolder")
@@ -31,7 +31,7 @@ Public Class Form1
         End If
 
         AddHandler ApplicationSettings.OnSettingChangedEvent, AddressOf GettingChanged
-
+        Console.WriteLine(ApplicationSettings.importMinutesToPause())
     End Sub
     ''' <summary>
     ''' Display settings. If TestMode has changed we need to unsubscribe else will
@@ -144,14 +144,14 @@ Public Class Form1
     End Sub
 
     Private Sub MyApplicationPropertiesButton_Click(sender As Object, e As EventArgs) Handles MyApplicationPropertiesButton.Click
-        Dim properties = ApplicationSettings.Application()
-        AppSettingsListView.Items.Clear()
+        'Dim properties = ApplicationSettings.Application()
+        'AppSettingsListView.Items.Clear()
 
-        Dim item2 As New ListViewItem("Last ran", 0)
-        item2.SubItems.Add(properties.LastRan.ToString())
+        'Dim item2 As New ListViewItem("Last ran", 0)
+        'item2.SubItems.Add(properties.LastRan.ToString())
 
-        AppSettingsListView.Items.Add(item2)
-
+        'AppSettingsListView.Items.Add(item2)
+        PopulateApplicationListView()
     End Sub
     Private Sub PopulateApplicationListView()
         Dim properties = ApplicationSettings.Application()
