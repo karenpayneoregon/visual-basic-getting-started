@@ -256,6 +256,7 @@ Public Class MainForm
         Finally
             settingForm.Dispose()
         End Try
+
     End Sub
     ''' <summary>
     ''' Toggle test mode
