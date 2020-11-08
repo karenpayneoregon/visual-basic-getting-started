@@ -3,20 +3,22 @@ Imports System.Configuration
 Imports System.IO
 Imports System.Text
 Imports MySettingsAlternate.Classes
-
+''' <summary>
+''' Note, throughout the code My.Settings and raw operations with app.config are done
+''' to show either way can be used.
+''' </summary>
 Public Class MainForm
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
         IncomingFolderTextBox.Text = ApplicationSettings.GetSettingAsString("IncomingFolder")
 
-        Text = ApplicationSettings.MainWindowTitle()
+        Text = My.Settings.MainWindowTitle
 
         ConnectionStringTextBox.Text = My.Settings.ConnectionString
 
         LastRanTextBox.Text = My.Settings.LastRan
 
         WindowTitleTextBox.Text = My.Settings.MainWindowTitle
-
 
         IncomingFolderTextBox.Select(0, 0)
 
@@ -101,6 +103,11 @@ Public Class MainForm
             End If
         End If
     End Sub
+    ''' <summary>
+    ''' Update this window title
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub UpdateWindowTitleButton_Click(sender As Object, e As EventArgs) Handles UpdateWindowTitleButton.Click
         If Not String.IsNullOrWhiteSpace(WindowTitleTextBox.Text) Then
             Dim originalValue = ApplicationSettings.MainWindowTitle()
@@ -128,10 +135,19 @@ Public Class MainForm
         End If
 
     End Sub
+    ''' <summary>
+    ''' Demonstrate attempt to get an non-existing key from app.config
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub CrashOnSetNonExistingKeyButton_Click(sender As Object, e As EventArgs) Handles CrashOnSetNonExistingKeyButton.Click
         ApplicationSettings.SetValue("NotASetting", "Apples")
     End Sub
-
+    ''' <summary>
+    ''' Open error log
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub OpenErrorLogButton_Click(sender As Object, e As EventArgs) Handles OpenErrorLogButton.Click
         Dim fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "UnhandledException.txt")
 
@@ -141,14 +157,23 @@ Public Class MainForm
             MessageBox.Show("Log file does not exists!")
         End If
     End Sub
-
+    ''' <summary>
+    ''' Record when this application last ran
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        ApplicationSettings.SetLastRan()
+        My.Settings.SetLastRan()
     End Sub
 
     Private Sub MyApplicationPropertiesButton_Click(sender As Object, e As EventArgs) Handles MyApplicationPropertiesButton.Click
         PopulateApplicationListView()
     End Sub
+    ''' <summary>
+    ''' Mocked example to determine if keys in a list exists, two exits while one does not exists
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub KeyExistsButton_Click(sender As Object, e As EventArgs) Handles KeyExistsButton.Click
 
         Dim sb As New StringBuilder
@@ -161,6 +186,11 @@ Public Class MainForm
         MessageBox.Show(sb.ToString())
 
     End Sub
+    ''' <summary>
+    ''' Get setting via dynamic code
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub GetMyApplicationDynamicallyButton_Click(sender As Object, e As EventArgs) Handles GetMyApplicationDynamicallyButton.Click
         Dim sb As New StringBuilder
         Dim myApplication = ApplicationSettings.CreateMyApplicationDynamically()
@@ -182,13 +212,13 @@ Public Class MainForm
         Dim lastRan As New ListViewItem("Last ran", 0)
         lastRan.SubItems.Add(properties.LastRan.ToString())
 
-        Dim IncomingFolder As New ListViewItem("Incoming Folder", 1)
-        IncomingFolder.SubItems.Add(properties.IncomingFolder)
+        Dim incomingFolder As New ListViewItem("Incoming Folder", 1)
+        incomingFolder.SubItems.Add(properties.IncomingFolder)
 
-        Dim WindowTitle As New ListViewItem("Window Title", 2)
-        WindowTitle.SubItems.Add(properties.MainWindowTitle)
+        Dim windowTitle As New ListViewItem("Window Title", 2)
+        windowTitle.SubItems.Add(properties.MainWindowTitle)
 
-        AppSettingsListView.Items.AddRange(New ListViewItem() {lastRan, IncomingFolder, WindowTitle})
+        AppSettingsListView.Items.AddRange(New ListViewItem() {lastRan, incomingFolder, windowTitle})
 
         AppSettingsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
 
@@ -198,6 +228,7 @@ Public Class MainForm
 
         OpenDatabaseButton.Enabled = False
         DataOperations.GetConnectionString()
+
         Try
             If Await DataOperations.OpenDatabaseConnection() Then
                 MessageBox.Show("Open successfully")
@@ -210,9 +241,15 @@ Public Class MainForm
 
 
     End Sub
-
+    ''' <summary>
+    ''' Show a dialog to change the database connection string
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ChangeConnectionStringButton_Click(sender As Object, e As EventArgs) Handles ChangeConnectionStringButton.Click
+
         Dim settingForm As New DatabaseSettingsForm
+
         Try
             settingForm.ShowDialog()
             ConnectionStringTextBox.Text = ApplicationSettings.DatabaseConnectionString()
@@ -220,15 +257,19 @@ Public Class MainForm
             settingForm.Dispose()
         End Try
     End Sub
-
+    ''' <summary>
+    ''' Toggle test mode
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub TestBoxCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles TestBoxCheckBox.CheckedChanged
         ApplicationSettings.SetValue("TestMode", TestBoxCheckBox.Checked.ToString())
     End Sub
-
-    Private Sub MainConfigurationButton_Click(sender As Object, e As EventArgs) Handles MainConfigurationButton.Click
-
-    End Sub
-
+    ''' <summary>
+    ''' Get current selected email details from MailItemsComboBox
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub CurrentMailItemButton_Click(sender As Object, e As EventArgs) Handles CurrentMailItemButton.Click
         Dim mailItem = CType(MailItemsComboBox.SelectedItem, MailItem)
         MessageBox.Show($"From: [{mailItem.From}]{Environment.NewLine}User name: [{mailItem.UserName}]")

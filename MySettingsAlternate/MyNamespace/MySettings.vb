@@ -65,6 +65,9 @@ Namespace My
                 Return ApplicationSettings.DatabaseConnectionString()
             End Get
         End Property
+        Public Sub SetLastRan()
+            ApplicationSettings.SetLastRan()
+        End Sub
     End Class
 
 End Namespace

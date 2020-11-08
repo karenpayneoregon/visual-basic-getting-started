@@ -43,7 +43,6 @@ Partial Class MainForm
         Me.TestBoxCheckBox = New System.Windows.Forms.CheckBox()
         Me.MailItemsComboBox = New System.Windows.Forms.ComboBox()
         Me.CurrentMailItemButton = New System.Windows.Forms.Button()
-        Me.MainConfigurationButton = New System.Windows.Forms.Button()
         Me.GetMyApplicationDynamicallyButton = New System.Windows.Forms.Button()
         Me.KeyExistsButton = New System.Windows.Forms.Button()
         Me.ChangeConnectionStringButton = New System.Windows.Forms.Button()
@@ -242,17 +241,6 @@ Partial Class MainForm
         Me.CurrentMailItemButton.Text = "Current mail item"
         Me.CurrentMailItemButton.UseVisualStyleBackColor = True
         '
-        'MainConfigurationButton
-        '
-        Me.MainConfigurationButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Dynamic_16x
-        Me.MainConfigurationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MainConfigurationButton.Location = New System.Drawing.Point(425, 235)
-        Me.MainConfigurationButton.Name = "MainConfigurationButton"
-        Me.MainConfigurationButton.Size = New System.Drawing.Size(176, 23)
-        Me.MainConfigurationButton.TabIndex = 27
-        Me.MainConfigurationButton.Text = "Mail"
-        Me.MainConfigurationButton.UseVisualStyleBackColor = True
-        '
         'GetMyApplicationDynamicallyButton
         '
         Me.GetMyApplicationDynamicallyButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Dynamic_16x
@@ -372,7 +360,6 @@ Partial Class MainForm
         Me.ClientSize = New System.Drawing.Size(623, 669)
         Me.Controls.Add(Me.CurrentMailItemButton)
         Me.Controls.Add(Me.MailItemsComboBox)
-        Me.Controls.Add(Me.MainConfigurationButton)
         Me.Controls.Add(Me.GetMyApplicationDynamicallyButton)
         Me.Controls.Add(Me.KeyExistsButton)
         Me.Controls.Add(Me.TestBoxCheckBox)
@@ -436,7 +423,6 @@ Partial Class MainForm
     Friend WithEvents Label8 As Label
     Friend WithEvents KeyExistsButton As Button
     Friend WithEvents GetMyApplicationDynamicallyButton As Button
-    Friend WithEvents MainConfigurationButton As Button
     Friend WithEvents MailItemsComboBox As ComboBox
     Friend WithEvents CurrentMailItemButton As Button
 End Class
