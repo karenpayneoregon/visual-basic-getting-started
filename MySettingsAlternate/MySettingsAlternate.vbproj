@@ -80,13 +80,16 @@
     <Compile Include="Classes\Category.vb" />
     <Compile Include="Classes\DataOperations.vb" />
     <Compile Include="Classes\Exceptions.vb" />
+    <Compile Include="Classes\MailConfiguration.vb" />
     <Compile Include="Classes\MyApplication.vb" />
+    <Compile Include="Classes\PropertyExtension.vb" />
     <Compile Include="DatabaseSettingsForm.Designer.vb">
       <DependentUpon>DatabaseSettingsForm.vb</DependentUpon>
     </Compile>
     <Compile Include="DatabaseSettingsForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Classes\MailItem.vb" />
     <Compile Include="Modules\CategoryItemExtensions.vb" />
     <Compile Include="Modules\DataGridViewExtensions.vb" />
     <Compile Include="MainForm.vb">
@@ -170,6 +173,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Dynamic_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

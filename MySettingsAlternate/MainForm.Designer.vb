@@ -41,6 +41,9 @@ Partial Class MainForm
         Me.WindowTitleTextBox = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TestBoxCheckBox = New System.Windows.Forms.CheckBox()
+        Me.MailItemsComboBox = New System.Windows.Forms.ComboBox()
+        Me.CurrentMailItemButton = New System.Windows.Forms.Button()
+        Me.MainConfigurationButton = New System.Windows.Forms.Button()
         Me.GetMyApplicationDynamicallyButton = New System.Windows.Forms.Button()
         Me.KeyExistsButton = New System.Windows.Forms.Button()
         Me.ChangeConnectionStringButton = New System.Windows.Forms.Button()
@@ -57,7 +60,7 @@ Partial Class MainForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(41, 46)
+        Me.Label1.Location = New System.Drawing.Point(41, 40)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 13)
         Me.Label1.TabIndex = 0
@@ -65,7 +68,7 @@ Partial Class MainForm
         '
         'IncomingFolderTextBox
         '
-        Me.IncomingFolderTextBox.Location = New System.Drawing.Point(131, 46)
+        Me.IncomingFolderTextBox.Location = New System.Drawing.Point(131, 40)
         Me.IncomingFolderTextBox.Name = "IncomingFolderTextBox"
         Me.IncomingFolderTextBox.Size = New System.Drawing.Size(254, 20)
         Me.IncomingFolderTextBox.TabIndex = 1
@@ -73,7 +76,7 @@ Partial Class MainForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(86, 79)
+        Me.Label2.Location = New System.Drawing.Point(86, 74)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 3
@@ -82,7 +85,7 @@ Partial Class MainForm
         'TextBox1
         '
         Me.TextBox1.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox1.Location = New System.Drawing.Point(131, 79)
+        Me.TextBox1.Location = New System.Drawing.Point(131, 74)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(254, 20)
         Me.TextBox1.TabIndex = 4
@@ -108,7 +111,7 @@ Partial Class MainForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 68)
+        Me.Label4.Location = New System.Drawing.Point(12, 66)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 13)
         Me.Label4.TabIndex = 9
@@ -116,7 +119,7 @@ Partial Class MainForm
         '
         'LastRanTextBox
         '
-        Me.LastRanTextBox.Location = New System.Drawing.Point(15, 84)
+        Me.LastRanTextBox.Location = New System.Drawing.Point(15, 82)
         Me.LastRanTextBox.Name = "LastRanTextBox"
         Me.LastRanTextBox.ReadOnly = True
         Me.LastRanTextBox.Size = New System.Drawing.Size(136, 20)
@@ -128,9 +131,9 @@ Partial Class MainForm
         Me.ApplicationPropertiesGroupBox.Controls.Add(Me.Label4)
         Me.ApplicationPropertiesGroupBox.Controls.Add(Me.Label3)
         Me.ApplicationPropertiesGroupBox.Controls.Add(Me.ConnectionStringTextBox)
-        Me.ApplicationPropertiesGroupBox.Location = New System.Drawing.Point(17, 251)
+        Me.ApplicationPropertiesGroupBox.Location = New System.Drawing.Point(17, 264)
         Me.ApplicationPropertiesGroupBox.Name = "ApplicationPropertiesGroupBox"
-        Me.ApplicationPropertiesGroupBox.Size = New System.Drawing.Size(584, 118)
+        Me.ApplicationPropertiesGroupBox.Size = New System.Drawing.Size(584, 115)
         Me.ApplicationPropertiesGroupBox.TabIndex = 11
         Me.ApplicationPropertiesGroupBox.TabStop = False
         Me.ApplicationPropertiesGroupBox.Text = "Application properties"
@@ -188,7 +191,7 @@ Partial Class MainForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(51, 14)
+        Me.Label7.Location = New System.Drawing.Point(51, 11)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(69, 13)
         Me.Label7.TabIndex = 18
@@ -196,7 +199,7 @@ Partial Class MainForm
         '
         'WindowTitleTextBox
         '
-        Me.WindowTitleTextBox.Location = New System.Drawing.Point(131, 14)
+        Me.WindowTitleTextBox.Location = New System.Drawing.Point(131, 11)
         Me.WindowTitleTextBox.Name = "WindowTitleTextBox"
         Me.WindowTitleTextBox.Size = New System.Drawing.Size(254, 20)
         Me.WindowTitleTextBox.TabIndex = 19
@@ -219,11 +222,42 @@ Partial Class MainForm
         Me.TestBoxCheckBox.TabIndex = 24
         Me.TestBoxCheckBox.UseVisualStyleBackColor = True
         '
+        'MailItemsComboBox
+        '
+        Me.MailItemsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.MailItemsComboBox.FormattingEnabled = True
+        Me.MailItemsComboBox.Location = New System.Drawing.Point(131, 152)
+        Me.MailItemsComboBox.Name = "MailItemsComboBox"
+        Me.MailItemsComboBox.Size = New System.Drawing.Size(254, 21)
+        Me.MailItemsComboBox.TabIndex = 28
+        '
+        'CurrentMailItemButton
+        '
+        Me.CurrentMailItemButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Mail_16x
+        Me.CurrentMailItemButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CurrentMailItemButton.Location = New System.Drawing.Point(131, 178)
+        Me.CurrentMailItemButton.Name = "CurrentMailItemButton"
+        Me.CurrentMailItemButton.Size = New System.Drawing.Size(254, 23)
+        Me.CurrentMailItemButton.TabIndex = 29
+        Me.CurrentMailItemButton.Text = "Current mail item"
+        Me.CurrentMailItemButton.UseVisualStyleBackColor = True
+        '
+        'MainConfigurationButton
+        '
+        Me.MainConfigurationButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Dynamic_16x
+        Me.MainConfigurationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.MainConfigurationButton.Location = New System.Drawing.Point(425, 235)
+        Me.MainConfigurationButton.Name = "MainConfigurationButton"
+        Me.MainConfigurationButton.Size = New System.Drawing.Size(176, 23)
+        Me.MainConfigurationButton.TabIndex = 27
+        Me.MainConfigurationButton.Text = "Mail"
+        Me.MainConfigurationButton.UseVisualStyleBackColor = True
+        '
         'GetMyApplicationDynamicallyButton
         '
         Me.GetMyApplicationDynamicallyButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Dynamic_16x
         Me.GetMyApplicationDynamicallyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GetMyApplicationDynamicallyButton.Location = New System.Drawing.Point(425, 222)
+        Me.GetMyApplicationDynamicallyButton.Location = New System.Drawing.Point(425, 207)
         Me.GetMyApplicationDynamicallyButton.Name = "GetMyApplicationDynamicallyButton"
         Me.GetMyApplicationDynamicallyButton.Size = New System.Drawing.Size(176, 23)
         Me.GetMyApplicationDynamicallyButton.TabIndex = 26
@@ -234,7 +268,7 @@ Partial Class MainForm
         '
         Me.KeyExistsButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Key_16x
         Me.KeyExistsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.KeyExistsButton.Location = New System.Drawing.Point(425, 192)
+        Me.KeyExistsButton.Location = New System.Drawing.Point(425, 178)
         Me.KeyExistsButton.Name = "KeyExistsButton"
         Me.KeyExistsButton.Size = New System.Drawing.Size(176, 23)
         Me.KeyExistsButton.TabIndex = 25
@@ -245,7 +279,7 @@ Partial Class MainForm
         '
         Me.ChangeConnectionStringButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Database_16x
         Me.ChangeConnectionStringButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ChangeConnectionStringButton.Location = New System.Drawing.Point(425, 163)
+        Me.ChangeConnectionStringButton.Location = New System.Drawing.Point(425, 152)
         Me.ChangeConnectionStringButton.Name = "ChangeConnectionStringButton"
         Me.ChangeConnectionStringButton.Size = New System.Drawing.Size(176, 23)
         Me.ChangeConnectionStringButton.TabIndex = 22
@@ -256,7 +290,7 @@ Partial Class MainForm
         '
         Me.OpenDatabaseButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Database_16x
         Me.OpenDatabaseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.OpenDatabaseButton.Location = New System.Drawing.Point(425, 134)
+        Me.OpenDatabaseButton.Location = New System.Drawing.Point(425, 125)
         Me.OpenDatabaseButton.Name = "OpenDatabaseButton"
         Me.OpenDatabaseButton.Size = New System.Drawing.Size(176, 23)
         Me.OpenDatabaseButton.TabIndex = 21
@@ -267,7 +301,7 @@ Partial Class MainForm
         '
         Me.UpdateWindowTitleButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Execute_16x
         Me.UpdateWindowTitleButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.UpdateWindowTitleButton.Location = New System.Drawing.Point(425, 12)
+        Me.UpdateWindowTitleButton.Location = New System.Drawing.Point(425, 9)
         Me.UpdateWindowTitleButton.Name = "UpdateWindowTitleButton"
         Me.UpdateWindowTitleButton.Size = New System.Drawing.Size(176, 23)
         Me.UpdateWindowTitleButton.TabIndex = 20
@@ -302,7 +336,7 @@ Partial Class MainForm
         '
         Me.CrashOnSetNonExistingKeyButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Execute_16x
         Me.CrashOnSetNonExistingKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CrashOnSetNonExistingKeyButton.Location = New System.Drawing.Point(425, 105)
+        Me.CrashOnSetNonExistingKeyButton.Location = New System.Drawing.Point(425, 98)
         Me.CrashOnSetNonExistingKeyButton.Name = "CrashOnSetNonExistingKeyButton"
         Me.CrashOnSetNonExistingKeyButton.Size = New System.Drawing.Size(176, 23)
         Me.CrashOnSetNonExistingKeyButton.TabIndex = 12
@@ -313,7 +347,7 @@ Partial Class MainForm
         '
         Me.CrashOnGetNonExistingKeyButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Execute_16x
         Me.CrashOnGetNonExistingKeyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CrashOnGetNonExistingKeyButton.Location = New System.Drawing.Point(425, 73)
+        Me.CrashOnGetNonExistingKeyButton.Location = New System.Drawing.Point(425, 68)
         Me.CrashOnGetNonExistingKeyButton.Name = "CrashOnGetNonExistingKeyButton"
         Me.CrashOnGetNonExistingKeyButton.Size = New System.Drawing.Size(176, 23)
         Me.CrashOnGetNonExistingKeyButton.TabIndex = 5
@@ -324,7 +358,7 @@ Partial Class MainForm
         '
         Me.IncomingFolderButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Execute_16x
         Me.IncomingFolderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IncomingFolderButton.Location = New System.Drawing.Point(425, 41)
+        Me.IncomingFolderButton.Location = New System.Drawing.Point(425, 40)
         Me.IncomingFolderButton.Name = "IncomingFolderButton"
         Me.IncomingFolderButton.Size = New System.Drawing.Size(176, 23)
         Me.IncomingFolderButton.TabIndex = 2
@@ -336,6 +370,9 @@ Partial Class MainForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(623, 669)
+        Me.Controls.Add(Me.CurrentMailItemButton)
+        Me.Controls.Add(Me.MailItemsComboBox)
+        Me.Controls.Add(Me.MainConfigurationButton)
         Me.Controls.Add(Me.GetMyApplicationDynamicallyButton)
         Me.Controls.Add(Me.KeyExistsButton)
         Me.Controls.Add(Me.TestBoxCheckBox)
@@ -399,4 +436,7 @@ Partial Class MainForm
     Friend WithEvents Label8 As Label
     Friend WithEvents KeyExistsButton As Button
     Friend WithEvents GetMyApplicationDynamicallyButton As Button
+    Friend WithEvents MainConfigurationButton As Button
+    Friend WithEvents MailItemsComboBox As ComboBox
+    Friend WithEvents CurrentMailItemButton As Button
 End Class

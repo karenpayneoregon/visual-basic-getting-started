@@ -1,6 +1,5 @@
 ﻿Imports System.Configuration
 Imports System.IO
-Imports System.Reflection
 
 Namespace Classes
     Public Class ApplicationSettings
@@ -239,16 +238,25 @@ Namespace Classes
             }
 
         End Function
+        ''' <summary>
+        ''' Determine if a key exists
+        ''' </summary>
         Public Shared Sub AllKeys()
             Dim keys = ConfigurationManager.AppSettings.AllKeys.Select(Function(item) New With {.Name = item, .Value = ConfigurationManager.AppSettings(item)})
-            Console.WriteLine()
         End Sub
+
+        ''' <summary>
+        ''' Determine if a key exists
+        ''' </summary>
         Public Shared Function KeyExists(key As String) As Boolean
             Dim result = ConfigurationManager.AppSettings.AllKeys.FirstOrDefault(Function(keyName) keyName = key)
             Return result IsNot Nothing
         End Function
+        ''' <summary>
+        ''' Populate <see cref="MyApplication"/> instance dynamically
+        ''' </summary>
+        ''' <returns></returns>
         Public Shared Function CreateMyApplicationDynamically() As MyApplication
-
 
             Dim propertyInfo = GetType(MyApplication).
                     GetProperties().
@@ -261,34 +269,40 @@ Namespace Classes
 
             Dim myApplication As New MyApplication()
 
-
             For Each anonymous In propertyInfo
-                Dim PropertyValue As Object = anonymous.Value
-                myApplication.SetPropertyValue(anonymous.PropertyName, PropertyValue)
+                Dim propertyValue As Object = anonymous.Value
+                myApplication.SetPropertyValue(anonymous.PropertyName, propertyValue)
             Next
 
 
             Return myApplication
 
         End Function
-        ''' <summary>
-        ''' Write this
-        ''' </summary>
-        ''' <returns></returns>
-        Public Function Save() As Boolean
-            Return True
+
+        Public Shared Function MailAddresses() As List(Of MailItem)
+            Dim emailList As New List(Of MailItem)
+            Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
+            Dim myCollect As ConfigurationSectionGroupCollection = config.SectionGroups
+
+            For Each configurationSectionGroup As ConfigurationSectionGroup In myCollect
+
+                For Each configurationSection As ConfigurationSection In configurationSectionGroup.Sections
+                    Dim sectionName As String = configurationSection.SectionInformation.Name.ToString()
+
+
+                    If sectionName.StartsWith("smtp") Then
+                        Dim mc As MailConfiguration = New MailConfiguration($"mailSettings/{sectionName}")
+                        Dim mailItem As New MailItem With {
+                                .DisplayName = sectionName.Replace("smtp_", ""),
+                                .ConfigurationName = sectionName, .MailConfiguration = mc
+                                }
+                        emailList.Add(mailItem)
+                    End If
+                Next
+            Next
+
+            Return emailList
+
         End Function
     End Class
-
-    Public Module PropertyExtension
-
-        <System.Runtime.CompilerServices.Extension>
-        Public Sub SetPropertyValue(ByVal p_object As Object, ByVal p_propertyName As String, ByVal value As Object)
-            Dim [property] As PropertyInfo = p_object.GetType().GetProperty(p_propertyName)
-            Dim t As Type = If(Nullable.GetUnderlyingType([property].PropertyType), [property].PropertyType)
-            Dim safeValue As Object = If(value Is Nothing, Nothing, Convert.ChangeType(value, t))
-
-            [property].SetValue(p_object, safeValue, Nothing)
-        End Sub
-    End Module
 End Namespace

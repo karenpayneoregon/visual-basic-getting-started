@@ -2,9 +2,16 @@
 
 Namespace Classes
     Public Class DataOperations
+        ''' <summary>
+        ''' Must call to get connection string from app.config
+        ''' </summary>
         Public Shared Sub GetConnectionString()
             ConnectionString = ApplicationSettings.DatabaseConnectionString()
         End Sub
+        ''' <summary>
+        ''' Connection string to use for accessing SQL-Server
+        ''' </summary>
+        ''' <returns></returns>
         Public Shared Property ConnectionString() As String
         ''' <summary>
         ''' Open database specified in configuration file.
@@ -15,7 +22,8 @@ Namespace Classes
                 Using cn = New SqlConnection() With {.ConnectionString = ConnectionString}
                     Await cn.OpenAsync()
                 End Using
-            Catch ex As Exception
+            Catch e As Exception
+                Exceptions.Write(e)
                 Return False
             End Try
 
@@ -69,8 +77,8 @@ Namespace Classes
                         categoryTable.Load(cmd.ExecuteReader())
                     End Using
                 End Using
-            Catch ex As Exception
-                Console.WriteLine()
+            Catch e As Exception
+                Exceptions.Write(e)
             End Try
 
             Return categoryTable

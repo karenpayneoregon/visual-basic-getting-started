@@ -1,4 +1,6 @@
-﻿Imports System.IO
+﻿Imports System.Collections.Specialized
+Imports System.Configuration
+Imports System.IO
 Imports System.Text
 Imports MySettingsAlternate.Classes
 
@@ -32,7 +34,7 @@ Public Class MainForm
         End If
 
         AddHandler ApplicationSettings.OnSettingChangedEvent, AddressOf GettingChanged
-        Console.WriteLine(ApplicationSettings.importMinutesToPause())
+        MailItemsComboBox.DataSource = ApplicationSettings.MailAddresses()
     End Sub
     ''' <summary>
     ''' Display settings. If TestMode has changed we need to unsubscribe else will
@@ -195,7 +197,7 @@ Public Class MainForm
     Private Async Sub OpenDatabaseButton_Click(sender As Object, e As EventArgs) Handles OpenDatabaseButton.Click
 
         OpenDatabaseButton.Enabled = False
-
+        DataOperations.GetConnectionString()
         Try
             If Await DataOperations.OpenDatabaseConnection() Then
                 MessageBox.Show("Open successfully")
@@ -223,5 +225,12 @@ Public Class MainForm
         ApplicationSettings.SetValue("TestMode", TestBoxCheckBox.Checked.ToString())
     End Sub
 
+    Private Sub MainConfigurationButton_Click(sender As Object, e As EventArgs) Handles MainConfigurationButton.Click
 
+    End Sub
+
+    Private Sub CurrentMailItemButton_Click(sender As Object, e As EventArgs) Handles CurrentMailItemButton.Click
+        Dim mailItem = CType(MailItemsComboBox.SelectedItem, MailItem)
+        MessageBox.Show($"From: [{mailItem.From}]{Environment.NewLine}User name: [{mailItem.UserName}]")
+    End Sub
 End Class
