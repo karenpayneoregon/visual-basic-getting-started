@@ -23,7 +23,8 @@ Namespace Classes
 
         End Function
         ''' <summary>
-        ''' Get all known categories in the database
+        ''' Get all known categories in the database. if an unhandled exception is raised
+        ''' it's written to the error log file in ApplicationEvents module only at runtime.
         ''' </summary>
         ''' <returns></returns>
         Public Shared Function GetCategories() As List(Of Category)

@@ -74,6 +74,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Classes\ApplicationSettingError.vb" />
     <Compile Include="Classes\ApplicationSettings.vb" />
     <Compile Include="Classes\Category.vb" />
