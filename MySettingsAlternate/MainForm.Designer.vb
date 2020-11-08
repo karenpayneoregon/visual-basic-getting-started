@@ -22,9 +22,7 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.IncomingFolderTextBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -53,7 +51,6 @@ Partial Class MainForm
         Me.CrashOnSetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.CrashOnGetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.IncomingFolderButton = New System.Windows.Forms.Button()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ApplicationPropertiesGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,10 +62,6 @@ Partial Class MainForm
         Me.Label1.Size = New System.Drawing.Size(79, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "IncomingFolder"
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
         '
         'IncomingFolderTextBox
         '
@@ -166,7 +159,7 @@ Partial Class MainForm
         '
         Me.AppSettingsListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
         Me.AppSettingsListView.HideSelection = False
-        Me.AppSettingsListView.Location = New System.Drawing.Point(17, 549)
+        Me.AppSettingsListView.Location = New System.Drawing.Point(17, 528)
         Me.AppSettingsListView.Name = "AppSettingsListView"
         Me.AppSettingsListView.Size = New System.Drawing.Size(584, 106)
         Me.AppSettingsListView.TabIndex = 15
@@ -186,7 +179,7 @@ Partial Class MainForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 533)
+        Me.Label6.Location = New System.Drawing.Point(16, 512)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 17
@@ -283,9 +276,10 @@ Partial Class MainForm
         '
         'OpenErrorLogButton
         '
+        Me.OpenErrorLogButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.OpenErrorLogButton.Image = Global.MySettingsAlternate.My.Resources.Resources.View_16x
         Me.OpenErrorLogButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.OpenErrorLogButton.Location = New System.Drawing.Point(17, 661)
+        Me.OpenErrorLogButton.Location = New System.Drawing.Point(17, 640)
         Me.OpenErrorLogButton.Name = "OpenErrorLogButton"
         Me.OpenErrorLogButton.Size = New System.Drawing.Size(170, 23)
         Me.OpenErrorLogButton.TabIndex = 6
@@ -294,9 +288,10 @@ Partial Class MainForm
         '
         'MyApplicationPropertiesButton
         '
+        Me.MyApplicationPropertiesButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.MyApplicationPropertiesButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Property_16x
         Me.MyApplicationPropertiesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MyApplicationPropertiesButton.Location = New System.Drawing.Point(431, 661)
+        Me.MyApplicationPropertiesButton.Location = New System.Drawing.Point(431, 640)
         Me.MyApplicationPropertiesButton.Name = "MyApplicationPropertiesButton"
         Me.MyApplicationPropertiesButton.Size = New System.Drawing.Size(170, 23)
         Me.MyApplicationPropertiesButton.TabIndex = 16
@@ -340,7 +335,7 @@ Partial Class MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(623, 715)
+        Me.ClientSize = New System.Drawing.Size(623, 669)
         Me.Controls.Add(Me.GetMyApplicationDynamicallyButton)
         Me.Controls.Add(Me.KeyExistsButton)
         Me.Controls.Add(Me.TestBoxCheckBox)
@@ -368,7 +363,6 @@ Partial Class MainForm
         Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AppSetting code sample"
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ApplicationPropertiesGroupBox.ResumeLayout(False)
         Me.ApplicationPropertiesGroupBox.PerformLayout()
         Me.ResumeLayout(False)
@@ -377,7 +371,6 @@ Partial Class MainForm
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents IncomingFolderTextBox As TextBox
     Friend WithEvents IncomingFolderButton As Button
     Friend WithEvents CrashOnGetNonExistingKeyButton As Button
