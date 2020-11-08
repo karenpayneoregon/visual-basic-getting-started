@@ -156,12 +156,20 @@
   <ItemGroup>
     <None Include="Resources\View_16x.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Key_16x.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Property_16x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Database_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_16x1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dynamic_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

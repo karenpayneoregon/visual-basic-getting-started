@@ -1,5 +1,6 @@
 ﻿Imports System.Configuration
 Imports System.IO
+Imports System.Reflection
 
 Namespace Classes
     Public Class ApplicationSettings
@@ -238,6 +239,38 @@ Namespace Classes
             }
 
         End Function
+        Public Shared Sub AllKeys()
+            Dim keys = ConfigurationManager.AppSettings.AllKeys.Select(Function(item) New With {.Name = item, .Value = ConfigurationManager.AppSettings(item)})
+            Console.WriteLine()
+        End Sub
+        Public Shared Function KeyExists(key As String) As Boolean
+            Dim result = ConfigurationManager.AppSettings.AllKeys.FirstOrDefault(Function(keyName) keyName = key)
+            Return result IsNot Nothing
+        End Function
+        Public Shared Function CreateMyApplicationDynamically() As MyApplication
+
+
+            Dim propertyInfo = GetType(MyApplication).
+                    GetProperties().
+                    Where(Function(p) p.CanWrite).
+                    Select(Function(p) New With {
+                              .PropertyName = p.Name,
+                              .Value = ConfigurationManager.AppSettings(p.Name)
+                              }).
+                    ToList()
+
+            Dim myApplication As New MyApplication()
+
+
+            For Each anonymous In propertyInfo
+                Dim PropertyValue As Object = anonymous.Value
+                myApplication.SetPropertyValue(anonymous.PropertyName, PropertyValue)
+            Next
+
+
+            Return myApplication
+
+        End Function
         ''' <summary>
         ''' Write this
         ''' </summary>
@@ -246,4 +279,16 @@ Namespace Classes
             Return True
         End Function
     End Class
+
+    Public Module PropertyExtension
+
+        <System.Runtime.CompilerServices.Extension>
+        Public Sub SetPropertyValue(ByVal p_object As Object, ByVal p_propertyName As String, ByVal value As Object)
+            Dim [property] As PropertyInfo = p_object.GetType().GetProperty(p_propertyName)
+            Dim t As Type = If(Nullable.GetUnderlyingType([property].PropertyType), [property].PropertyType)
+            Dim safeValue As Object = If(value Is Nothing, Nothing, Convert.ChangeType(value, t))
+
+            [property].SetValue(p_object, safeValue, Nothing)
+        End Sub
+    End Module
 End Namespace

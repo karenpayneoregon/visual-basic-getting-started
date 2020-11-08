@@ -41,6 +41,11 @@ Partial Class MainForm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.WindowTitleTextBox = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TestBoxCheckBox = New System.Windows.Forms.CheckBox()
+        Me.GetMyApplicationDynamicallyButton = New System.Windows.Forms.Button()
+        Me.KeyExistsButton = New System.Windows.Forms.Button()
+        Me.ChangeConnectionStringButton = New System.Windows.Forms.Button()
         Me.OpenDatabaseButton = New System.Windows.Forms.Button()
         Me.UpdateWindowTitleButton = New System.Windows.Forms.Button()
         Me.OpenErrorLogButton = New System.Windows.Forms.Button()
@@ -48,9 +53,6 @@ Partial Class MainForm
         Me.CrashOnSetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.CrashOnGetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.IncomingFolderButton = New System.Windows.Forms.Button()
-        Me.ChangeConnectionStringButton = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TestBoxCheckBox = New System.Windows.Forms.CheckBox()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ApplicationPropertiesGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -133,7 +135,7 @@ Partial Class MainForm
         Me.ApplicationPropertiesGroupBox.Controls.Add(Me.Label4)
         Me.ApplicationPropertiesGroupBox.Controls.Add(Me.Label3)
         Me.ApplicationPropertiesGroupBox.Controls.Add(Me.ConnectionStringTextBox)
-        Me.ApplicationPropertiesGroupBox.Location = New System.Drawing.Point(17, 187)
+        Me.ApplicationPropertiesGroupBox.Location = New System.Drawing.Point(17, 251)
         Me.ApplicationPropertiesGroupBox.Name = "ApplicationPropertiesGroupBox"
         Me.ApplicationPropertiesGroupBox.Size = New System.Drawing.Size(584, 118)
         Me.ApplicationPropertiesGroupBox.TabIndex = 11
@@ -144,7 +146,7 @@ Partial Class MainForm
         '
         Me.ResultsTextBox.BackColor = System.Drawing.Color.Black
         Me.ResultsTextBox.ForeColor = System.Drawing.Color.Yellow
-        Me.ResultsTextBox.Location = New System.Drawing.Point(17, 343)
+        Me.ResultsTextBox.Location = New System.Drawing.Point(17, 411)
         Me.ResultsTextBox.Multiline = True
         Me.ResultsTextBox.Name = "ResultsTextBox"
         Me.ResultsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -154,7 +156,7 @@ Partial Class MainForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 321)
+        Me.Label5.Location = New System.Drawing.Point(16, 389)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(177, 13)
         Me.Label5.TabIndex = 14
@@ -164,7 +166,7 @@ Partial Class MainForm
         '
         Me.AppSettingsListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
         Me.AppSettingsListView.HideSelection = False
-        Me.AppSettingsListView.Location = New System.Drawing.Point(17, 470)
+        Me.AppSettingsListView.Location = New System.Drawing.Point(17, 549)
         Me.AppSettingsListView.Name = "AppSettingsListView"
         Me.AppSettingsListView.Size = New System.Drawing.Size(584, 106)
         Me.AppSettingsListView.TabIndex = 15
@@ -184,7 +186,7 @@ Partial Class MainForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(16, 454)
+        Me.Label6.Location = New System.Drawing.Point(16, 533)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 17
@@ -205,6 +207,57 @@ Partial Class MainForm
         Me.WindowTitleTextBox.Name = "WindowTitleTextBox"
         Me.WindowTitleTextBox.Size = New System.Drawing.Size(254, 20)
         Me.WindowTitleTextBox.TabIndex = 19
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(63, 115)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(57, 13)
+        Me.Label8.TabIndex = 23
+        Me.Label8.Text = "Test mode"
+        '
+        'TestBoxCheckBox
+        '
+        Me.TestBoxCheckBox.AutoSize = True
+        Me.TestBoxCheckBox.Location = New System.Drawing.Point(131, 114)
+        Me.TestBoxCheckBox.Name = "TestBoxCheckBox"
+        Me.TestBoxCheckBox.Size = New System.Drawing.Size(15, 14)
+        Me.TestBoxCheckBox.TabIndex = 24
+        Me.TestBoxCheckBox.UseVisualStyleBackColor = True
+        '
+        'GetMyApplicationDynamicallyButton
+        '
+        Me.GetMyApplicationDynamicallyButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Dynamic_16x
+        Me.GetMyApplicationDynamicallyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GetMyApplicationDynamicallyButton.Location = New System.Drawing.Point(425, 222)
+        Me.GetMyApplicationDynamicallyButton.Name = "GetMyApplicationDynamicallyButton"
+        Me.GetMyApplicationDynamicallyButton.Size = New System.Drawing.Size(176, 23)
+        Me.GetMyApplicationDynamicallyButton.TabIndex = 26
+        Me.GetMyApplicationDynamicallyButton.Text = "Dynamic MyApplication"
+        Me.GetMyApplicationDynamicallyButton.UseVisualStyleBackColor = True
+        '
+        'KeyExistsButton
+        '
+        Me.KeyExistsButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Key_16x
+        Me.KeyExistsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.KeyExistsButton.Location = New System.Drawing.Point(425, 192)
+        Me.KeyExistsButton.Name = "KeyExistsButton"
+        Me.KeyExistsButton.Size = New System.Drawing.Size(176, 23)
+        Me.KeyExistsButton.TabIndex = 25
+        Me.KeyExistsButton.Text = "Key exists"
+        Me.KeyExistsButton.UseVisualStyleBackColor = True
+        '
+        'ChangeConnectionStringButton
+        '
+        Me.ChangeConnectionStringButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Database_16x
+        Me.ChangeConnectionStringButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ChangeConnectionStringButton.Location = New System.Drawing.Point(425, 163)
+        Me.ChangeConnectionStringButton.Name = "ChangeConnectionStringButton"
+        Me.ChangeConnectionStringButton.Size = New System.Drawing.Size(176, 23)
+        Me.ChangeConnectionStringButton.TabIndex = 22
+        Me.ChangeConnectionStringButton.Text = "Change Connection string"
+        Me.ChangeConnectionStringButton.UseVisualStyleBackColor = True
         '
         'OpenDatabaseButton
         '
@@ -232,7 +285,7 @@ Partial Class MainForm
         '
         Me.OpenErrorLogButton.Image = Global.MySettingsAlternate.My.Resources.Resources.View_16x
         Me.OpenErrorLogButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.OpenErrorLogButton.Location = New System.Drawing.Point(17, 582)
+        Me.OpenErrorLogButton.Location = New System.Drawing.Point(17, 661)
         Me.OpenErrorLogButton.Name = "OpenErrorLogButton"
         Me.OpenErrorLogButton.Size = New System.Drawing.Size(170, 23)
         Me.OpenErrorLogButton.TabIndex = 6
@@ -243,7 +296,7 @@ Partial Class MainForm
         '
         Me.MyApplicationPropertiesButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Property_16x
         Me.MyApplicationPropertiesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MyApplicationPropertiesButton.Location = New System.Drawing.Point(431, 582)
+        Me.MyApplicationPropertiesButton.Location = New System.Drawing.Point(431, 661)
         Me.MyApplicationPropertiesButton.Name = "MyApplicationPropertiesButton"
         Me.MyApplicationPropertiesButton.Size = New System.Drawing.Size(170, 23)
         Me.MyApplicationPropertiesButton.TabIndex = 16
@@ -283,40 +336,13 @@ Partial Class MainForm
         Me.IncomingFolderButton.Text = "Update Incoming folder"
         Me.IncomingFolderButton.UseVisualStyleBackColor = True
         '
-        'ChangeConnectionStringButton
-        '
-        Me.ChangeConnectionStringButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Database_16x
-        Me.ChangeConnectionStringButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ChangeConnectionStringButton.Location = New System.Drawing.Point(425, 163)
-        Me.ChangeConnectionStringButton.Name = "ChangeConnectionStringButton"
-        Me.ChangeConnectionStringButton.Size = New System.Drawing.Size(176, 23)
-        Me.ChangeConnectionStringButton.TabIndex = 22
-        Me.ChangeConnectionStringButton.Text = "Change Connection string"
-        Me.ChangeConnectionStringButton.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(63, 115)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(57, 13)
-        Me.Label8.TabIndex = 23
-        Me.Label8.Text = "Test mode"
-        '
-        'TestBoxCheckBox
-        '
-        Me.TestBoxCheckBox.AutoSize = True
-        Me.TestBoxCheckBox.Location = New System.Drawing.Point(131, 114)
-        Me.TestBoxCheckBox.Name = "TestBoxCheckBox"
-        Me.TestBoxCheckBox.Size = New System.Drawing.Size(15, 14)
-        Me.TestBoxCheckBox.TabIndex = 24
-        Me.TestBoxCheckBox.UseVisualStyleBackColor = True
-        '
-        'Form1
+        'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(623, 620)
+        Me.ClientSize = New System.Drawing.Size(623, 715)
+        Me.Controls.Add(Me.GetMyApplicationDynamicallyButton)
+        Me.Controls.Add(Me.KeyExistsButton)
         Me.Controls.Add(Me.TestBoxCheckBox)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ChangeConnectionStringButton)
@@ -339,7 +365,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.IncomingFolderTextBox)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "Form1"
+        Me.Name = "MainForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AppSetting code sample"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -378,4 +404,6 @@ Partial Class MainForm
     Friend WithEvents ChangeConnectionStringButton As Button
     Friend WithEvents TestBoxCheckBox As CheckBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents KeyExistsButton As Button
+    Friend WithEvents GetMyApplicationDynamicallyButton As Button
 End Class

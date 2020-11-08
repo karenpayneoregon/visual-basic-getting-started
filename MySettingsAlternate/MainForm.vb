@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text
 Imports MySettingsAlternate.Classes
 
 Public Class MainForm
@@ -144,14 +145,33 @@ Public Class MainForm
     End Sub
 
     Private Sub MyApplicationPropertiesButton_Click(sender As Object, e As EventArgs) Handles MyApplicationPropertiesButton.Click
-        'Dim properties = ApplicationSettings.Application()
-        'AppSettingsListView.Items.Clear()
-
-        'Dim item2 As New ListViewItem("Last ran", 0)
-        'item2.SubItems.Add(properties.LastRan.ToString())
-
-        'AppSettingsListView.Items.Add(item2)
         PopulateApplicationListView()
+    End Sub
+    Private Sub KeyExistsButton_Click(sender As Object, e As EventArgs) Handles KeyExistsButton.Click
+
+        Dim sb As New StringBuilder
+        Dim keyList As New List(Of String) From {"DatabaseServer", "Catalog", "BadApple"}
+
+        For Each keyName As String In keyList
+            sb.AppendLine($"Key '{keyName}' exists: {ApplicationSettings.KeyExists(keyName)}")
+        Next
+
+        MessageBox.Show(sb.ToString())
+
+    End Sub
+    Private Sub GetMyApplicationDynamicallyButton_Click(sender As Object, e As EventArgs) Handles GetMyApplicationDynamicallyButton.Click
+        Dim sb As New StringBuilder
+        Dim myApplication = ApplicationSettings.CreateMyApplicationDynamically()
+
+        sb.AppendLine($"Connection string: [{myApplication.ConnectionString}]")
+        sb.AppendLine($"Minutes to pause: [{myApplication.ImportMinutesToPause}]")
+        sb.AppendLine($"IncomingFolder: [{myApplication.IncomingFolder}]")
+        sb.AppendLine($"Last ran: [{myApplication.LastRan}]")
+        sb.AppendLine($"Main Title: [{myApplication.MainWindowTitle}]")
+        sb.AppendLine($"Test mode: [{myApplication.TestMode}]")
+
+        MessageBox.Show(sb.ToString())
+
     End Sub
     Private Sub PopulateApplicationListView()
         Dim properties = ApplicationSettings.Application()
@@ -202,4 +222,6 @@ Public Class MainForm
     Private Sub TestBoxCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles TestBoxCheckBox.CheckedChanged
         ApplicationSettings.SetValue("TestMode", TestBoxCheckBox.Checked.ToString())
     End Sub
+
+
 End Class
