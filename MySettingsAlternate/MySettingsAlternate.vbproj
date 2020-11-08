@@ -115,6 +115,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="MyNamespace\MySettings.vb" />
     <Compile Include="ProductsByCategoryForm.Designer.vb">
       <DependentUpon>ProductsByCategoryForm.vb</DependentUpon>
     </Compile>
@@ -177,5 +178,6 @@
   <ItemGroup>
     <None Include="Resources\Mail_16x.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

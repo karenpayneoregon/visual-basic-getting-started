@@ -11,11 +11,11 @@ Public Class MainForm
 
         Text = ApplicationSettings.MainWindowTitle()
 
-        ConnectionStringTextBox.Text = ApplicationSettings.DatabaseConnectionString()
+        ConnectionStringTextBox.Text = My.Settings.ConnectionString
 
-        LastRanTextBox.Text = ApplicationSettings.LastRan()
+        LastRanTextBox.Text = My.Settings.LastRan
 
-        WindowTitleTextBox.Text = ApplicationSettings.MainWindowTitle()
+        WindowTitleTextBox.Text = My.Settings.MainWindowTitle
 
 
         IncomingFolderTextBox.Select(0, 0)
@@ -34,7 +34,7 @@ Public Class MainForm
         End If
 
         AddHandler ApplicationSettings.OnSettingChangedEvent, AddressOf GettingChanged
-        MailItemsComboBox.DataSource = ApplicationSettings.MailAddresses()
+        MailItemsComboBox.DataSource = My.Settings.MailAddresses
     End Sub
     ''' <summary>
     ''' Display settings. If TestMode has changed we need to unsubscribe else will
