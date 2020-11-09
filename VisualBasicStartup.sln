@@ -164,6 +164,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xml code samples", "xml cod
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SerializeXmlWithMultipleLinesWinForms", "SerializeXmlWithMultipleLinesWinForms\SerializeXmlWithMultipleLinesWinForms.vbproj", "{6A954A86-7976-4B97-BA28-22B6F9ECF09F}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Simple_ProgressBar_VB", "DemoSplashScreen_ProgressBar\Simple_ProgressBar_VB.vbproj", "{7583078F-9646-4FC5-AAB4-322C7C9079A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -386,6 +388,10 @@ Global
 		{6A954A86-7976-4B97-BA28-22B6F9ECF09F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A954A86-7976-4B97-BA28-22B6F9ECF09F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A954A86-7976-4B97-BA28-22B6F9ECF09F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7583078F-9646-4FC5-AAB4-322C7C9079A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7583078F-9646-4FC5-AAB4-322C7C9079A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7583078F-9646-4FC5-AAB4-322C7C9079A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7583078F-9646-4FC5-AAB4-322C7C9079A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -457,6 +463,7 @@ Global
 		{ED5931D6-9FC4-4162-A59C-F321E11CCC21} = {0F78F6F7-DB06-4999-B026-2288E535210D}
 		{D0490C52-40AB-4A75-9791-38D0A30FBB70} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
 		{6A954A86-7976-4B97-BA28-22B6F9ECF09F} = {D0490C52-40AB-4A75-9791-38D0A30FBB70}
+		{7583078F-9646-4FC5-AAB4-322C7C9079A9} = {AEB46F27-701C-402F-9C40-D4CC36AB0FD1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
