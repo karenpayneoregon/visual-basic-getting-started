@@ -1,3 +1,3 @@
 # About
 
-Entity Framework code samples
+Entity Framework code sample
