@@ -167,6 +167,9 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Simple_ProgressBar_VB", "DemoSplashScreen_ProgressBar\Simple_ProgressBar_VB.vbproj", "{7583078F-9646-4FC5-AAB4-322C7C9079A9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft Access", "Microsoft Access", "{B344B257-5462-4278-90A0-8663B81F6A0B}"
+	ProjectSection(SolutionItems) = preProject
+		microsoftAccess.md = microsoftAccess.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{D15D6197-838B-4240-879A-944430115420}"
 EndProject
@@ -175,6 +178,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend projects", "Frontend projects", "{FCCACB38-5DDE-4036-86C1-8B055C242D13}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MasterDetailRelation", "MasterDetailRelation\MasterDetailRelation.vbproj", "{03DA4FE2-47A8-4078-B70F-47D75E2A5D44}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BlogBackendLibrary", "Entity Framework 6\BlogBackendLibrary\BlogBackendLibrary.vbproj", "{43654757-3DAD-4EFE-B0D3-5931838439AB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BloggingFrontend", "Entity Framework 6\BloggingFrontend\BloggingFrontend.vbproj", "{0EF481C9-6A7E-4486-A774-CA7B22A5B26E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -410,6 +417,14 @@ Global
 		{03DA4FE2-47A8-4078-B70F-47D75E2A5D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03DA4FE2-47A8-4078-B70F-47D75E2A5D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03DA4FE2-47A8-4078-B70F-47D75E2A5D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43654757-3DAD-4EFE-B0D3-5931838439AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43654757-3DAD-4EFE-B0D3-5931838439AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43654757-3DAD-4EFE-B0D3-5931838439AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43654757-3DAD-4EFE-B0D3-5931838439AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EF481C9-6A7E-4486-A774-CA7B22A5B26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF481C9-6A7E-4486-A774-CA7B22A5B26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF481C9-6A7E-4486-A774-CA7B22A5B26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF481C9-6A7E-4486-A774-CA7B22A5B26E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -487,6 +502,8 @@ Global
 		{EFEEB293-F4E1-476D-84F3-64F09FE02D7A} = {D15D6197-838B-4240-879A-944430115420}
 		{FCCACB38-5DDE-4036-86C1-8B055C242D13} = {B344B257-5462-4278-90A0-8663B81F6A0B}
 		{03DA4FE2-47A8-4078-B70F-47D75E2A5D44} = {FCCACB38-5DDE-4036-86C1-8B055C242D13}
+		{43654757-3DAD-4EFE-B0D3-5931838439AB} = {0F78F6F7-DB06-4999-B026-2288E535210D}
+		{0EF481C9-6A7E-4486-A774-CA7B22A5B26E} = {0F78F6F7-DB06-4999-B026-2288E535210D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
