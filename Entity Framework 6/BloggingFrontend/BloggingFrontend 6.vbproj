@@ -133,9 +133,9 @@
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlogBackendLibrary\BlogBackendLibrary.vbproj">
+    <ProjectReference Include="..\BlogBackendLibrary\BlogBackendLibrary 6.vbproj">
       <Project>{43654757-3DAD-4EFE-B0D3-5931838439AB}</Project>
-      <Name>BlogBackendLibrary</Name>
+      <Name>BlogBackendLibrary 6</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

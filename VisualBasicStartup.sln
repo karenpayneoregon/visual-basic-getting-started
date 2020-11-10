@@ -113,7 +113,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Step 3 WPF examples", "Step
 		WPFcodeSamples.md = WPFcodeSamples.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity Framework examples", "Entity Framework examples", "{0F78F6F7-DB06-4999-B026-2288E535210D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity Framework 6 and Core examples", "Entity Framework 6 and Core examples", "{0F78F6F7-DB06-4999-B026-2288E535210D}"
 	ProjectSection(SolutionItems) = preProject
 		EntityFramework.md = EntityFramework.md
 	EndProjectSection
@@ -179,9 +179,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend projects", "Fronte
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MasterDetailRelation", "MasterDetailRelation\MasterDetailRelation.vbproj", "{03DA4FE2-47A8-4078-B70F-47D75E2A5D44}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BlogBackendLibrary", "Entity Framework 6\BlogBackendLibrary\BlogBackendLibrary.vbproj", "{43654757-3DAD-4EFE-B0D3-5931838439AB}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BlogBackendLibrary 6", "Entity Framework 6\BlogBackendLibrary\BlogBackendLibrary 6.vbproj", "{43654757-3DAD-4EFE-B0D3-5931838439AB}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BloggingFrontend", "Entity Framework 6\BloggingFrontend\BloggingFrontend.vbproj", "{0EF481C9-6A7E-4486-A774-CA7B22A5B26E}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BloggingFrontend 6", "Entity Framework 6\BloggingFrontend\BloggingFrontend 6.vbproj", "{0EF481C9-6A7E-4486-A774-CA7B22A5B26E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
