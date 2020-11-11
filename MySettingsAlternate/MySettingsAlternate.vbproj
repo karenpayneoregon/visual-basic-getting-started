@@ -84,10 +84,11 @@
     <Compile Include="Classes\DataOperations.vb" />
     <Compile Include="Classes\Exceptions.vb" />
     <Compile Include="Classes\Json\MyAppllicationJson.vb" />
-    <Compile Include="Classes\Json\FileOperations.vb" />
+    <Compile Include="Classes\Json\JsonFileOperations.vb" />
     <Compile Include="Classes\MailConfiguration.vb" />
     <Compile Include="Classes\MyApplication.vb" />
     <Compile Include="Classes\PropertyExtension.vb" />
+    <Compile Include="Classes\UserDetails.vb" />
     <Compile Include="DatabaseSettingsForm.Designer.vb">
       <DependentUpon>DatabaseSettingsForm.vb</DependentUpon>
     </Compile>
@@ -127,6 +128,12 @@
     <Compile Include="ProductsByCategoryForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserDetailsForm.Designer.vb">
+      <DependentUpon>UserDetailsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetailsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DatabaseSettingsForm.resx">
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsByCategoryForm.resx">
       <DependentUpon>ProductsByCategoryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDetailsForm.resx">
+      <DependentUpon>UserDetailsForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +197,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\json-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinFormHelpers\WinFormHelpers.vbproj">
+      <Project>{48b4d9ac-2a51-4822-8c34-ae1ca78d333b}</Project>
+      <Name>WinFormHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Account_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

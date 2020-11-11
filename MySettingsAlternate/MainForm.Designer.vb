@@ -42,6 +42,8 @@ Partial Class MainForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TestBoxCheckBox = New System.Windows.Forms.CheckBox()
         Me.MailItemsComboBox = New System.Windows.Forms.ComboBox()
+        Me.UserDetailsButton = New System.Windows.Forms.Button()
+        Me.GetMainWindowTitleJsonButton = New System.Windows.Forms.Button()
         Me.ReadJsonButton = New System.Windows.Forms.Button()
         Me.CurrentMailItemButton = New System.Windows.Forms.Button()
         Me.GetMyApplicationDynamicallyButton = New System.Windows.Forms.Button()
@@ -54,7 +56,7 @@ Partial Class MainForm
         Me.CrashOnSetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.CrashOnGetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.IncomingFolderButton = New System.Windows.Forms.Button()
-        Me.GetMainWindowTitleJsonButton = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.ApplicationPropertiesGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -232,6 +234,28 @@ Partial Class MainForm
         Me.MailItemsComboBox.Size = New System.Drawing.Size(254, 21)
         Me.MailItemsComboBox.TabIndex = 28
         '
+        'UserDetailsButton
+        '
+        Me.UserDetailsButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Account_16x
+        Me.UserDetailsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.UserDetailsButton.Location = New System.Drawing.Point(672, 125)
+        Me.UserDetailsButton.Name = "UserDetailsButton"
+        Me.UserDetailsButton.Size = New System.Drawing.Size(176, 23)
+        Me.UserDetailsButton.TabIndex = 32
+        Me.UserDetailsButton.Text = "User details"
+        Me.UserDetailsButton.UseVisualStyleBackColor = True
+        '
+        'GetMainWindowTitleJsonButton
+        '
+        Me.GetMainWindowTitleJsonButton.Image = Global.MySettingsAlternate.My.Resources.Resources.json_file
+        Me.GetMainWindowTitleJsonButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GetMainWindowTitleJsonButton.Location = New System.Drawing.Point(672, 40)
+        Me.GetMainWindowTitleJsonButton.Name = "GetMainWindowTitleJsonButton"
+        Me.GetMainWindowTitleJsonButton.Size = New System.Drawing.Size(176, 23)
+        Me.GetMainWindowTitleJsonButton.TabIndex = 31
+        Me.GetMainWindowTitleJsonButton.Text = "Main window title"
+        Me.GetMainWindowTitleJsonButton.UseVisualStyleBackColor = True
+        '
         'ReadJsonButton
         '
         Me.ReadJsonButton.Image = Global.MySettingsAlternate.My.Resources.Resources.json_file
@@ -366,22 +390,22 @@ Partial Class MainForm
         Me.IncomingFolderButton.Text = "Update Incoming folder"
         Me.IncomingFolderButton.UseVisualStyleBackColor = True
         '
-        'GetMainWindowTitleJsonButton
+        'Label9
         '
-        Me.GetMainWindowTitleJsonButton.Image = Global.MySettingsAlternate.My.Resources.Resources.json_file
-        Me.GetMainWindowTitleJsonButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GetMainWindowTitleJsonButton.Location = New System.Drawing.Point(672, 40)
-        Me.GetMainWindowTitleJsonButton.Name = "GetMainWindowTitleJsonButton"
-        Me.GetMainWindowTitleJsonButton.Size = New System.Drawing.Size(176, 23)
-        Me.GetMainWindowTitleJsonButton.TabIndex = 31
-        Me.GetMainWindowTitleJsonButton.Text = "Main window title"
-        Me.GetMainWindowTitleJsonButton.UseVisualStyleBackColor = True
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(669, 109)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(84, 13)
+        Me.Label9.TabIndex = 33
+        Me.Label9.Text = "User details json"
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(860, 669)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.UserDetailsButton)
         Me.Controls.Add(Me.GetMainWindowTitleJsonButton)
         Me.Controls.Add(Me.ReadJsonButton)
         Me.Controls.Add(Me.CurrentMailItemButton)
@@ -453,4 +477,6 @@ Partial Class MainForm
     Friend WithEvents CurrentMailItemButton As Button
     Friend WithEvents ReadJsonButton As Button
     Friend WithEvents GetMainWindowTitleJsonButton As Button
+    Friend WithEvents UserDetailsButton As Button
+    Friend WithEvents Label9 As Label
 End Class

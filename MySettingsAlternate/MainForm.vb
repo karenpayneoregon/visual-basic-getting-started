@@ -30,7 +30,7 @@ Public Class MainForm
         AddHandler ApplicationSettings.OnSettingsErrorEvent, AddressOf SettingsException
         AddHandler ApplicationSettings.OnGetKeyErrorEvent, AddressOf GetException
 
-        FileOperations.MockUp()
+        JsonFileOperations.MockUp()
 
         PopulateApplicationListView()
 
@@ -289,5 +289,16 @@ Public Class MainForm
 
     Private Sub GetMainWindowTitleJsonButton_Click(sender As Object, e As EventArgs) Handles GetMainWindowTitleJsonButton.Click
         MessageBox.Show($"This window title fron Json{vbCr}[{My.Settings.MainWindowTitleJson}]")
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles UserDetailsButton.Click
+        Dim userDetailsForm As New UserDetailsForm
+
+        Try
+            userDetailsForm.ShowDialog()
+        Finally
+            userDetailsForm.Dispose()
+        End Try
+
     End Sub
 End Class

@@ -3,7 +3,7 @@ Imports Newtonsoft.Json
 
 Namespace Classes.Json
 
-    Public Class FileOperations
+    Public Class JsonFileOperations
         Private Property mFileName() As String
         Public Sub New()
 

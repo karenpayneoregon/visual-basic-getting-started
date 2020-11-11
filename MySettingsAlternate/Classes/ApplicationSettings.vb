@@ -1,5 +1,6 @@
 ﻿Imports System.Configuration
 Imports System.IO
+Imports Newtonsoft.Json
 
 Namespace Classes
     Public Class ApplicationSettings
@@ -46,6 +47,22 @@ Namespace Classes
 
             Return value
 
+        End Function
+        ''' <summary>
+        ''' Write UserDetails key to app.config
+        ''' </summary>
+        ''' <param name="userDetails"></param>
+        Public Shared Sub SerializeUserDetails(userDetails As UserDetails)
+            Dim details = JsonConvert.SerializeObject(userDetails)
+            SetValue("UserDetails", details)
+        End Sub
+        ''' <summary>
+        ''' Read UserDetails key from app.config
+        ''' </summary>
+        ''' <returns></returns>
+        Public Shared Function DeserializeUserDetails() As UserDetails
+            Dim json = GetSettingAsString("UserDetails")
+            Return JsonConvert.DeserializeObject(Of UserDetails)(json)
         End Function
         ''' <summary>
         ''' Get a key in the configuration file as a date

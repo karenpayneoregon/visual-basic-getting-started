@@ -89,7 +89,7 @@ Namespace My
         ' The following is for json setting example
         '
         Private _fileName As String
-        Private ReadOnly _fileOperations As New FileOperations
+        Private ReadOnly _fileOperations As New JsonFileOperations
         ''' <summary>
         ''' Read json configuration file settings
         ''' </summary>
