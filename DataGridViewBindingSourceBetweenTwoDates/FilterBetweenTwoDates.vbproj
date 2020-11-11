@@ -95,6 +95,12 @@
     <Compile Include="OrderForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="OrderFormGrouped.Designer.vb">
+      <DependentUpon>OrderFormGrouped.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrderFormGrouped.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderFormGrouped.resx">
+      <DependentUpon>OrderFormGrouped.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -120,7 +129,12 @@
     <None Include="App.config" />
     <None Include="readme.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WinFormHelpers\WinFormHelpers.vbproj">
+      <Project>{48b4d9ac-2a51-4822-8c34-ae1ca78d333b}</Project>
+      <Name>WinFormHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\databaseScript.sql" />
   </ItemGroup>

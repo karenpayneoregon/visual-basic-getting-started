@@ -66,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CueBannerTextCode.vb" />
+    <Compile Include="GroupByGrid.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TabControlHelper.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

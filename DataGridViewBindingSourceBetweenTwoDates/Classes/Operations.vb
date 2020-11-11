@@ -4,11 +4,16 @@
                            "Data Source=.\SQLEXPRESS;" &
                            "Initial Catalog=NorthWind2020;Integrated Security=True"
 
-        Public Shared Function Read() As DataTable
+        Public Shared Function Read(Optional order As Boolean = False) As DataTable
             Using cn As New SqlClient.SqlConnection With {.ConnectionString = ConnectionString}
                 Using cmd As New SqlClient.SqlCommand With {.Connection = cn}
 
-                    cmd.CommandText = "SELECT OrderID, CustomerIdentifier, EmployeeID, OrderDate, ShipCountry FROM dbo.Orders"
+
+                    If order Then
+                        cmd.CommandText = "SELECT OrderID, CustomerIdentifier, EmployeeID, OrderDate, ShipCountry FROM dbo.Orders ORDER BY ShipCountry"
+                    Else
+                        cmd.CommandText = "SELECT OrderID, CustomerIdentifier, EmployeeID, OrderDate, ShipCountry FROM dbo.Orders"
+                    End If
 
                     Dim orderTable As New DataTable
 
