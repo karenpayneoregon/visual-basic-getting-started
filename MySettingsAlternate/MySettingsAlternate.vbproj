@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\MySettingsAlternate.exe.config" />
+    <None Include="bin\Debug\Settings.json" />
     <None Include="Classes\Json\readme.md" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -206,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Account_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\UnhandledException.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
