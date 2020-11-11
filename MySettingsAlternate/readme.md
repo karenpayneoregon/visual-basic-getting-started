@@ -10,7 +10,9 @@ Code sample for alternate to using My.Settings.
 
 ## TechNet article
 
-TODO
+[My.Settings alternate for storing app settings (VB.NET)](https://social.technet.microsoft.com/wiki/contents/articles/54134.my-settings-alternate-for-storing-app-settings-vb-net.aspx)
+
+
 
 ## Requires
 
