@@ -1,0 +1,10 @@
+{
+  "MainWindowTitle": "Code sample for reading/setting app.config",
+  "IncomingFolder": "D:\\UISides\\oed_incoming",
+  "ImportMinutesToPause": 2,
+  "TestMode": false,
+  "LastRan": "2020-11-11T04:35:46.2768761-08:00",
+  "LastCategoryIdentifier": 3,
+  "DatabaseServer": ".\\SQLEXPRESS",
+  "Catalog": "NorthWind2020"
+}

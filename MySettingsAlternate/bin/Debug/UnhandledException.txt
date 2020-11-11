@@ -1,0 +1,831 @@
+11/8/2020 4:18:55 AM
+Key NotASetting does not exist
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 98
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 110
+   at MySettingsAlternate.Form1.CrashOnSetNonExistingKeyButton_Click(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Form1.vb:line 129
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+
+11/8/2020 8:22:17 AM
+A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at MySettingsAlternate.Classes.DataOperations.GetCategories() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\DataOperations.vb:line 36
+   at MySettingsAlternate.ProductsByCategoryForm.VB$StateMachine_34_ProductsByCategoryForm_Shown.MoveNext() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\ProductsByCategoryForm.vb:line 16
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.AsyncMethodBuilderCore.<>c.<ThrowAsync>b__6_0(Object state)
+   at MySettingsAlternate.My.MyApplication.MyApplication_UnhandledException(Object sender, UnhandledExceptionEventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\ApplicationEvents.vb:line 15
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 8:22:48 AM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.RefreshSection(String sectionName)
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 135
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 140
+   at MySettingsAlternate.Classes.ApplicationSettings.SetLastCategoryIdentifier(Int32 value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 196
+   at MySettingsAlternate.ProductsByCategoryForm.ProductsByCategoryForm_Closing(Object sender, CancelEventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\ProductsByCategoryForm.vb:line 68
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 8:23:02 AM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.RefreshSection(String sectionName)
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 135
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 140
+   at MySettingsAlternate.Classes.ApplicationSettings.SetLastCategoryIdentifier(Int32 value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 196
+   at MySettingsAlternate.ProductsByCategoryForm.ProductsByCategoryForm_Closing(Object sender, CancelEventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\ProductsByCategoryForm.vb:line 68
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 9:27:52 AM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.RefreshSection(String sectionName)
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 135
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 140
+   at MySettingsAlternate.Classes.ApplicationSettings.SetLastCategoryIdentifier(Int32 value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 196
+   at MySettingsAlternate.ProductsByCategoryForm.ProductsByCategoryForm_Closing(Object sender, CancelEventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\ProductsByCategoryForm.vb:line 68
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 9:34:35 AM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.RefreshSection(String sectionName)
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 135
+   at MySettingsAlternate.Classes.ApplicationSettings.SetValue(String key, String value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 140
+   at MySettingsAlternate.Classes.ApplicationSettings.SetLastCategoryIdentifier(Int32 value) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 196
+   at MySettingsAlternate.ProductsByCategoryForm.ProductsByCategoryForm_Closing(Object sender, CancelEventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\ProductsByCategoryForm.vb:line 68
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:29 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 8
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:29 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 10
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:29 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:29 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:29 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRanAsDate() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 207
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRan() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 204
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:29 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 16
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:29 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.GetIncomingFolder() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 167
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:30 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:30 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:30 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:30 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:53:31 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.IsTestMode() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 214
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 8
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 10
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRanAsDate() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 207
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRan() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 204
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 16
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.GetIncomingFolder() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 167
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:26 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:55:27 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.IsTestMode() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 214
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:49 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 8
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:49 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 10
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:49 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:49 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:49 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRanAsDate() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 207
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRan() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 204
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:50 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 16
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:50 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.GetIncomingFolder() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 167
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:50 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:50 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:50 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:50 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 177
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 27
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 1:56:50 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.IsTestMode() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 214
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:31 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 10
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:31 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:31 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:31 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRanAsDate() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 207
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRan() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 204
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 16
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 18
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.GetIncomingFolder() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 167
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:43:32 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.IsTestMode() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 214
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 31
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:02 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 10
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:02 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:02 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:02 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRanAsDate() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 207
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRan() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 204
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 16
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 18
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.GetIncomingFolder() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 167
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:03 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.IsTestMode() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 214
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 31
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 10
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 12
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.DatabaseConnectionString() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 224
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 14
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRanAsDate() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 207
+   at MySettingsAlternate.Classes.ApplicationSettings.LastRan() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 204
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 16
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 18
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.GetIncomingFolder() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 167
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.MainWindowTitle() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 174
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 62
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsDateTime(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 75
+   at MySettingsAlternate.Classes.ApplicationSettings.Application() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 232
+   at MySettingsAlternate.MainForm.PopulateApplicationListView() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 179
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 29
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
+
+11/8/2020 2:45:51 PM
+Configuration system failed to initialize
+   at System.Configuration.ConfigurationManager.PrepareConfigSystem()
+   at System.Configuration.ConfigurationManager.get_AppSettings()
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 36
+   at MySettingsAlternate.Classes.ApplicationSettings.GetSettingAsString(String configKey) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 44
+   at MySettingsAlternate.Classes.ApplicationSettings.IsTestMode() in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\Classes\ApplicationSettings.vb:line 214
+   at MySettingsAlternate.MainForm.Form1_Shown(Object sender, EventArgs e) in C:\OED\Dotnetland\vbGettingStarted\MySettingsAlternate\MainForm.vb:line 31
+   at MySettingsAlternate.My.MyApplication.Main(String[] Args) in :line 81
