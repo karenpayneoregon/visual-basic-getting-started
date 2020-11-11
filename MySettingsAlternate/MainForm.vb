@@ -3,6 +3,8 @@ Imports System.Configuration
 Imports System.IO
 Imports System.Text
 Imports MySettingsAlternate.Classes
+Imports MySettingsAlternate.Classes.Json
+
 ''' <summary>
 ''' Note, throughout the code My.Settings and raw operations with app.config are done
 ''' to show either way can be used.
@@ -28,6 +30,8 @@ Public Class MainForm
         AddHandler ApplicationSettings.OnSettingsErrorEvent, AddressOf SettingsException
         AddHandler ApplicationSettings.OnGetKeyErrorEvent, AddressOf GetException
 
+        FileOperations.MockUp()
+
         PopulateApplicationListView()
 
         If ApplicationSettings.IsTestMode() Then
@@ -38,6 +42,15 @@ Public Class MainForm
         AddHandler ApplicationSettings.OnSettingChangedEvent, AddressOf GettingChanged
         MailItemsComboBox.DataSource = My.Settings.MailAddresses
     End Sub
+    ''' <summary>
+    ''' Record when this application last ran
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        My.Settings.SetLastRunDate()
+    End Sub
+
     ''' <summary>
     ''' Display settings. If TestMode has changed we need to unsubscribe else will
     ''' end up with a recursive call thus a StackOverflowException exception,
@@ -110,7 +123,8 @@ Public Class MainForm
     ''' <param name="e"></param>
     Private Sub UpdateWindowTitleButton_Click(sender As Object, e As EventArgs) Handles UpdateWindowTitleButton.Click
         If Not String.IsNullOrWhiteSpace(WindowTitleTextBox.Text) Then
-            Dim originalValue = ApplicationSettings.MainWindowTitle()
+
+            My.Settings.SetMainWindowTitleJson(WindowTitleTextBox.Text)
 
             If ApplicationSettings.SetMainWindowTitle(WindowTitleTextBox.Text) Then
                 Dim currentValue = ApplicationSettings.MainWindowTitle()
@@ -156,14 +170,6 @@ Public Class MainForm
         Else
             MessageBox.Show("Log file does not exists!")
         End If
-    End Sub
-    ''' <summary>
-    ''' Record when this application last ran
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        My.Settings.SetLastRan()
     End Sub
 
     Private Sub MyApplicationPropertiesButton_Click(sender As Object, e As EventArgs) Handles MyApplicationPropertiesButton.Click
@@ -274,5 +280,14 @@ Public Class MainForm
     Private Sub CurrentMailItemButton_Click(sender As Object, e As EventArgs) Handles CurrentMailItemButton.Click
         Dim mailItem = CType(MailItemsComboBox.SelectedItem, MailItem)
         MessageBox.Show($"From: [{mailItem.From}]{Environment.NewLine}User name: [{mailItem.UserName}]")
+    End Sub
+
+    Private Sub ReadJsonButton_Click(sender As Object, e As EventArgs) Handles ReadJsonButton.Click
+        Dim settings = My.Settings.ReadJsonSetting
+        Console.WriteLine(My.Settings.MainWindowTitleJson)
+    End Sub
+
+    Private Sub GetMainWindowTitleJsonButton_Click(sender As Object, e As EventArgs) Handles GetMainWindowTitleJsonButton.Click
+        MessageBox.Show($"This window title fron Json{vbCr}[{My.Settings.MainWindowTitleJson}]")
     End Sub
 End Class

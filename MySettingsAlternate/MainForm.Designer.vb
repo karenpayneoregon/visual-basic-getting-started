@@ -42,6 +42,7 @@ Partial Class MainForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TestBoxCheckBox = New System.Windows.Forms.CheckBox()
         Me.MailItemsComboBox = New System.Windows.Forms.ComboBox()
+        Me.ReadJsonButton = New System.Windows.Forms.Button()
         Me.CurrentMailItemButton = New System.Windows.Forms.Button()
         Me.GetMyApplicationDynamicallyButton = New System.Windows.Forms.Button()
         Me.KeyExistsButton = New System.Windows.Forms.Button()
@@ -53,6 +54,7 @@ Partial Class MainForm
         Me.CrashOnSetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.CrashOnGetNonExistingKeyButton = New System.Windows.Forms.Button()
         Me.IncomingFolderButton = New System.Windows.Forms.Button()
+        Me.GetMainWindowTitleJsonButton = New System.Windows.Forms.Button()
         Me.ApplicationPropertiesGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -230,6 +232,17 @@ Partial Class MainForm
         Me.MailItemsComboBox.Size = New System.Drawing.Size(254, 21)
         Me.MailItemsComboBox.TabIndex = 28
         '
+        'ReadJsonButton
+        '
+        Me.ReadJsonButton.Image = Global.MySettingsAlternate.My.Resources.Resources.json_file
+        Me.ReadJsonButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReadJsonButton.Location = New System.Drawing.Point(672, 9)
+        Me.ReadJsonButton.Name = "ReadJsonButton"
+        Me.ReadJsonButton.Size = New System.Drawing.Size(176, 23)
+        Me.ReadJsonButton.TabIndex = 30
+        Me.ReadJsonButton.Text = "Read json config"
+        Me.ReadJsonButton.UseVisualStyleBackColor = True
+        '
         'CurrentMailItemButton
         '
         Me.CurrentMailItemButton.Image = Global.MySettingsAlternate.My.Resources.Resources.Mail_16x
@@ -353,11 +366,24 @@ Partial Class MainForm
         Me.IncomingFolderButton.Text = "Update Incoming folder"
         Me.IncomingFolderButton.UseVisualStyleBackColor = True
         '
+        'GetMainWindowTitleJsonButton
+        '
+        Me.GetMainWindowTitleJsonButton.Image = Global.MySettingsAlternate.My.Resources.Resources.json_file
+        Me.GetMainWindowTitleJsonButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GetMainWindowTitleJsonButton.Location = New System.Drawing.Point(672, 40)
+        Me.GetMainWindowTitleJsonButton.Name = "GetMainWindowTitleJsonButton"
+        Me.GetMainWindowTitleJsonButton.Size = New System.Drawing.Size(176, 23)
+        Me.GetMainWindowTitleJsonButton.TabIndex = 31
+        Me.GetMainWindowTitleJsonButton.Text = "Main window title"
+        Me.GetMainWindowTitleJsonButton.UseVisualStyleBackColor = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(623, 669)
+        Me.ClientSize = New System.Drawing.Size(860, 669)
+        Me.Controls.Add(Me.GetMainWindowTitleJsonButton)
+        Me.Controls.Add(Me.ReadJsonButton)
         Me.Controls.Add(Me.CurrentMailItemButton)
         Me.Controls.Add(Me.MailItemsComboBox)
         Me.Controls.Add(Me.GetMyApplicationDynamicallyButton)
@@ -425,4 +451,6 @@ Partial Class MainForm
     Friend WithEvents GetMyApplicationDynamicallyButton As Button
     Friend WithEvents MailItemsComboBox As ComboBox
     Friend WithEvents CurrentMailItemButton As Button
+    Friend WithEvents ReadJsonButton As Button
+    Friend WithEvents GetMainWindowTitleJsonButton As Button
 End Class

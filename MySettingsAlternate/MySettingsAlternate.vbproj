@@ -48,6 +48,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -80,6 +83,8 @@
     <Compile Include="Classes\Category.vb" />
     <Compile Include="Classes\DataOperations.vb" />
     <Compile Include="Classes\Exceptions.vb" />
+    <Compile Include="Classes\Json\MyAppllicationJson.vb" />
+    <Compile Include="Classes\Json\FileOperations.vb" />
     <Compile Include="Classes\MailConfiguration.vb" />
     <Compile Include="Classes\MyApplication.vb" />
     <Compile Include="Classes\PropertyExtension.vb" />
@@ -142,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\MySettingsAlternate.exe.config" />
+    <None Include="Classes\Json\readme.md" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -152,6 +158,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +185,8 @@
   <ItemGroup>
     <None Include="Resources\Mail_16x.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\json-file.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
