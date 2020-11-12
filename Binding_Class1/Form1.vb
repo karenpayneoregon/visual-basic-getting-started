@@ -1,37 +1,37 @@
 ﻿Imports System.ComponentModel
+Imports Binding_Class1.Classes
 
 Public Class Form1
     Private _itemBindingList As New BindingList(Of Item)
     Private ReadOnly _itemBindingSource As New BindingSource
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
-        Dim items = New List(Of Item) From {
-                New Item() With {.Value1 = 100000000D, .Value2 = 100400000D},
-                New Item() With {.Value1 = 200000000D, .Value2 = 200500000D},
-                New Item() With {.Value1 = 300000000D, .Value2 = 300500000D}}
-
-        _itemBindingList = New BindingList(Of Item)(items)
+        _itemBindingList = New BindingList(Of Item)(MockUpItems.ItemsList())
         _itemBindingSource.DataSource = _itemBindingList
 
         BindingNavigator1.BindingSource = _itemBindingSource
 
-        Dim b As Binding = New Binding("Text", _itemBindingSource, "Value1")
-        AddHandler b.Format, AddressOf FormatDouble
-        Value1TextBox.DataBindings.Add(b)
+        Dim binding As Binding = New Binding("Text", _itemBindingSource, "Value1")
+        AddHandler binding.Format, AddressOf FormatDouble
+        Value1TextBox.DataBindings.Add(binding)
 
-        b = New Binding("Text", _itemBindingSource, "Value2")
-        AddHandler b.Format, AddressOf FormatDouble
-        Value2TextBox.DataBindings.Add(b)
+        binding = New Binding("Text", _itemBindingSource, "Value2")
+        AddHandler binding.Format, AddressOf FormatDouble
+        Value2TextBox.DataBindings.Add(binding)
 
     End Sub
-
+    ''' <summary>
+    ''' Format Doubles
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub FormatDouble(sender As Object, e As ConvertEventArgs)
 
         If e.DesiredType IsNot GetType(String) Then
             Exit Sub
         End If
 
-        e.Value = CType(e.Value, Double).ToString("N1")
+        e.Value = CType(e.Value, Double).ToString("N2")
 
     End Sub
 End Class
