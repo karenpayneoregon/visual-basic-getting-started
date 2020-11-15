@@ -28,15 +28,6 @@ Partial Class MainForm
         Me.InformationButton = New System.Windows.Forms.Button()
         Me.CurrentButton = New System.Windows.Forms.Button()
         Me.CustomersDataGridView = New System.Windows.Forms.DataGridView()
-        Me.CompanyNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContactTitleColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.FirstNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StreetColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RegionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PostalCodeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CountryColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.CustomersNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -49,6 +40,15 @@ Partial Class MainForm
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.CompanyNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContactTitleColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.FirstNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StreetColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RegionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PostalCodeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CountryColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.CustomersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,62 +92,6 @@ Partial Class MainForm
         Me.CustomersDataGridView.Name = "CustomersDataGridView"
         Me.CustomersDataGridView.Size = New System.Drawing.Size(991, 375)
         Me.CustomersDataGridView.TabIndex = 1
-        '
-        'CompanyNameColumn
-        '
-        Me.CompanyNameColumn.DataPropertyName = "CompanyName"
-        Me.CompanyNameColumn.HeaderText = "Name"
-        Me.CompanyNameColumn.Name = "CompanyNameColumn"
-        '
-        'ContactTitleColumn
-        '
-        Me.ContactTitleColumn.DataPropertyName = "ContactTitle"
-        Me.ContactTitleColumn.HeaderText = "Title"
-        Me.ContactTitleColumn.Name = "ContactTitleColumn"
-        '
-        'FirstNameColumn
-        '
-        Me.FirstNameColumn.DataPropertyName = "FirstName"
-        Me.FirstNameColumn.HeaderText = "First"
-        Me.FirstNameColumn.Name = "FirstNameColumn"
-        '
-        'LastColumn
-        '
-        Me.LastColumn.DataPropertyName = "LastName"
-        Me.LastColumn.HeaderText = "Last"
-        Me.LastColumn.Name = "LastColumn"
-        '
-        'StreetColumn
-        '
-        Me.StreetColumn.DataPropertyName = "Street"
-        Me.StreetColumn.HeaderText = "Street"
-        Me.StreetColumn.Name = "StreetColumn"
-        '
-        'CityColumn
-        '
-        Me.CityColumn.DataPropertyName = "City"
-        Me.CityColumn.HeaderText = "City"
-        Me.CityColumn.Name = "CityColumn"
-        '
-        'RegionColumn
-        '
-        Me.RegionColumn.DataPropertyName = "Region"
-        Me.RegionColumn.HeaderText = "Region"
-        Me.RegionColumn.Name = "RegionColumn"
-        '
-        'PostalCodeColumn
-        '
-        Me.PostalCodeColumn.DataPropertyName = "PostalCode"
-        Me.PostalCodeColumn.HeaderText = "Zip"
-        Me.PostalCodeColumn.Name = "PostalCodeColumn"
-        '
-        'CountryColumn
-        '
-        Me.CountryColumn.DataPropertyName = "CountryName"
-        Me.CountryColumn.HeaderText = "Country"
-        Me.CountryColumn.Name = "CountryColumn"
-        Me.CountryColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CountryColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'CustomersNavigator
         '
@@ -251,6 +195,63 @@ Partial Class MainForm
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
+        'CompanyNameColumn
+        '
+        Me.CompanyNameColumn.DataPropertyName = "CompanyName"
+        Me.CompanyNameColumn.HeaderText = "Name"
+        Me.CompanyNameColumn.Name = "CompanyNameColumn"
+        '
+        'ContactTitleColumn
+        '
+        Me.ContactTitleColumn.DataPropertyName = "ContactTitle"
+        Me.ContactTitleColumn.HeaderText = "Title"
+        Me.ContactTitleColumn.Name = "ContactTitleColumn"
+        Me.ContactTitleColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'FirstNameColumn
+        '
+        Me.FirstNameColumn.DataPropertyName = "FirstName"
+        Me.FirstNameColumn.HeaderText = "First"
+        Me.FirstNameColumn.Name = "FirstNameColumn"
+        '
+        'LastColumn
+        '
+        Me.LastColumn.DataPropertyName = "LastName"
+        Me.LastColumn.HeaderText = "Last"
+        Me.LastColumn.Name = "LastColumn"
+        '
+        'StreetColumn
+        '
+        Me.StreetColumn.DataPropertyName = "Street"
+        Me.StreetColumn.HeaderText = "Street"
+        Me.StreetColumn.Name = "StreetColumn"
+        '
+        'CityColumn
+        '
+        Me.CityColumn.DataPropertyName = "City"
+        Me.CityColumn.HeaderText = "City"
+        Me.CityColumn.Name = "CityColumn"
+        '
+        'RegionColumn
+        '
+        Me.RegionColumn.DataPropertyName = "Region"
+        Me.RegionColumn.HeaderText = "Region"
+        Me.RegionColumn.Name = "RegionColumn"
+        '
+        'PostalCodeColumn
+        '
+        Me.PostalCodeColumn.DataPropertyName = "PostalCode"
+        Me.PostalCodeColumn.HeaderText = "Zip"
+        Me.PostalCodeColumn.Name = "PostalCodeColumn"
+        '
+        'CountryColumn
+        '
+        Me.CountryColumn.DataPropertyName = "CountryName"
+        Me.CountryColumn.HeaderText = "Country"
+        Me.CountryColumn.Name = "CountryColumn"
+        Me.CountryColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CountryColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -274,15 +275,6 @@ Partial Class MainForm
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents CustomersDataGridView As DataGridView
-    Friend WithEvents CompanyNameColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ContactTitleColumn As DataGridViewComboBoxColumn
-    Friend WithEvents FirstNameColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LastColumn As DataGridViewTextBoxColumn
-    Friend WithEvents StreetColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CityColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RegionColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PostalCodeColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CountryColumn As DataGridViewComboBoxColumn
     Friend WithEvents CurrentButton As Button
     Friend WithEvents CustomersNavigator As BindingNavigator
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
@@ -297,4 +289,13 @@ Partial Class MainForm
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
     Friend WithEvents InformationButton As Button
+    Friend WithEvents CompanyNameColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ContactTitleColumn As DataGridViewComboBoxColumn
+    Friend WithEvents FirstNameColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LastColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StreetColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CityColumn As DataGridViewTextBoxColumn
+    Friend WithEvents RegionColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PostalCodeColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CountryColumn As DataGridViewComboBoxColumn
 End Class
