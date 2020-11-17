@@ -60,6 +60,7 @@ Public Class MainForm
         ContactTitleColumn.DisplayMember = "ContactTitle"
         ContactTitleColumn.ValueMember = "ContactTypeIdentifier"
         ContactTitleColumn.DataPropertyName = "ContactTypeIdentifier"
+        ContactTitleColumn.DropDownWidth = 155
 
         _titleComboBoxBindingSource.DataSource = Operations.ContactTypeDataTable()
 
