@@ -199,6 +199,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "json code samples", "json c
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DeserializeJson_1", "DeserializeJson_1\DeserializeJson_1.vbproj", "{731928E7-40F3-4371-B688-DFCC6387C7E4}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RecurseFolders", "RecurseFolders\RecurseFolders.vbproj", "{4F4D2D8E-D2C4-439E-9881-6301B859D6B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -469,6 +471,10 @@ Global
 		{731928E7-40F3-4371-B688-DFCC6387C7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{731928E7-40F3-4371-B688-DFCC6387C7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{731928E7-40F3-4371-B688-DFCC6387C7E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F4D2D8E-D2C4-439E-9881-6301B859D6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4D2D8E-D2C4-439E-9881-6301B859D6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4D2D8E-D2C4-439E-9881-6301B859D6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4D2D8E-D2C4-439E-9881-6301B859D6B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -556,6 +562,7 @@ Global
 		{E6EA89C5-A077-4645-99A6-0608802F5B1F} = {729B6ECF-1FFE-49C6-B0C8-B3153905271B}
 		{3D7D31D0-80E6-4B72-B7FC-2AFEDC8CE399} = {1CEF8D36-31EE-409A-B2E1-FC5E1ECBB866}
 		{731928E7-40F3-4371-B688-DFCC6387C7E4} = {3D7D31D0-80E6-4B72-B7FC-2AFEDC8CE399}
+		{4F4D2D8E-D2C4-439E-9881-6301B859D6B3} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
