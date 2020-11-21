@@ -6,6 +6,35 @@ Code sample which recursively iterates a folder structure.
 
 NuGet package [BetterFolderBrowser](https://www.nuget.org/packages/BetterFolderBrowser/) for selecting folders only thus is optional when using the code in this project in other projects.
 
+### Extract with Git
+
+To extract only projects needed for this code sample rather than entire repository.
+
+- Ensure [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed
+- Create a temp folder e.g. C:\GitExtractions
+- Create a batch file
+- Place below into the batch file, save
+- Run the batch file
+- Copy the two project folders into a Visual Studio solution
+- Perform a NuGet restore packages
+- Remove C:\GitExtractions\code folder
+
+```batch
+mkdir code
+cd code
+git init
+git remote add -f origin https://github.com/karenpayneoregon/visual-basic-getting-started
+git sparse-checkout init --cone
+git sparse-checkout add FileHelpers
+git pull origin master
+:clean-up
+del .gitattributes
+del .gitignore
+del *.md
+del *.sln
+```
+
+
 ### Visual Studio
 
 Coded in VS2017 and will work in VS2019, not tested in earlier releases of Visual Studio.
