@@ -48,3 +48,16 @@ Coded in VS2017 and will work in VS2019, not tested in earlier releases of Visua
 -  Events are hooked up once in form load.
 
 ![screen](../assets/recurseFolders.png)
+
+# Secondary example
+
+This example is basic, all code in a form with 
+
+-  Hard coded path
+-  Hard search for file type
+-  Unlike above results are shown when completed rather in time of operation
+-  Option to cancel
+
+Code was done in a form as many developer rather this than classes but separating code for iterating folders should be in it's own class.
+
+![screen1](../assets/recurseFolders_1.png)

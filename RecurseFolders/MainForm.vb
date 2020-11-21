@@ -3,7 +3,7 @@ Imports System.Threading
 Imports FileHelpers
 Imports RecurseFolders.Extensions
 
-Public Class Form1
+Public Class MainForm
     ''' <summary>
     ''' Provides an opportunity to cancel traversal of folders
     ''' </summary>
