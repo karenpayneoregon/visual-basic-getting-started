@@ -15,7 +15,7 @@ To extract only projects needed for this code sample rather than entire reposito
 - Create a batch file
 - Place below into the batch file, save
 - Run the batch file
-- Copy the two project folders into a Visual Studio solution
+- Copy the two project folders into a Visual Studio solution (using VS2019, if earlier add the projects to the solution)
 - Perform a NuGet restore packages
 - Remove C:\GitExtractions\code folder
 
