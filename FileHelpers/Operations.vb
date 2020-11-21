@@ -110,5 +110,31 @@ Public Class Operations
         End Try
 
     End Function
+    ''' <summary>
+    ''' Example that will run freely and the app will be unresponsive which
+    ''' is how many developers approach reading folders and only try with a smaller
+    ''' folder structure but larger structures will freeze the app thus we
+    ''' need to consider an asynchronous method.
+    ''' </summary>
+    ''' <param name="path"></param>
+    ''' <param name="indentLevel"></param>
+    Public Shared Sub RecursiveFolders(path As String, indentLevel As Integer)
+
+        Try
+            If (File.GetAttributes(path) And FileAttributes.ReparsePoint) <> FileAttributes.ReparsePoint Then
+
+                For Each folder As String In Directory.GetDirectories(path)
+                    Console.WriteLine($"{New String(" "c, indentLevel)}{IO.Path.GetFileName(folder)}")
+                    RecursiveFolders(folder, indentLevel + 2)
+                Next
+
+            End If
+        Catch unauthorized As UnauthorizedAccessException
+            '
+            ' Show folder which failed by deny access
+            '
+            Console.WriteLine($"{unauthorized.Message}")
+        End Try
+    End Sub
 
 End Class
