@@ -116,11 +116,12 @@ Public Class Operations
     ''' folder structure but larger structures will freeze the app thus we
     ''' need to consider an asynchronous method.
     ''' </summary>
-    ''' <param name="path"></param>
-    ''' <param name="indentLevel"></param>
+    ''' <param name="path">Folder to work with</param>
+    ''' <param name="indentLevel">Indent level for display with Console.WriteLine</param>
     Public Shared Sub RecursiveFolders(path As String, indentLevel As Integer)
 
         Try
+
             If (File.GetAttributes(path) And FileAttributes.ReparsePoint) <> FileAttributes.ReparsePoint Then
 
                 For Each folder As String In Directory.GetDirectories(path)
@@ -129,6 +130,7 @@ Public Class Operations
                 Next
 
             End If
+
         Catch unauthorized As UnauthorizedAccessException
             '
             ' Show folder which failed by deny access
