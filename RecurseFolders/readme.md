@@ -2,6 +2,10 @@
 
 Code sample which recursively iterates a folder structure.
 
+### Requires
+
+NuGet package [BetterFolderBrowser](https://www.nuget.org/packages/BetterFolderBrowser/) for selecting folders only thus is optional when using the code in this project in other projects.
+
 ### Visual Studio
 
 Coded in VS2017 and will work in VS2019, not tested in earlier releases of Visual Studio.

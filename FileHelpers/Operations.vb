@@ -56,52 +56,57 @@ Public Class Operations
     ''' Process directory tree
     ''' </summary>
     ''' <param name="baseDir">Full path</param>
-    ''' <param name="exclude">string array to filter what folders to exclude</param>
+    ''' <param name="excludeFileExtensions">string array to filter what folders to exclude</param>
     ''' <param name="ct"></param>
-    Public Shared Async Sub RecursiveFolders(baseDir As DirectoryInfo, exclude As String(), ct As CancellationToken)
+    Public Shared Async Function RecursiveFolders(baseDir As DirectoryInfo, excludeFileExtensions As String(), ct As CancellationToken) As Task
+
         If Not baseDir.Exists Then
             RaiseEvent OnTraverseEvent("Nothing to process")
             Return
         End If
 
-        If Not exclude.Any(AddressOf baseDir.FullName.Contains) Then
+        If Not excludeFileExtensions.Any(AddressOf baseDir.FullName.Contains) Then
+            Await Task.Delay(1)
             RaiseEvent OnTraverseEvent(baseDir.FullName)
         Else
             RaiseEvent OnTraverseExcludeFolderEvent(baseDir.FullName)
         End If
 
-        For Each dir As DirectoryInfo In baseDir.EnumerateDirectories()
-            Try
 
-                Dim folder = dir
+        Try
+            Await Task.Run(Async Function()
 
-                If Not Cancelled Then
+                               For Each dir As DirectoryInfo In baseDir.EnumerateDirectories()
+                                   Dim folder = dir
 
-                    Await Task.Run(Async Function()
-                                       Await Task.Delay(10)
-                                       RecursiveFolders(folder, exclude, ct)
-                                   End Function)
-                Else
-                    Return
-                End If
+                                   If Not Cancelled Then
 
+                                       Await Task.Delay(1)
+                                       Await RecursiveFolders(folder, excludeFileExtensions, ct)
 
-                If ct.IsCancellationRequested Then
-                    ct.ThrowIfCancellationRequested()
-                End If
+                                   Else
+                                       Return
+                                   End If
 
-            Catch ex As Exception
-                '
-                ' Only raise exceptions, not cancellation request
-                '
-                If TypeOf ex Is OperationCanceledException Then
-                    Cancelled = True
-                Else
-                    RaiseEvent OnExceptionEvent(ex)
-                End If
+                                   If ct.IsCancellationRequested Then
+                                       ct.ThrowIfCancellationRequested()
+                                   End If
 
-            End Try
-        Next
-    End Sub
+                               Next
+
+                           End Function)
+
+        Catch ex As Exception
+            '
+            ' Only raise exceptions, not cancellation request
+            '
+            If TypeOf ex Is OperationCanceledException Then
+                Cancelled = True
+            Else
+                RaiseEvent OnExceptionEvent(ex)
+            End If
+        End Try
+
+    End Function
 
 End Class

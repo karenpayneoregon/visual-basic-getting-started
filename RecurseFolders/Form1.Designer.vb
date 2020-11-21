@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TraverseButton = New System.Windows.Forms.Button()
         Me.ExcludeListBox = New System.Windows.Forms.ListBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -30,6 +31,9 @@ Partial Class Form1
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.ExceptionsListBox = New System.Windows.Forms.ListBox()
         Me.CancelButton = New System.Windows.Forms.Button()
+        Me.FolderTextBox = New System.Windows.Forms.TextBox()
+        Me.FolderBrowser = New WK.Libraries.BetterFolderBrowserNS.BetterFolderBrowser(Me.components)
+        Me.SelectFolderButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -55,7 +59,7 @@ Partial Class Form1
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ExcludeListBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 69)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 105)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(583, 159)
         Me.GroupBox1.TabIndex = 2
@@ -65,7 +69,7 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.IncludedListBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 234)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 274)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(583, 159)
         Me.GroupBox2.TabIndex = 3
@@ -83,7 +87,7 @@ Partial Class Form1
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.ExceptionsListBox)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 399)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 447)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(583, 159)
         Me.GroupBox3.TabIndex = 4
@@ -107,11 +111,35 @@ Partial Class Form1
         Me.CancelButton.Text = "Cancel"
         Me.CancelButton.UseVisualStyleBackColor = True
         '
+        'FolderTextBox
+        '
+        Me.FolderTextBox.Location = New System.Drawing.Point(12, 56)
+        Me.FolderTextBox.Name = "FolderTextBox"
+        Me.FolderTextBox.Size = New System.Drawing.Size(531, 20)
+        Me.FolderTextBox.TabIndex = 6
+        '
+        'FolderBrowser
+        '
+        Me.FolderBrowser.Multiselect = False
+        Me.FolderBrowser.RootFolder = "C:\Users\paynek\Desktop"
+        Me.FolderBrowser.Title = "Please select a folder..."
+        '
+        'SelectFolderButton
+        '
+        Me.SelectFolderButton.Image = Global.RecurseFolders.My.Resources.Resources.Folder_16x
+        Me.SelectFolderButton.Location = New System.Drawing.Point(549, 53)
+        Me.SelectFolderButton.Name = "SelectFolderButton"
+        Me.SelectFolderButton.Size = New System.Drawing.Size(49, 23)
+        Me.SelectFolderButton.TabIndex = 7
+        Me.SelectFolderButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(608, 571)
+        Me.ClientSize = New System.Drawing.Size(608, 617)
+        Me.Controls.Add(Me.SelectFolderButton)
+        Me.Controls.Add(Me.FolderTextBox)
         Me.Controls.Add(Me.CancelButton)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -125,6 +153,7 @@ Partial Class Form1
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -136,4 +165,7 @@ Partial Class Form1
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents ExceptionsListBox As ListBox
     Friend WithEvents CancelButton As Button
+    Friend WithEvents FolderTextBox As TextBox
+    Friend WithEvents FolderBrowser As WK.Libraries.BetterFolderBrowserNS.BetterFolderBrowser
+    Friend WithEvents SelectFolderButton As Button
 End Class
