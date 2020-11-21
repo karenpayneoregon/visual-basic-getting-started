@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Threading
 Imports FileHelpers
+Imports RecurseFolders.Extensions
 
 Public Class Form1
     ''' <summary>
