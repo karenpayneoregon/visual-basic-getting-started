@@ -29,54 +29,56 @@ Public Class Operations
     ''' For traversing folders, if a cancellation is requested stop processing folders.
     ''' </summary>
     Public Shared Cancelled As Boolean = False
+    ''' <summary>
+    ''' Base template for removing a folder structure. Unlike RecursiveFolders
+    ''' which has cancellation and error trapping this procedure does not but with a
+    ''' little effort it can.
+    ''' </summary>
+    ''' <param name="directoryInformation"></param>
+    Public Shared Sub RecursiveDelete(directoryInformation As DirectoryInfo)
 
-    Public Shared Sub RecursiveDelete(baseDir As DirectoryInfo)
-
-        If Not baseDir.Exists Then
+        If Not directoryInformation.Exists Then
             RaiseEvent OnDeleteEvent("Nothing to process")
             Return
         End If
 
-        RaiseEvent OnDeleteEvent(baseDir.Name)
+        RaiseEvent OnDeleteEvent(directoryInformation.Name)
 
-        For Each dir As DirectoryInfo In baseDir.EnumerateDirectories()
+        For Each dir As DirectoryInfo In directoryInformation.EnumerateDirectories()
             Try
                 RecursiveDelete(dir)
             Catch ex As Exception
-
-
                 RaiseEvent OnExceptionEvent(ex)
             End Try
         Next
 
-        baseDir.Delete(True)
+        directoryInformation.Delete(True)
 
     End Sub
     ''' <summary>
     ''' Process directory tree
     ''' </summary>
-    ''' <param name="baseDir">Full path</param>
+    ''' <param name="directoryInfo">Full path wrapped in a DirectoryInfo variable</param>
     ''' <param name="excludeFileExtensions">string array to filter what folders to exclude</param>
     ''' <param name="ct"></param>
-    Public Shared Async Function RecursiveFolders(baseDir As DirectoryInfo, excludeFileExtensions As String(), ct As CancellationToken) As Task
+    Public Shared Async Function RecursiveFolders(directoryInfo As DirectoryInfo, excludeFileExtensions As String(), ct As CancellationToken) As Task
 
-        If Not baseDir.Exists Then
+        If Not directoryInfo.Exists Then
             RaiseEvent OnTraverseEvent("Nothing to process")
             Return
         End If
 
-        If Not excludeFileExtensions.Any(AddressOf baseDir.FullName.Contains) Then
+        If Not excludeFileExtensions.Any(AddressOf directoryInfo.FullName.Contains) Then
             Await Task.Delay(1)
-            RaiseEvent OnTraverseEvent(baseDir.FullName)
+            RaiseEvent OnTraverseEvent(directoryInfo.FullName)
         Else
-            RaiseEvent OnTraverseExcludeFolderEvent(baseDir.FullName)
+            RaiseEvent OnTraverseExcludeFolderEvent(directoryInfo.FullName)
         End If
-
 
         Try
             Await Task.Run(Async Function()
 
-                               For Each dir As DirectoryInfo In baseDir.EnumerateDirectories()
+                               For Each dir As DirectoryInfo In directoryInfo.EnumerateDirectories()
                                    Dim folder = dir
 
                                    If Not Cancelled Then
