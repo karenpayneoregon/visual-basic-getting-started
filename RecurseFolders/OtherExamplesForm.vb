@@ -36,9 +36,10 @@ Public Class OtherExamplesForm
         Try
 
             Await Task.Run(Async Function()
+
                                Do While (stack.Count > 0)
 
-                                   Dim strDirectory As String = stack.Pop
+                                   Dim directory As String = stack.Pop
                                    Await Task.Delay(1)
 
                                    If _cts.IsCancellationRequested Then
@@ -47,10 +48,10 @@ Public Class OtherExamplesForm
 
                                    Try
 
-                                       _resultList.AddRange(Directory.GetFiles(strDirectory, "*.dll"))
+                                       _resultList.AddRange(IO.Directory.GetFiles(directory, "*.dll"))
 
                                        Dim strDirectoryName As String
-                                       For Each strDirectoryName In Directory.GetDirectories(strDirectory)
+                                       For Each strDirectoryName In IO.Directory.GetDirectories(directory)
                                            stack.Push(strDirectoryName)
                                        Next
 
@@ -58,6 +59,7 @@ Public Class OtherExamplesForm
                                        _exceptionList.Add(ex.Message)
                                    End Try
                                Loop
+
                            End Function)
 
         Catch ex As OperationCanceledException
