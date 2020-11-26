@@ -12,7 +12,7 @@ Namespace Classes
     Public Class FileOperations
         ''' <summary>
         ''' This is the same default buffer size as
-        ''' <see cref="StreamReader"/> and <see cref="IO.FileStream"/>.
+        ''' <see cref="StreamReader"/> and <see cref="FileStream"/>.
         ''' </summary>
         Private Const DefaultBufferSize As Integer = 4096
 
@@ -30,15 +30,15 @@ Namespace Classes
         ''' object which throw the exception e.g. file missing, incorrect column count, conversion
         ''' issue.
         ''' </summary>
-        ''' <param name="FileName"></param>
+        ''' <param name="fileName"></param>
         ''' <returns></returns>
-        Public Shared Function ReadAllLinesWithFileReadLines(FileName As String, CountryList As List(Of Country)) As (List As List(Of Customer), Exception As Exception)
+        Public Shared Function ReadAllLinesWithFileReadLines(fileName As String, countryList As List(Of Country)) As (List As List(Of Customer), Exception As Exception)
 
             Dim customers = New List(Of Customer)()
 
             Try
 
-                Dim lines = File.ReadAllLines(FileName)
+                Dim lines = File.ReadAllLines(fileName)
 
                 For Each line As String In lines
 
@@ -53,7 +53,7 @@ Namespace Classes
                     '
                     ' Get country name from country identifier
                     '
-                    Dim currentCountryName = CountryList.FirstOrDefault(Function(country) country.CountryIdentifier = countryId).Name
+                    Dim currentCountryName = countryList.FirstOrDefault(Function(country) country.CountryIdentifier = countryId).Name
 
                     customers.Add(New Customer() With {
                                      .CustomerIdentifier = Convert.ToInt32(lineParts(0)),
@@ -78,13 +78,13 @@ Namespace Classes
         ''' <summary>
         ''' Read country id and name into a strong type list of Country
         ''' </summary>
-        ''' <param name="FileName"></param>
+        ''' <param name="fileName"></param>
         ''' <returns></returns>
-        Public Shared Function GetCountryList(FileName As String) As List(Of Country)
+        Public Shared Function GetCountryList(fileName As String) As List(Of Country)
 
             Try
 
-                Return File.ReadAllLines(FileName).Select(
+                Return File.ReadAllLines(fileName).Select(
                 Function(country)
                     Dim linePart() As String
 
@@ -105,14 +105,14 @@ Namespace Classes
         ''' lines in unless using .Skip and/or .Take which can be a performance hit
         ''' on the application.
         ''' </summary>
-        ''' <param name="FileName"></param>
+        ''' <param name="fileName"></param>
         ''' <returns></returns>
-        Public Shared Function ReadAllLinesWithFileStream(FileName As String) As List(Of Customer)
+        Public Shared Function ReadAllLinesWithFileStream(fileName As String) As List(Of Customer)
             Dim customers = New List(Of Customer)()
 
             ' Open the FileStream with the same FileMode, FileAccess
             ' and FileShare as a call to File.OpenText would've done.
-            Using stream = New FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.Read, DefaultBufferSize, DefaultOptions)
+            Using stream = New FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read, DefaultBufferSize, DefaultOptions)
                 Using reader = New StreamReader(stream)
                     Dim line As String
 
@@ -141,13 +141,13 @@ Namespace Classes
         ''' asynchronous which can keep the app responsive yet will slow
         ''' down the entire process.
         ''' </summary>
-        ''' <param name="FileName"></param>
-        ''' <param name="Encoding"></param>
+        ''' <param name="fileName"></param>
+        ''' <param name="encoding"></param>
         ''' <returns></returns>
-        Public Shared Async Function ReadAllLinesWithFileStreamAsync(FileName As String, Encoding As Encoding) As Task(Of Customer())
+        Public Shared Async Function ReadAllLinesWithFileStreamAsync(fileName As String, encoding As Encoding) As Task(Of Customer())
             Dim customers = New List(Of Customer)()
 
-            Using stream = New FileStream(FileName, FileMode.Open, FileAccess.Read, FileShare.Read, DefaultBufferSize, DefaultOptions)
+            Using stream = New FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read, DefaultBufferSize, DefaultOptions)
                 Using reader = New StreamReader(stream)
                     Dim line As String
 
