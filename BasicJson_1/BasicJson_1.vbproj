@@ -77,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ApplicationStorage.vb" />
+    <Compile Include="Classes\Asset.vb" />
+    <Compile Include="Classes\AssetGrouping.vb" />
+    <Compile Include="Classes\AssetOperations.vb" />
     <Compile Include="Classes\FileOperations.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
