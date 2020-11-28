@@ -209,6 +209,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LogLibrary", "LogLibrary\Lo
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TraceListenerBasic", "TraceListenerBasic\TraceListenerBasic.vbproj", "{B807C57D-613E-480E-94CA-F5891D84FA94}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BindingWithoutRefreshing", "BindingWithoutRefreshing\BindingWithoutRefreshing.vbproj", "{A4A4874C-5686-479A-9D4A-F67E39F1155C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -499,6 +501,10 @@ Global
 		{B807C57D-613E-480E-94CA-F5891D84FA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B807C57D-613E-480E-94CA-F5891D84FA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B807C57D-613E-480E-94CA-F5891D84FA94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4A4874C-5686-479A-9D4A-F67E39F1155C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4A4874C-5686-479A-9D4A-F67E39F1155C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4A4874C-5686-479A-9D4A-F67E39F1155C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4A4874C-5686-479A-9D4A-F67E39F1155C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -591,6 +597,7 @@ Global
 		{94DFAA30-9BB8-41FD-9B3A-1529953018AC} = {CC385D56-7B75-400C-813F-A5D66374D47C}
 		{BF5E8BC4-164D-41C2-81CB-34093E27F751} = {CC385D56-7B75-400C-813F-A5D66374D47C}
 		{B807C57D-613E-480E-94CA-F5891D84FA94} = {32B5A642-AE30-42CE-AC43-A0123F0BAED6}
+		{A4A4874C-5686-479A-9D4A-F67E39F1155C} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
