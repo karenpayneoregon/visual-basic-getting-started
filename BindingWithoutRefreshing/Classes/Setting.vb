@@ -30,7 +30,7 @@ Namespace Classes
             Implements INotifyPropertyChanged.PropertyChanged
 
         Protected Overridable Sub OnPropertyChanged(
-                                                    <CallerMemberName> Optional memberName As String = Nothing)
+            <CallerMemberName> Optional memberName As String = Nothing)
             RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(memberName))
 
         End Sub
