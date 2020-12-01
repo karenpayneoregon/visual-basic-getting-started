@@ -14,7 +14,7 @@ Namespace Controls
         ''' Subscribe to be notified when ENTER was pressed.
         ''' </summary>
         Public Event TriggerEvent As TriggerDelegate
-        Protected Overrides Sub OnKeyDown(ByVal e As KeyEventArgs)
+        Protected Overrides Sub OnKeyDown(e As KeyEventArgs)
             If e.KeyCode = Keys.Enter Then
 
                 e.Handled = True
@@ -85,7 +85,7 @@ Namespace Controls
         ''' <param name="msg"></param>
         ''' <param name="keyData"></param>
         ''' <returns></returns>
-        Protected Overrides Function ProcessCmdKey(ByRef msg As Message, ByVal keyData As Keys) As Boolean
+        Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
             If keyData = Keys.Tab Then
                 If ToTitleCase Then
                     HandleCasing()
