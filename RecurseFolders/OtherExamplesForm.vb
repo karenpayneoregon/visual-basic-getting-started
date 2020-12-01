@@ -51,6 +51,7 @@ Public Class OtherExamplesForm
 
                                            For Each file As String In files
                                                Dim item = New ListViewItem(New String() {"", Path.GetFileName(file)})
+                                               item.Tag = directory
                                                ListView1.InvokeIfRequired(Sub(lv) lv.Items.Add(item))
                                            Next
 
@@ -84,5 +85,30 @@ Public Class OtherExamplesForm
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         _cts.Cancel()
+    End Sub
+    ''' <summary>
+    ''' Get current item
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub SelectedButton_Click(sender As Object, e As EventArgs) Handles SelectedButton.Click
+        If ListView1.Items.Count = 0 Then
+            Exit Sub
+        End If
+
+        Dim folder = ListView1.SelectedItems(0).Text
+        Dim fileName = ""
+        If ListView1.SelectedItems(0).SubItems.Count = 2 Then
+            fileName = ListView1.SelectedItems(0).SubItems(1).Text
+        Else
+            fileName = ""
+        End If
+
+        If String.IsNullOrWhiteSpace(folder) Then
+            folder = ListView1.SelectedItems(0).Tag.ToString()
+        End If
+
+        MessageBox.Show($"{folder}\{fileName}")
+
     End Sub
 End Class

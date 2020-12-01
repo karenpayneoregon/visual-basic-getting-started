@@ -30,6 +30,7 @@ Partial Class OtherExamplesForm
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ExceptionsListBox = New System.Windows.Forms.ListBox()
+        Me.SelectedButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -57,6 +58,7 @@ Partial Class OtherExamplesForm
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.SelectedButton)
         Me.Panel1.Controls.Add(Me.DeniedAccessCoveredButton)
         Me.Panel1.Controls.Add(Me.CancelButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -114,6 +116,16 @@ Partial Class OtherExamplesForm
         Me.ExceptionsListBox.Size = New System.Drawing.Size(608, 151)
         Me.ExceptionsListBox.TabIndex = 0
         '
+        'SelectedButton
+        '
+        Me.SelectedButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SelectedButton.Location = New System.Drawing.Point(521, 17)
+        Me.SelectedButton.Name = "SelectedButton"
+        Me.SelectedButton.Size = New System.Drawing.Size(75, 23)
+        Me.SelectedButton.TabIndex = 2
+        Me.SelectedButton.Text = "Selected"
+        Me.SelectedButton.UseVisualStyleBackColor = True
+        '
         'OtherExamplesForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -141,4 +153,5 @@ Partial Class OtherExamplesForm
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents SelectedButton As Button
 End Class
