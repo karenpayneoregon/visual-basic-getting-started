@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class OtherExamplesForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,15 @@ Partial Class OtherExamplesForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DeniedAccessCoveredButton = New System.Windows.Forms.Button()
         Me.CancelButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.ResultsListBox = New System.Windows.Forms.ListBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ExceptionsListBox = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +74,7 @@ Partial Class OtherExamplesForm
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.ResultsListBox)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.ListView1)
         '
         'SplitContainer1.Panel2
         '
@@ -81,14 +83,27 @@ Partial Class OtherExamplesForm
         Me.SplitContainer1.SplitterDistance = 152
         Me.SplitContainer1.TabIndex = 3
         '
-        'ResultsListBox
+        'ListView1
         '
-        Me.ResultsListBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ResultsListBox.FormattingEnabled = True
-        Me.ResultsListBox.Location = New System.Drawing.Point(0, 0)
-        Me.ResultsListBox.Name = "ResultsListBox"
-        Me.ResultsListBox.Size = New System.Drawing.Size(608, 152)
-        Me.ResultsListBox.TabIndex = 0
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.FullRowSelect = True
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(0, 0)
+        Me.ListView1.MultiSelect = False
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(608, 152)
+        Me.ListView1.TabIndex = 1
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Folder"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Files"
         '
         'ExceptionsListBox
         '
@@ -122,6 +137,8 @@ Partial Class OtherExamplesForm
     Friend WithEvents CancelButton As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents ResultsListBox As ListBox
     Friend WithEvents ExceptionsListBox As ListBox
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
 End Class

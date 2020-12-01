@@ -1,13 +1,12 @@
 ﻿Imports System.IO
 Imports System.Threading
+Imports RecurseFolders.Extensions
 
 Public Class OtherExamplesForm
     ''' <summary>
     ''' Provides an opportunity to cancel traversal of folders
     ''' </summary>
     Private _cts As New CancellationTokenSource()
-
-    Private _resultList As List(Of String)
     Private _exceptionList As List(Of String)
 
     ''' <summary>
@@ -22,24 +21,22 @@ Public Class OtherExamplesForm
             _cts = New CancellationTokenSource()
         End If
 
-        _resultList = New List(Of String)
-        ResultsListBox.DataSource = Nothing
-
         _exceptionList = New List(Of String)
         ExceptionsListBox.DataSource = Nothing
 
-        'Dim errorList As New List(Of String)
         Dim stack As New Stack(Of String)
 
-        stack.Push("C:\Users")
+        stack.Push(Environment.GetFolderPath(Environment.SpecialFolder.Desktop))
 
         Try
 
             Await Task.Run(Async Function()
 
                                Do While (stack.Count > 0)
-
                                    Dim directory As String = stack.Pop
+                                   Dim lvItem As New ListViewItem(directory)
+                                   ListView1.InvokeIfRequired(Sub(lv) lv.Items.Add(lvItem))
+
                                    Await Task.Delay(1)
 
                                    If _cts.IsCancellationRequested Then
@@ -48,11 +45,21 @@ Public Class OtherExamplesForm
 
                                    Try
 
-                                       _resultList.AddRange(IO.Directory.GetFiles(directory, "*.dll"))
+                                       Dim files = IO.Directory.GetFiles(directory, "*.*")
+
+                                       If files.Length > 0 Then
+
+                                           For Each file As String In files
+                                               Dim item = New ListViewItem(New String() {"", Path.GetFileName(file)})
+                                               ListView1.InvokeIfRequired(Sub(lv) lv.Items.Add(item))
+                                           Next
+
+                                       End If
 
                                        Dim strDirectoryName As String
                                        For Each strDirectoryName In IO.Directory.GetDirectories(directory)
                                            stack.Push(strDirectoryName)
+
                                        Next
 
                                    Catch ex As UnauthorizedAccessException
@@ -62,12 +69,16 @@ Public Class OtherExamplesForm
 
                            End Function)
 
+            ExceptionsListBox.DataSource = _exceptionList
+
+            ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
+            ListView1.FocusedItem = ListView1.Items(0)
+            ListView1.Items(0).Selected = True
+            ActiveControl = ListView1
+
         Catch ex As OperationCanceledException
             MessageBox.Show($"Cancelled")
         End Try
-
-        ResultsListBox.DataSource = _resultList
-        ExceptionsListBox.DataSource = _exceptionList
 
     End Sub
 
