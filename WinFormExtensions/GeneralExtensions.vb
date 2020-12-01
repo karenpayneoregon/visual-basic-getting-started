@@ -1,4 +1,6 @@
-﻿Public Module GeneralExtensions
+﻿Imports System.Globalization
+
+Public Module GeneralExtensions
 
     ''' <summary>
     ''' Convert number to letter
@@ -24,6 +26,18 @@
         End If
 
         Return columnName
+
+    End Function
+    ''' <summary>
+    ''' Convert string to title case e.g. mary m jones to Mary M Jones
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="cultureIdentifier"></param>
+    ''' <returns></returns>
+    <Runtime.CompilerServices.Extension>
+    Public Function ToTitleCase(sender As String, Optional cultureIdentifier As String = "en-US") As String
+        Dim textInfo As TextInfo = (New CultureInfo(cultureIdentifier, False)).TextInfo
+        Return textInfo.ToTitleCase(sender)
 
     End Function
 End Module
