@@ -217,6 +217,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Working with strings", "Wor
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TitleCaseCodeSample", "TitleCaseCodeSample\TitleCaseCodeSample.vbproj", "{4397BFA6-9E3D-4FAA-BEED-652B969CB0BE}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataTableOnDelete", "DataTableOnDelete\DataTableOnDelete.vbproj", "{2C473742-A022-4CEE-B803-1C75285F6F6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -519,6 +521,10 @@ Global
 		{4397BFA6-9E3D-4FAA-BEED-652B969CB0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4397BFA6-9E3D-4FAA-BEED-652B969CB0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4397BFA6-9E3D-4FAA-BEED-652B969CB0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C473742-A022-4CEE-B803-1C75285F6F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C473742-A022-4CEE-B803-1C75285F6F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C473742-A022-4CEE-B803-1C75285F6F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C473742-A022-4CEE-B803-1C75285F6F6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -615,6 +621,7 @@ Global
 		{4BFBB97A-153E-43AA-AF4E-4207E2EFBBFC} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
 		{D9AF76F9-FC65-4E49-8799-E92B4EF98C58} = {2EA0779D-72E1-4205-9617-F173EDCD1633}
 		{4397BFA6-9E3D-4FAA-BEED-652B969CB0BE} = {D9AF76F9-FC65-4E49-8799-E92B4EF98C58}
+		{2C473742-A022-4CEE-B803-1C75285F6F6C} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}

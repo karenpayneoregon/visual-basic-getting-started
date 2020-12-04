@@ -145,6 +145,7 @@ Public Class Form1
                                 Dim fullName = Path.Combine(extractPath, entry.FullName).Replace("/", "\")
 
                                 Dim currentPath = Path.GetDirectoryName(fullName)
+                                Console.WriteLine(currentPath)
                                 If Not Directory.Exists(currentPath) Then
                                     Directory.CreateDirectory(currentPath)
                                 End If
@@ -277,5 +278,39 @@ Public Class Form1
             MessageBox.Show("Please select a folder first")
         End If
 
+    End Sub
+
+    Private Sub ZipContentsButton_Click(sender As Object, e As EventArgs) Handles ZipContentsButton.Click
+        Dim containers = New List(Of ResultContainer)
+        Dim newItem As Boolean
+
+        Dim dictionary = ZipHelpers.GetFiles(File.ReadAllBytes("C:\OED\Dotnetland\vbGettingStarted\ExtractFilesWithProgress\bin\Debug\SampleZip.zip"))
+
+        Dim currentContainer = New ResultContainer
+
+        For Each keyValuePair As KeyValuePair(Of String, Byte()) In dictionary
+            Dim folderName = Path.GetDirectoryName(keyValuePair.Key)
+
+            If String.IsNullOrWhiteSpace(folderName) Then
+                folderName = "(root)"
+            End If
+
+            currentContainer = containers.FirstOrDefault(Function(item) item.FolderName = folderName)
+            If currentContainer Is Nothing Then
+                currentContainer = New ResultContainer With {.FolderName = folderName}
+                newItem = True
+            Else
+                newItem = False
+            End If
+
+            'Console.WriteLine($"{folderName}\{Path.GetFileName(keyValuePair.Key)} | {ZipHelpers.SizeSuffix(keyValuePair.Value.Length)}")
+            currentContainer.List.Add(New FileContainer() With {.Name = Path.GetFileName(keyValuePair.Key), .Size = keyValuePair.Value.Length})
+            If newItem Then
+                containers.Add(currentContainer)
+            End If
+
+        Next
+
+        Console.WriteLine(containers.Count)
     End Sub
 End Class

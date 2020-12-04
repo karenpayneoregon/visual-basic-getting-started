@@ -37,6 +37,7 @@ Partial Class Form1
         Me.ExceptionsListBox = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.ZipContentsButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ProgressBar1
@@ -157,11 +158,21 @@ Partial Class Form1
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Issues encountered"
         '
+        'ZipContentsButton
+        '
+        Me.ZipContentsButton.Location = New System.Drawing.Point(12, 255)
+        Me.ZipContentsButton.Name = "ZipContentsButton"
+        Me.ZipContentsButton.Size = New System.Drawing.Size(96, 23)
+        Me.ZipContentsButton.TabIndex = 12
+        Me.ZipContentsButton.Text = "Zip contents"
+        Me.ZipContentsButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(598, 435)
+        Me.Controls.Add(Me.ZipContentsButton)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ExceptionsListBox)
@@ -197,4 +208,5 @@ Partial Class Form1
     Friend WithEvents ExceptionsListBox As ListBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents ZipContentsButton As Button
 End Class
