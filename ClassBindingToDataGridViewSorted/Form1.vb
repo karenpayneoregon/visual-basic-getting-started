@@ -1,4 +1,5 @@
 ﻿Public Class Form1
+
     Private peopleBindingList As SortableBindingList(Of Person)
     Private peopleBindingSource As New BindingSource()
 
@@ -10,13 +11,16 @@
         dataGridView1.Columns("id").Visible = False
     End Sub
 
-    Private Sub CurrentPersonButton_Click(sender As Object, e As EventArgs) Handles CurrentPersonButton.Click
+    Private Sub CurrentPersonButton_Click(sender As Object, e As EventArgs) _
+        Handles CurrentPersonButton.Click
+
         If peopleBindingSource.Current Is Nothing Then
             Return
         End If
 
         Dim currentPerson = peopleBindingList(peopleBindingSource.Position)
         MessageBox.Show($"{currentPerson.Id}, {currentPerson.FirstName}, {currentPerson.LastName}")
+
     End Sub
 
     Private Sub NewPersonButton_Click(sender As Object, e As EventArgs) Handles NewPersonButton.Click
