@@ -21,11 +21,18 @@ Public Class NumericTextBox
         If msg.Msg = WM_KEYDOWN Then
             Dim keys As Keys = CType(msg.WParam.ToInt32(), Keys)
 
-            Dim numbers As Boolean = ((keys >= System.Windows.Forms.Keys.D0 AndAlso keys <= System.Windows.Forms.Keys.D9) OrElse (keys >= System.Windows.Forms.Keys.NumPad0 AndAlso keys <= System.Windows.Forms.Keys.NumPad9)) AndAlso ModifierKeys <> System.Windows.Forms.Keys.Shift
+            Dim numbers As Boolean = ((keys >= Keys.D0 AndAlso keys <= Keys.D9) OrElse
+                                      (keys >= Keys.NumPad0 AndAlso keys <= Keys.NumPad9)) AndAlso
+                                     ModifierKeys <> Keys.Shift
 
-            Dim ctrl As Boolean = keys = System.Windows.Forms.Keys.Control
+            Dim ctrl As Boolean = keys = Keys.Control
 
-            Dim ctrlZ As Boolean = keys = System.Windows.Forms.Keys.Z AndAlso ModifierKeys = System.Windows.Forms.Keys.Control, ctrlX As Boolean = keys = System.Windows.Forms.Keys.X AndAlso ModifierKeys = System.Windows.Forms.Keys.Control, ctrlC As Boolean = keys = System.Windows.Forms.Keys.C AndAlso ModifierKeys = System.Windows.Forms.Keys.Control, ctrlV As Boolean = keys = System.Windows.Forms.Keys.V AndAlso ModifierKeys = System.Windows.Forms.Keys.Control, del As Boolean = keys = System.Windows.Forms.Keys.Delete, bksp As Boolean = keys = System.Windows.Forms.Keys.Back, arrows As Boolean = (keys = System.Windows.Forms.Keys.Up) Or (keys = System.Windows.Forms.Keys.Down) Or (keys = System.Windows.Forms.Keys.Left) Or (keys = System.Windows.Forms.Keys.Right)
+            Dim ctrlZ As Boolean = keys = Keys.Z AndAlso ModifierKeys = Keys.Control,
+                ctrlX As Boolean = keys = Keys.X AndAlso ModifierKeys = Keys.Control, ctrlC As Boolean = keys = Keys.C AndAlso
+                    ModifierKeys = Keys.Control, ctrlV As Boolean = keys = Keys.V AndAlso
+                    ModifierKeys = Keys.Control, del As Boolean = keys = Keys.Delete,
+                bksp As Boolean = keys = Keys.Back, arrows As Boolean = (keys = Keys.Up) Or (keys = Keys.Down) Or
+                                                                        (keys = Keys.Left) Or (keys = Keys.Right)
 
             If numbers Or ctrl Or del Or bksp Or arrows Or ctrlC Or ctrlX Or ctrlZ Then
                 Return False
