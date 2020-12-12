@@ -3,6 +3,7 @@ Imports System.Runtime.CompilerServices
 
 Public Class Item
     Implements INotifyPropertyChanged
+
     Private _value1 As Integer
     Private _value2 As Integer
     Private _value3 As Integer
@@ -53,6 +54,7 @@ Public Class Item
             Return Value1 + Value2 + Value3 + Value4
         End Get
     End Property
+
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
     Protected Overridable Sub OnPropertyChanged(<CallerMemberName> Optional memberName As String = Nothing)
         RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(memberName))
