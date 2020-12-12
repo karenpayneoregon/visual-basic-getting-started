@@ -5,7 +5,7 @@ Public Class Form1
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         BindingList = New BindingList(Of Item) From {New Item() With
-            {.Value1 = 12, .Value2 = 3, .Value3 = 100, .Value4 = 6}}
+            {.Value1 = 0, .Value2 = 0, .Value3 = 0, .Value4 = 0}}
 
         NumericTextbox1.DataBindings.Add("Text", BindingList, "Value1")
         NumericTextbox2.DataBindings.Add("Text", BindingList, "Value2")
