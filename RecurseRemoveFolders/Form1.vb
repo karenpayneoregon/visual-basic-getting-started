@@ -2,8 +2,17 @@
 Imports FileHelpers
 
 Public Class Form1
+    ''' <summary>
+    ''' Use with caution as this can only be undone with
+    ''' recovery from Windows recycle bin.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub RemoveFoldersButton_Click(sender As Object, e As EventArgs) Handles RemoveFoldersButton.Click
-        Operations.RecursiveDelete(New DirectoryInfo("C:\OED\Dotnetland\vbGettingStarted"))
+        If My.Dialogs.Question("Continue with delete process?") Then
+            Operations.RecursiveDelete(New DirectoryInfo("C:\OED\Dotnetland\vbGettingStarted"))
+        End If
+
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
