@@ -29,6 +29,8 @@ Public Class Operations
     ''' For traversing folders, if a cancellation is requested stop processing folders.
     ''' </summary>
     Public Shared Cancelled As Boolean = False
+    Public Shared ProcessDirectory As New List(Of String) From {"netcoreapp2.1", "RecentActions"}
+
     ''' <summary>
     ''' Base template for removing a folder structure. Unlike RecursiveFolders
     ''' which has cancellation and error trapping this procedure does not but with a
@@ -42,9 +44,20 @@ Public Class Operations
             Return
         End If
 
-        RaiseEvent OnDeleteEvent(directoryInformation.Name)
 
-        For Each dir As DirectoryInfo In directoryInformation.EnumerateDirectories()
+        Dim attr = File.GetAttributes(directoryInformation.FullName)
+        'RecentActions
+        '
+        If attr.HasFlag(FileAttributes.Directory) Then
+
+            If ProcessDirectory.Contains(directoryInformation.Name) Then
+                RaiseEvent OnDeleteEvent($"Folder: {directoryInformation.FullName}")
+            End If
+
+        End If
+
+
+            For Each dir As DirectoryInfo In directoryInformation.EnumerateDirectories()
             Try
                 RecursiveDelete(dir)
             Catch ex As Exception

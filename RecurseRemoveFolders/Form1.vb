@@ -3,7 +3,7 @@ Imports FileHelpers
 
 Public Class Form1
     Private Sub RemoveFoldersButton_Click(sender As Object, e As EventArgs) Handles RemoveFoldersButton.Click
-        Operations.RecursiveDelete(New DirectoryInfo("C:\OED\DataGridViewCheckBoxOneRow"))
+        Operations.RecursiveDelete(New DirectoryInfo("C:\OED\Dotnetland\vbGettingStarted"))
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

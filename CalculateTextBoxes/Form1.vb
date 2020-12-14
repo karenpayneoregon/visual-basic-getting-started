@@ -16,5 +16,6 @@ Public Class Form1
         Next
 
         TotalLabel.DataBindings.Add("Text", BindingList, "Total")
+
     End Sub
 End Class
