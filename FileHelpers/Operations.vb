@@ -29,6 +29,9 @@ Public Class Operations
     ''' For traversing folders, if a cancellation is requested stop processing folders.
     ''' </summary>
     Public Shared Cancelled As Boolean = False
+    ''' <summary>
+    ''' For RecursiveDelete, so we don't need to carry this around in a recursive procedure
+    ''' </summary>
     Public Shared ProcessDirectory As New List(Of String) From {"netcoreapp2.1", "RecentActions"}
 
     ''' <summary>
@@ -65,7 +68,10 @@ Public Class Operations
             End Try
         Next
 
-        directoryInformation.Delete(True)
+        If ProcessDirectory.Contains(directoryInformation.Name) Then
+            directoryInformation.Delete(True)
+        End If
+
 
     End Sub
     ''' <summary>
