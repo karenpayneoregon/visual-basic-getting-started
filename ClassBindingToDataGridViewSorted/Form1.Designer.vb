@@ -25,6 +25,7 @@ Partial Class Form1
         Me.CurrentPersonButton = New System.Windows.Forms.Button()
         Me.dataGridView1 = New System.Windows.Forms.DataGridView()
         Me.NewPersonButton = New System.Windows.Forms.Button()
+        Me.ExportButton = New System.Windows.Forms.Button()
         CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,11 +55,21 @@ Partial Class Form1
         Me.NewPersonButton.Text = "New"
         Me.NewPersonButton.UseVisualStyleBackColor = True
         '
+        'ExportButton
+        '
+        Me.ExportButton.Location = New System.Drawing.Point(190, 243)
+        Me.ExportButton.Name = "ExportButton"
+        Me.ExportButton.Size = New System.Drawing.Size(75, 23)
+        Me.ExportButton.TabIndex = 6
+        Me.ExportButton.Text = "Export"
+        Me.ExportButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(454, 286)
+        Me.Controls.Add(Me.ExportButton)
         Me.Controls.Add(Me.NewPersonButton)
         Me.Controls.Add(Me.CurrentPersonButton)
         Me.Controls.Add(Me.dataGridView1)
@@ -73,4 +84,5 @@ Partial Class Form1
     Private WithEvents CurrentPersonButton As Button
     Private WithEvents dataGridView1 As DataGridView
     Friend WithEvents NewPersonButton As Button
+    Friend WithEvents ExportButton As Button
 End Class

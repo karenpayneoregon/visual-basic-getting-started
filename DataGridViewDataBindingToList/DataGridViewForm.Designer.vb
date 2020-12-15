@@ -43,6 +43,7 @@ Partial Class DataGridViewForm
         Me.ContactNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CountryColumn = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.ExportButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
@@ -51,6 +52,7 @@ Partial Class DataGridViewForm
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.ExportButton)
         Me.Panel1.Controls.Add(Me.CurrentCustomerButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 288)
@@ -205,6 +207,15 @@ Partial Class DataGridViewForm
         Me.CountryColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.CountryColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
+        'ExportButton
+        '
+        Me.ExportButton.Location = New System.Drawing.Point(161, 11)
+        Me.ExportButton.Name = "ExportButton"
+        Me.ExportButton.Size = New System.Drawing.Size(135, 23)
+        Me.ExportButton.TabIndex = 7
+        Me.ExportButton.Text = "Export"
+        Me.ExportButton.UseVisualStyleBackColor = True
+        '
         'DataGridViewForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,4 +256,5 @@ Partial Class DataGridViewForm
     Friend WithEvents ContactNameColumn As DataGridViewTextBoxColumn
     Friend WithEvents CityColumn As DataGridViewTextBoxColumn
     Friend WithEvents CountryColumn As DataGridViewComboBoxColumn
+    Friend WithEvents ExportButton As Button
 End Class

@@ -176,4 +176,8 @@ Public Class DataGridViewForm
             End Try
         End If
     End Sub
+
+    Private Sub ExportButton_Click(sender As Object, e As EventArgs) Handles ExportButton.Click
+        CustomersDataGridView.ExportRows("Customers.csv")
+    End Sub
 End Class

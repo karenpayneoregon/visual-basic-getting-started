@@ -33,4 +33,8 @@
             })
 
     End Sub
+
+    Private Sub ExportButton_Click(sender As Object, e As EventArgs) Handles ExportButton.Click
+        dataGridView1.ExportRows("Data.csv")
+    End Sub
 End Class

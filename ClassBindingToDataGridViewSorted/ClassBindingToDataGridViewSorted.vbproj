@@ -77,6 +77,7 @@
     <Compile Include="Classes\Operations.vb" />
     <Compile Include="Classes\Person.vb" />
     <Compile Include="Classes\SortableBindingList.vb" />
+    <Compile Include="DataGridViewExtensions.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
