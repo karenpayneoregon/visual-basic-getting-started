@@ -59,9 +59,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logger.vb" />
+    <Compile Include="Classes\ConsoleLogger.vb" />
+    <Compile Include="Classes\ExceptionExtensions.vb" />
+    <Compile Include="Classes\ExceptionLogType.vb" />
+    <Compile Include="Classes\Exceptions.vb" />
+    <Compile Include="Classes\LogManager.vb" />
+    <Compile Include="Interfaces\ILogger.vb" />
+    <Compile Include="Classes\LogLevel.vb" />
+    <Compile Include="Classes\Logger.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="ApplicationTraceListener.vb" />
+    <Compile Include="Classes\ApplicationTraceListener.vb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md" />

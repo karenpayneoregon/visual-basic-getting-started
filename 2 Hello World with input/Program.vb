@@ -3,9 +3,11 @@ Imports ConsoleHelperLibrary
 Module Program
     Sub Main(args As String())
 
-        Console.Write("Enter your first name: ")
-        Console.SetCursorPosition(12, 0)
+        'Console.Write("Enter your first name: ")
+        'Console.SetCursorPosition(24, 0)
+        WriteText("Enter your first name: ", 0, 0, False)
         Dim firstName = Console.ReadLine()
+
 
         If Not String.IsNullOrWhiteSpace(firstName) Then
             Console.WriteLine($"Hello {firstName}")

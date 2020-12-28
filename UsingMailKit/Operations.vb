@@ -1,4 +1,5 @@
-﻿Imports MailKit
+﻿Imports System.IO
+Imports MailKit
 Imports MailKit.Security
 Imports MimeKit
 Imports MimeKit.Utils
@@ -16,6 +17,10 @@ Public Class Operations
         Dim image = builder.LinkedResources.Add("C:\Users\Joey\Documents\Selfies\selfie.jpg")
 
         image.ContentId = MimeUtils.GenerateMessageId()
+        Dim files = Directory.GetFiles("c:\SomeFolder").ToList()
+        For Each file As String In files
+            builder.Attachments.Add(file)
+        Next
 
 
         builder.HtmlBody =
