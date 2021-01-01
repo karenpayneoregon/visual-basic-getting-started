@@ -229,6 +229,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "UsingMailKit", "UsingMailKi
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OpenExcel_Using_Interop", "OpenExcel_Using_Interop\OpenExcel_Using_Interop.vbproj", "{95FF5CAE-9442-4CC6-80C0-817D021968EF}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ResolveLibrary", "ResolveLibrary\ResolveLibrary.vbproj", "{0C43DDF4-0F89-4794-B3C4-ADA9868B3522}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ResolveHelperDemo", "ResolveHelperDemo\ResolveHelperDemo.vbproj", "{379F0B89-2FBE-48C9-8A4C-19599F774C56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -555,6 +559,14 @@ Global
 		{95FF5CAE-9442-4CC6-80C0-817D021968EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95FF5CAE-9442-4CC6-80C0-817D021968EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95FF5CAE-9442-4CC6-80C0-817D021968EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C43DDF4-0F89-4794-B3C4-ADA9868B3522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C43DDF4-0F89-4794-B3C4-ADA9868B3522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C43DDF4-0F89-4794-B3C4-ADA9868B3522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C43DDF4-0F89-4794-B3C4-ADA9868B3522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379F0B89-2FBE-48C9-8A4C-19599F774C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379F0B89-2FBE-48C9-8A4C-19599F774C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379F0B89-2FBE-48C9-8A4C-19599F774C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379F0B89-2FBE-48C9-8A4C-19599F774C56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -657,6 +669,8 @@ Global
 		{D65CAAD4-9898-4A60-AC4F-13B2EDD6C62F} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
 		{0E798C38-DFCA-41EB-89A0-0B5912D52233} = {CC385D56-7B75-400C-813F-A5D66374D47C}
 		{95FF5CAE-9442-4CC6-80C0-817D021968EF} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
+		{0C43DDF4-0F89-4794-B3C4-ADA9868B3522} = {CC385D56-7B75-400C-813F-A5D66374D47C}
+		{379F0B89-2FBE-48C9-8A4C-19599F774C56} = {8E2D466B-E11F-4B23-ACD0-FB67209F3781}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DB0AB6E-BC74-40B8-B5FA-0545BA40F22B}
