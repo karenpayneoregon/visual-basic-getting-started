@@ -12,6 +12,9 @@ Public Class Form1
 
         UpdateCurrentCustomerButton.Enabled = False
 
+        EditFirstNameTextBox.DataBindings.Add("Text", _customersBindingList, "FirstName")
+        EditLastNameTextBox.DataBindings.Add("Text", _customersBindingList, "LastName")
+
     End Sub
     Private Sub AddNewCustomerButton_Click(sender As Object, e As EventArgs) Handles AddNewCustomerButton.Click
 
@@ -43,6 +46,10 @@ Public Class Form1
         _customersBindingList(CustomerListBox.SelectedIndex).FirstName = EditFirstNameTextBox.Text
 
         _customersBindingList(CustomerListBox.SelectedIndex).LastName = EditLastNameTextBox.Text
+
+    End Sub
+
+    Private Sub CustomerListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CustomerListBox.SelectedIndexChanged
 
     End Sub
 End Class

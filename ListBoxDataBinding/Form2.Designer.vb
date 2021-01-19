@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Form2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,13 +22,13 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.AddFirstNameTextBox = New System.Windows.Forms.TextBox()
         Me.AddLastNameTextBox = New System.Windows.Forms.TextBox()
-        Me.CustomerListBox = New System.Windows.Forms.ListBox()
+        Me.AddFirstNameTextBox = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.AddNewCustomerButton = New System.Windows.Forms.Button()
+        Me.CustomerListBox = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.UpdateCurrentCustomerButton = New System.Windows.Forms.Button()
         Me.EditLastNameTextBox = New System.Windows.Forms.TextBox()
@@ -36,18 +36,27 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ListCountLabel = New System.Windows.Forms.Label()
+        Me.CustomerListBox1 = New System.Windows.Forms.ListBox()
+        Me.TransferButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'AddLastNameTextBox
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(34, 32)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(26, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "First"
+        Me.AddLastNameTextBox.Location = New System.Drawing.Point(66, 60)
+        Me.AddLastNameTextBox.Name = "AddLastNameTextBox"
+        Me.AddLastNameTextBox.Size = New System.Drawing.Size(124, 20)
+        Me.AddLastNameTextBox.TabIndex = 3
+        Me.AddLastNameTextBox.Text = "Adams"
+        '
+        'AddFirstNameTextBox
+        '
+        Me.AddFirstNameTextBox.Location = New System.Drawing.Point(66, 29)
+        Me.AddFirstNameTextBox.Name = "AddFirstNameTextBox"
+        Me.AddFirstNameTextBox.Size = New System.Drawing.Size(124, 20)
+        Me.AddFirstNameTextBox.TabIndex = 2
+        Me.AddFirstNameTextBox.Text = "Mary"
         '
         'Label2
         '
@@ -58,29 +67,14 @@ Partial Class Form1
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Last"
         '
-        'AddFirstNameTextBox
+        'Label1
         '
-        Me.AddFirstNameTextBox.Location = New System.Drawing.Point(66, 29)
-        Me.AddFirstNameTextBox.Name = "AddFirstNameTextBox"
-        Me.AddFirstNameTextBox.Size = New System.Drawing.Size(124, 20)
-        Me.AddFirstNameTextBox.TabIndex = 2
-        Me.AddFirstNameTextBox.Text = "Mary"
-        '
-        'AddLastNameTextBox
-        '
-        Me.AddLastNameTextBox.Location = New System.Drawing.Point(66, 60)
-        Me.AddLastNameTextBox.Name = "AddLastNameTextBox"
-        Me.AddLastNameTextBox.Size = New System.Drawing.Size(124, 20)
-        Me.AddLastNameTextBox.TabIndex = 3
-        Me.AddLastNameTextBox.Text = "Adams"
-        '
-        'CustomerListBox
-        '
-        Me.CustomerListBox.FormattingEnabled = True
-        Me.CustomerListBox.Location = New System.Drawing.Point(318, 26)
-        Me.CustomerListBox.Name = "CustomerListBox"
-        Me.CustomerListBox.Size = New System.Drawing.Size(217, 95)
-        Me.CustomerListBox.TabIndex = 4
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(34, 32)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(26, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "First"
         '
         'GroupBox1
         '
@@ -89,10 +83,10 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.AddFirstNameTextBox)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 17)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 25)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(230, 116)
-        Me.GroupBox1.TabIndex = 5
+        Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add new"
         '
@@ -105,6 +99,14 @@ Partial Class Form1
         Me.AddNewCustomerButton.Text = "Add"
         Me.AddNewCustomerButton.UseVisualStyleBackColor = True
         '
+        'CustomerListBox
+        '
+        Me.CustomerListBox.FormattingEnabled = True
+        Me.CustomerListBox.Location = New System.Drawing.Point(318, 34)
+        Me.CustomerListBox.Name = "CustomerListBox"
+        Me.CustomerListBox.Size = New System.Drawing.Size(217, 95)
+        Me.CustomerListBox.TabIndex = 8
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.UpdateCurrentCustomerButton)
@@ -112,10 +114,10 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.EditFirstNameTextBox)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 147)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 155)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(230, 116)
-        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Edit current"
         '
@@ -165,25 +167,44 @@ Partial Class Form1
         'ListCountLabel
         '
         Me.ListCountLabel.AutoSize = True
-        Me.ListCountLabel.Location = New System.Drawing.Point(315, 10)
+        Me.ListCountLabel.Location = New System.Drawing.Point(315, 18)
         Me.ListCountLabel.Name = "ListCountLabel"
         Me.ListCountLabel.Size = New System.Drawing.Size(39, 13)
-        Me.ListCountLabel.TabIndex = 7
+        Me.ListCountLabel.TabIndex = 11
         Me.ListCountLabel.Text = "Label5"
         '
-        'Form1
+        'CustomerListBox1
+        '
+        Me.CustomerListBox1.FormattingEnabled = True
+        Me.CustomerListBox1.Location = New System.Drawing.Point(318, 155)
+        Me.CustomerListBox1.Name = "CustomerListBox1"
+        Me.CustomerListBox1.Size = New System.Drawing.Size(217, 95)
+        Me.CustomerListBox1.TabIndex = 12
+        '
+        'TransferButton
+        '
+        Me.TransferButton.Location = New System.Drawing.Point(318, 267)
+        Me.TransferButton.Name = "TransferButton"
+        Me.TransferButton.Size = New System.Drawing.Size(217, 23)
+        Me.TransferButton.TabIndex = 13
+        Me.TransferButton.Text = "Transfer"
+        Me.TransferButton.UseVisualStyleBackColor = True
+        '
+        'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(547, 289)
-        Me.Controls.Add(Me.ListCountLabel)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.ClientSize = New System.Drawing.Size(547, 333)
+        Me.Controls.Add(Me.TransferButton)
+        Me.Controls.Add(Me.CustomerListBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.CustomerListBox)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.ListCountLabel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Name = "Form1"
+        Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ListBox Binding"
+        Me.Text = "Form2"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -193,13 +214,13 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents AddFirstNameTextBox As TextBox
     Friend WithEvents AddLastNameTextBox As TextBox
-    Friend WithEvents CustomerListBox As ListBox
+    Friend WithEvents AddFirstNameTextBox As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents AddNewCustomerButton As Button
+    Friend WithEvents CustomerListBox As ListBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents UpdateCurrentCustomerButton As Button
     Friend WithEvents EditLastNameTextBox As TextBox
@@ -207,4 +228,6 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents ListCountLabel As Label
+    Friend WithEvents CustomerListBox1 As ListBox
+    Friend WithEvents TransferButton As Button
 End Class

@@ -39,9 +39,10 @@ Namespace Classes
             Try
 
                 Dim lines = File.ReadAllLines(fileName)
+                Dim index As Integer = 1
 
                 For Each line As String In lines
-
+                    Console.WriteLine(index)
                     ' split line by comma
                     Dim lineParts = line.Split(","c)
 
@@ -64,7 +65,7 @@ Namespace Classes
                                      .CountryIdentifier = countryId,
                                      .CountryName = currentCountryName
                                  })
-
+                    index += 1
                 Next
 
 
