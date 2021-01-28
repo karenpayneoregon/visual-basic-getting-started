@@ -21,6 +21,9 @@ Class MainWindow
 
         If e.Effects = DragDropEffects.Copy Then
             If _customCursor Is Nothing Then
+                '
+                ' Make sure this file or your file exists in the app folder
+                '
                 _customCursor = CursorHelper.CreateCursorFromImage("Dynamic.bmp")
             End If
 
