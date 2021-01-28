@@ -1,4 +1,6 @@
 ﻿Imports System.ComponentModel
+Imports System.IO
+Imports BindingList_ListChanged_1
 
 Public Class Form1
     Private personBindList As New BindingList(Of Person)
@@ -24,6 +26,11 @@ Public Class Form1
                 personBindList(index).FirstName = "Karen 1"
             End If
         Next
+        AddHandler FileDirectoryOperations.OnErrorEvent, AddressOf OnCopyError
+        FileDirectoryOperations.CopyFolder("C:\myData", "D:\Backup")
+    End Sub
+
+    Private Sub OnCopyError(exception As Exception)
 
     End Sub
 End Class
