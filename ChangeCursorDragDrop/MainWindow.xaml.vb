@@ -1,5 +1,4 @@
-﻿Imports System.Drawing
-
+﻿
 Class MainWindow
     Private Sub Label_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
 
