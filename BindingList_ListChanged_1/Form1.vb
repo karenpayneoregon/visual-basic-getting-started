@@ -26,8 +26,11 @@ Public Class Form1
                 personBindList(index).FirstName = "Karen 1"
             End If
         Next
+
         AddHandler FileDirectoryOperations.OnErrorEvent, AddressOf OnCopyError
+
         FileDirectoryOperations.CopyFolder("C:\myData", "D:\Backup")
+
     End Sub
 
     Private Sub OnCopyError(exception As Exception)
