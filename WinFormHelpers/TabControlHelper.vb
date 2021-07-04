@@ -16,7 +16,7 @@ Public Class TabControlHelper
 
         For index As Integer = 0 To tabControl.TabPages.Count - 1
             _pagesIndexed.Add(New KeyValuePair(Of TabPage, Integer)(tabControl.TabPages(index), index))
-        Next index
+        Next
     End Sub
 
     Public ReadOnly Property TabControl() As TabControl
@@ -63,6 +63,10 @@ Public Class TabControlHelper
     ''' <param name="tabPage">TabPage to insert</param>
     ''' <param name="index">At index in TabControl</param>
     Private Sub InsertTabPage(tabPage As TabPage, index As Integer)
+        If _tabControl.TabCount = 0 Then
+            Exit Sub
+        End If
+
         If index < 0 OrElse index > _tabControl.TabCount Then
             Throw New ArgumentException("Index out of Range.")
         End If
